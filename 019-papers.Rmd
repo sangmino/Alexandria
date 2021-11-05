@@ -1,0 +1,4 @@
+# Paper Highlights
+
+### Hansen and Jagannathan (1991) {#HansJaga:91}
+This paper...

@@ -1,0 +1,45 @@
+# (PART\*) CLASSICAL AP ESSENTIALS {-}
+
+# Portfolio Choice
+
+## Mean-Variance
+
+**CARA-Normal Framework**
+
+One useful benchmark is what is referred to as the CARA-Normal framework, in which the agent has CARA utility and the risky asset has returns that are normally distributed. While tractable, a key disadvantage of this approach is that wealth does not affect the amount invested in a risky asset. 
+
+**CRRA Utility** **and Mean-Variance**
+
+Instead, we now first assume that returns are lognormally distributed. It's appealing to assume that returns are lognormal in a discrete-time model with IID returns because returns will then be lognormal over multiple periods as well. Furthermore, let's introduce CRRA utility:
+$$
+\max \left[\mathbb{E}_t \frac{W_{t+1}^{1-\gamma}}{1-\gamma}\right]
+$$
+Then we can show that the investor indeed trades off mean against variance if we assume that investor's wealth is lognormally distributed. To see this, rewrite above as
+$$
+\max[\log\mathbb{E}_tW_{t+1}^{1-\gamma}] = \max\left[(1-\gamma) \mathbb{E}_tw_{t+1} + \frac{1}{2}(1-\gamma)^2 \sigma_{wt}^2\right]
+$$
+where $w_t =\log W_t$ and $\sigma_{wt}^2$ is the conditional variance of log wealth. We can then use the budget constraint $w_{t+1} = r_{p,t+1}+w_t$ to restate the problem:
+$$
+\max \left[\mathbb{E}_t r_{p,t+1} + \frac{1}{2} (1-\gamma) \sigma_{pt}^2\right]=\max\left[\log \mathbb{E}_t r_{p,t+1} - \frac{\gamma}{2} \sigma_{pt}^2\right]
+$$
+Thus the investor trades the log of the arithmetic mean return linearly against the variance of the log return. 
+
+**Mutual Fund Theorem**
+
+The mutual fund theorem of Tobin (1958) says that all minimum-variance portfolios can be obtained by mixing just two minimum-variance portfolios in different proportions. Thus, if all investors hold minimum-variance portfolios, all investors hold combinations of just two underlying portfolios or “mutual funds.”
+
+In the presence of a riskless asset, the mutual fund theorem simplifies because one of the mutual funds is the riskless asset and the other, the tangency portfolio, contains only risky assets. Thus it says that all investor, regardless of their risk aversion, should hold risky assets in the same proportion.
+
+Interpreting bonds and stocks as two alternative risky assets, the mutual fund theorem implies that the ratio of bonds to stocks should be constant across recommended portfolios, while the ratio of cash to (bonds + stocks) should move in the same direction as risk aversion. Canner, Mankiw, and Weil (1997) find that the ratio of bonds to stocks moves with risk aversion.
+
+
+
+## Expected Return - Beta Representations  
+
+**Price and Quantity of Risk**
+
+It's common to consider the representation of the following form:
+$$
+\mathbb{E}[R^i] = \alpha + \beta_{i,a}\lambda_a + \beta_{i,b}\lambda_b +\cdots
+$$
+It says that assets with higher betas should get higher average returns. $\beta_{i,a}$, often referred to as quantity of risk, is interpreted as the amount of exposure of asset $i$ to factor $a$ risks, and $\lambda_a$ is the **price of risk**. In other words, for each unit of exposure $\beta$ to risk factor $a$, you must provide investors with an expected return premium $\lambda_a$. 

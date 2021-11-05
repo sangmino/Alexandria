@@ -36,51 +36,11 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={A Minimal Book Example},
-  pdfauthor={John Doe},
+  pdftitle={Small Handbook of Asset Pricing Essentials},
+  pdfauthor={Sangmin S. Oh},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -109,33 +69,17 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\usepackage{amsmath}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
 
-\title{A Minimal Book Example}
-\author{John Doe}
-\date{2021-11-04}
+\title{Small Handbook of Asset Pricing Essentials}
+\author{Sangmin S. Oh}
+\date{}
 
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\newtheorem{conjecture}{Conjecture}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
-\theoremstyle{definition}
-\newtheorem{example}{Example}[chapter]
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}[chapter]
-\theoremstyle{definition}
-\newtheorem{hypothesis}{Hypothesis}[chapter]
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -143,256 +87,248 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{about}{%
-\chapter{About}\label{about}}
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports; for example, a math equation \(a^2 + b^2 = c^2\).
+This handbook, conveniently abbreviated as SHAPE, is designed to facilitate the review of key ideas and concepts necessary for asset pricing research. Much of the material is based primarily on my coursework at Chicago Booth, independent follow-ups, and discussions with my peers.
 
-\hypertarget{usage}{%
-\section{Usage}\label{usage}}
+\hypertarget{part-classical-ap-essentials}{%
+\part*{CLASSICAL AP ESSENTIALS}\label{part-classical-ap-essentials}}
+\addcontentsline{toc}{part}{CLASSICAL AP ESSENTIALS}
 
-Each \textbf{bookdown} chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter \emph{must} start with a first-level heading: \texttt{\#\ A\ good\ chapter}, and can contain one (and only one) first-level heading.
+\hypertarget{portfolio-choice}{%
+\chapter{Portfolio Choice}\label{portfolio-choice}}
 
-Use second-level and higher headings within chapters like: \texttt{\#\#\ A\ short\ section} or \texttt{\#\#\#\ An\ even\ shorter\ section}.
+\hypertarget{mean-variance}{%
+\section{Mean-Variance}\label{mean-variance}}
 
-The \texttt{index.Rmd} file is required, and is also your first book chapter. It will be the homepage when you render the book.
+\textbf{CARA-Normal Framework}
 
-\hypertarget{render-book}{%
-\section{Render book}\label{render-book}}
+One useful benchmark is what is referred to as the CARA-Normal framework, in which the agent has CARA utility and the risky asset has returns that are normally distributed. While tractable, a key disadvantage of this approach is that wealth does not affect the amount invested in a risky asset.
 
-You can render the HTML version of this example book without changing anything:
+\textbf{CRRA Utility} \textbf{and Mean-Variance}
 
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-  Find the \textbf{Build} pane in the RStudio IDE, and
-\item
-  Click on \textbf{Build Book}, then select your output format, or select ``All formats'' if you'd like to use multiple formats from the same book source files.
-\end{enumerate}
+Instead, we now first assume that returns are lognormally distributed. It's appealing to assume that returns are lognormal in a discrete-time model with IID returns because returns will then be lognormal over multiple periods as well. Furthermore, let's introduce CRRA utility:
+\[
+\max \left[\mathbb{E}_t \frac{W_{t+1}^{1-\gamma}}{1-\gamma}\right]
+\]
+Then we can show that the investor indeed trades off mean against variance if we assume that investor's wealth is lognormally distributed. To see this, rewrite above as
+\[
+\max[\log\mathbb{E}_tW_{t+1}^{1-\gamma}] = \max\left[(1-\gamma) \mathbb{E}_tw_{t+1} + \frac{1}{2}(1-\gamma)^2 \sigma_{wt}^2\right]
+\]
+where \(w_t =\log W_t\) and \(\sigma_{wt}^2\) is the conditional variance of log wealth. We can then use the budget constraint \(w_{t+1} = r_{p,t+1}+w_t\) to restate the problem:
+\[
+\max \left[\mathbb{E}_t r_{p,t+1} + \frac{1}{2} (1-\gamma) \sigma_{pt}^2\right]=\max\left[\log \mathbb{E}_t r_{p,t+1} - \frac{\gamma}{2} \sigma_{pt}^2\right]
+\]
+Thus the investor trades the log of the arithmetic mean return linearly against the variance of the log return.
 
-Or build the book from the R console:
+\textbf{Mutual Fund Theorem}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{render\_book}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
+The mutual fund theorem of Tobin (1958) says that all minimum-variance portfolios can be obtained by mixing just two minimum-variance portfolios in different proportions. Thus, if all investors hold minimum-variance portfolios, all investors hold combinations of just two underlying portfolios or ``mutual funds.''
 
-To render this example to PDF as a \texttt{bookdown::pdf\_book}, you'll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
+In the presence of a riskless asset, the mutual fund theorem simplifies because one of the mutual funds is the riskless asset and the other, the tangency portfolio, contains only risky assets. Thus it says that all investor, regardless of their risk aversion, should hold risky assets in the same proportion.
 
-\hypertarget{preview-book}{%
-\section{Preview book}\label{preview-book}}
+Interpreting bonds and stocks as two alternative risky assets, the mutual fund theorem implies that the ratio of bonds to stocks should be constant across recommended portfolios, while the ratio of cash to (bonds + stocks) should move in the same direction as risk aversion. Canner, Mankiw, and Weil (1997) find that the ratio of bonds to stocks moves with risk aversion.
 
-As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in ``Preview book'', or from the R console:
+\hypertarget{expected-return---beta-representations}{%
+\section{Expected Return - Beta Representations}\label{expected-return---beta-representations}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{serve\_book}\NormalTok{()}
-\end{Highlighting}
-\end{Shaded}
+\textbf{Price and Quantity of Risk}
 
-\hypertarget{hello-bookdown}{%
-\chapter{Hello bookdown}\label{hello-bookdown}}
+It's common to consider the representation of the following form:
+\[
+\mathbb{E}[R^i] = \alpha + \beta_{i,a}\lambda_a + \beta_{i,b}\lambda_b +\cdots
+\]
+It says that assets with higher betas should get higher average returns. \(\beta_{i,a}\), often referred to as quantity of risk, is interpreted as the amount of exposure of asset \(i\) to factor \(a\) risks, and \(\lambda_a\) is the \textbf{price of risk}. In other words, for each unit of exposure \(\beta\) to risk factor \(a\), you must provide investors with an expected return premium \(\lambda_a\).
 
-All chapters start with a first-level heading followed by your chapter title, like the line above. There should be only one first-level heading (\texttt{\#}) per .Rmd file.
+\hypertarget{stochastic-discount-factor}{%
+\chapter{Stochastic Discount Factor}\label{stochastic-discount-factor}}
 
-\hypertarget{a-section}{%
-\section{A section}\label{a-section}}
+\hypertarget{sdf-basics}{%
+\section{SDF Basics}\label{sdf-basics}}
 
-All chapter sections start with a second-level (\texttt{\#\#}) or higher heading followed by your section title, like the sections above and below here. You can have as many as you want within a chapter.
+\textbf{Existence of SDFs}
 
-\hypertarget{an-unnumbered-section}{%
-\subsection*{An unnumbered section}\label{an-unnumbered-section}}
-\addcontentsline{toc}{subsection}{An unnumbered section}
-
-Chapters and sections are numbered by default. To un-number a heading, add a \texttt{\{.unnumbered\}} or the shorter \texttt{\{-\}} at the end of the heading, like in this section.
-
-\hypertarget{cross}{%
-\chapter{Cross-references}\label{cross}}
-
-Cross-references make it easier for your readers to find and link to elements in your book.
-
-\hypertarget{chapters-and-sub-chapters}{%
-\section{Chapters and sub-chapters}\label{chapters-and-sub-chapters}}
-
-There are two steps to cross-reference any heading:
+There are two key theorems regarding the existence of an SDF:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Label the heading: \texttt{\#\ Hello\ world\ \{\#nice-label\}}.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Leave the label off if you like the automated heading generated based on your heading title: for example, \texttt{\#\ Hello\ world} = \texttt{\#\ Hello\ world\ \{\#hello-world\}}.
-  \item
-    To label an un-numbered heading, use: \texttt{\#\ Hello\ world\ \{-\#nice-label\}} or \texttt{\{\#\ Hello\ world\ .unnumbered\}}.
-  \end{itemize}
+  There is a discount factor that prices all the payoffs by \(P=\mathbb{E}[MX]\) if and only if the law of one price holds.
 \item
-  Next, reference the labeled heading anywhere in the text using \texttt{\textbackslash{}@ref(nice-label)}; for example, please see Chapter \ref{cross}.
-
-  \begin{itemize}
-  \tightlist
-  \item
-    If you prefer text as the link instead of a numbered reference use: \protect\hyperlink{cross}{any text you want can go here}.
-  \end{itemize}
+  There is a \emph{positive} discount factor that prices all the payoffs by \(P = \mathbb{E}[MX]\) if and only if there are no arbitrage opportunities.
 \end{enumerate}
 
-\hypertarget{captioned-figures-and-tables}{%
-\section{Captioned figures and tables}\label{captioned-figures-and-tables}}
+These theorems are useful to show that we can use SDFs without implicitly assuming anything about utility functions, aggregate, and market completeness.
 
-Figures and tables \emph{with captions} can also be cross-referenced from elsewhere in your book using \texttt{\textbackslash{}@ref(fig:chunk-label)} and \texttt{\textbackslash{}@ref(tab:chunk-label)}, respectively.
+\textbf{Fundamental Equation of Asset Pricing}
 
-See Figure \ref{fig:nice-fig}.
+Law of one price implies that we must have
+\[
+P(X) = \sum_{s=1}^S q(s)X(s) = \sum_{s=1}^S \pi(s)\left(\frac{q(s)}{\pi(s)}\right)X(s) = \mathbb{E}[MX]
+\]
+where \(M(s) = q(s) / \pi(s)\) is the ratio of state price to probability for state \(s\).
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, .}\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
-\FunctionTok{plot}\NormalTok{(pressure, }\AttributeTok{type =} \StringTok{\textquotesingle{}b\textquotesingle{}}\NormalTok{, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\textbf{Risk-Neutral Pricing}
 
-\begin{figure}
+We can further rewrite the above equation by defining risk-neutral probabilities as \(\pi^*(s)\):
+\[
+\pi^*(s) = R_f q(s) =\frac{M(s)}{\mathbb{E}[M]} \pi(s)
+\]
+which allows us to rewrite the asset pricing equation:
+\[
+P(X) = \frac{1}{R_f} \sum_s=1^S \pi^*(s) X(s) = \frac{1}{R_f} \mathbb{E}^*[X]
+\]
+So the price of any asset is the pseudo-expectation of its payoff, discounted at the riskless interest rate.
 
-{\centering \includegraphics[width=0.8\linewidth]{_main_files/figure-latex/nice-fig-1} 
+\hypertarget{properties-of-sdfs}{%
+\subsection{Properties of SDFs}\label{properties-of-sdfs}}
 
-}
+\textbf{Linear Factor Pricing Model}
 
-\caption{Here is a nice figure!}\label{fig:nice-fig}
-\end{figure}
+We can show that returns always obey a linear factor pricing model with the SDF as the single factor. To see this, start with the fundamental equation of asset pricing:
+\[
+P_{it} = \mathbb{E}_t[M_{t+1}X_{i,t+1}] = \mathbb{E}_t[M_{t+1}]\mathbb{E}_t[X_{i,t+1}] + Cov_t(M_{t+1}, X_{i,t+1})
+\]
+Dividing each side by \(P_{it}\) and using the fact that \(1+R_{f,t+1} = 1 / \mathbb{E}_t[M_{t+1}]\) yields:
+\[
+\mathbb{E}_t[1+R_{i,t+1}] = (1 + R_{f,t+1})(1 - Cov_t(M_{t+1}, R_{i,t+1}))
+\]
+which says that expected return on any asset is the riskless return times an adjustment factor for the covariance of return with the SDF.
 
-Don't miss Table \ref{tab:nice-tab}.
+As a final step, we can subtract the gross risk-free rate from each side:
+\[
+\begin{aligned}
+\mathbb{E}_t[R_{i,t+1} - R_{f,t+1}] &= -(1+R_{f,t+1}) Cov_t(M_t+1, R_{i,t+1} - R_{f,t+1})\\
+                                    &= \underbrace{-(1+R_{f,t+1})Var_t(M_{t+1})}_{\equiv \lambda_{Mt}}\underbrace{\frac{Cov_t(M_t+1, R_{i,t+1} - R_{f,t+1})}{Var_t(M_{t+1})}}_{\equiv \beta_{iMt}}
+\end{aligned}
+\]
+We denote \(\lambda_{Mt}\) as the price of risk or the factor risk premium of the SDF. Immediately, we see that it depends on the volatility of the SDF.
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}
-  \FunctionTok{head}\NormalTok{(pressure, }\DecValTok{10}\NormalTok{), }\AttributeTok{caption =} \StringTok{\textquotesingle{}Here is a nice table!\textquotesingle{}}\NormalTok{,}
-  \AttributeTok{booktabs =} \ConstantTok{TRUE}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+\textbf{Deriving the Hansen-Jagannathan Bound}
 
-\begin{table}
+Hansen--Jagannathan bound, introduced in \protect\hyperlink{HansJaga:91}{Hansen and Jagannathan (1991)} is a theorem that says that the ratio of the standard deviation of a stochastic discount factor to its mean exceeds the Sharpe ratio attained by any portfolio. Deriving the bound with a risky and a riskless asset is easy. Specifically, write:
+\[
+\begin{aligned}
+\mathbb{E}_t[R_{i,t+1} - R_{f,t+1}] &= -\frac{Cov_t(M_{t+1}, R_{i,t+1} - R_{f,t+1})}{\mathbb{E}_t[M_{t+1}]}\\
+                                    &\leq \frac{\sigma_t(M_{t+1})\sigma_t(R_{i,t+1} - R_{f,t+1})}{\mathbb{E}_t[M_{t+1}]}
+\end{aligned}
+\]
+Rearranging therefore yields:
+\[
+\frac{\sigma_t(M_{t+1})}{\mathbb{E}_t[M_{t+1}]} \geq \frac{\mathbb{E}_t[R_{i,t+1} - R_{f,t+1}]}{\sigma_t(R_{i,t+1} - R_{f,t+1})}
+\]
+Hansen and Jagannathan (1991) also derive the bound even when there is no riskfree asset pinning down the mean of the SDF. The idea is to treat the mean of the SDF as an unknown parameter, and for each possible value of the mean, augment the set of basis assets with a hypothetical riskfree payoff whose return equals \(1/\bar{M}\).
 
-\caption{\label{tab:nice-tab}Here is a nice table!}
-\centering
-\begin{tabular}[t]{rr}
-\toprule
-temperature & pressure\\
-\midrule
-0 & 0.0002\\
-20 & 0.0012\\
-40 & 0.0060\\
-60 & 0.0300\\
-80 & 0.0900\\
-\addlinespace
-100 & 0.2700\\
-120 & 0.7500\\
-140 & 1.8500\\
-160 & 4.2000\\
-180 & 8.8000\\
-\bottomrule
-\end{tabular}
-\end{table}
+\textbf{Usefulness of the Hansen-Jagannathan Bound}
 
-\hypertarget{parts}{%
-\chapter{Parts}\label{parts}}
+The HJ frontier is commonly used as a quick check on the ability of a parametric asset pricing model to fit the properties of asset returns. The mean and volatility of the SDF can be calculated for different parameter values of the model, and if they fail to satisfy the SDF volatility bounds, then this indicates that the model fails to price the assets.
 
-You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.
+\begin{itemize}
+\tightlist
+\item
+  For example, Hansen and Jagannathan (1991) calculate SDF volatility bounds using return data on Treasury bills and an aggregate stock index. They find that a simple consumption-based asset pricing model with a power-utility representative agent can only satisfy these bounds if very high risk aversion coefficients are used.
+\end{itemize}
 
-Add a numbered part: \texttt{\#\ (PART)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+\hypertarget{present-value-relations}{%
+\chapter{Present Value Relations}\label{present-value-relations}}
 
-Add an unnumbered part: \texttt{\#\ (PART\textbackslash{}*)\ Act\ one\ \{-\}} (followed by \texttt{\#\ A\ chapter})
+\hypertarget{dynamic-factor-models}{%
+\chapter{Dynamic Factor Models}\label{dynamic-factor-models}}
 
-Add an appendix as a special kind of un-numbered part: \texttt{\#\ (APPENDIX)\ Other\ stuff\ \{-\}} (followed by \texttt{\#\ A\ chapter}). Chapters in an appendix are prepended with letters instead of numbers.
+\hypertarget{estimating-and-evaluating-models}{%
+\chapter{Estimating and Evaluating Models}\label{estimating-and-evaluating-models}}
 
-\hypertarget{footnotes-and-citations}{%
-\chapter{Footnotes and citations}\label{footnotes-and-citations}}
+\hypertarget{paper-highlights}{%
+\chapter{Paper Highlights}\label{paper-highlights}}
 
-\hypertarget{footnotes}{%
-\section{Footnotes}\label{footnotes}}
+\hypertarget{HansJaga:91}{%
+\subsection{Hansen and Jagannathan (1991)}\label{HansJaga:91}}
 
-Footnotes are put inside the square brackets after a caret \texttt{\^{}{[}{]}}. Like this one \footnote{This is a footnote.}.
+This paper\ldots{}
 
-\hypertarget{citations}{%
-\section{Citations}\label{citations}}
+\hypertarget{part-shoulders-of-giants}{%
+\part*{SHOULDERS OF GIANTS}\label{part-shoulders-of-giants}}
+\addcontentsline{toc}{part}{SHOULDERS OF GIANTS}
 
-Reference items in your bibliography file(s) using \texttt{@key}.
+\hypertarget{epstein-zin-preferences-and-long-run-risks}{%
+\chapter{Epstein-Zin Preferences and Long-Run Risks}\label{epstein-zin-preferences-and-long-run-risks}}
 
-For example, we are using the \textbf{bookdown} package \citep{R-bookdown} (check out the last code chunk in index.Rmd to see how this citation key was added) in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015} (this citation was added manually in an external file book.bib).
-Note that the \texttt{.bib} files need to be listed in the index.Rmd with the YAML \texttt{bibliography} key.
+\hypertarget{incomplete-markets}{%
+\chapter{Incomplete Markets}\label{incomplete-markets}}
 
-The RStudio Visual Markdown Editor can also make it easier to insert citations: \url{https://rstudio.github.io/visual-markdown-editing/\#/citations}
+\hypertarget{rare-events-and-disasters}{%
+\chapter{Rare Events and Disasters}\label{rare-events-and-disasters}}
 
-\hypertarget{blocks}{%
-\chapter{Blocks}\label{blocks}}
+\hypertarget{habit-formation}{%
+\chapter{Habit Formation}\label{habit-formation}}
 
-\hypertarget{equations}{%
-\section{Equations}\label{equations}}
+\hypertarget{ambiguity-aversion}{%
+\chapter{Ambiguity Aversion}\label{ambiguity-aversion}}
 
-Here is an equation.
+\hypertarget{learning}{%
+\chapter{Learning}\label{learning}}
 
-\begin{equation} 
-  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
-  \label{eq:binom}
-\end{equation}
+\hypertarget{production-based-models}{%
+\chapter{Production-based Models}\label{production-based-models}}
 
-You may refer to using \texttt{\textbackslash{}@ref(eq:binom)}, like see Equation \eqref{eq:binom}.
+\hypertarget{term-structure}{%
+\chapter{Term Structure}\label{term-structure}}
 
-\hypertarget{theorems-and-proofs}{%
-\section{Theorems and proofs}\label{theorems-and-proofs}}
+\hypertarget{part-pricing-specific-assets}{%
+\part*{PRICING SPECIFIC ASSETS}\label{part-pricing-specific-assets}}
+\addcontentsline{toc}{part}{PRICING SPECIFIC ASSETS}
 
-Labeled theorems can be referenced in text using \texttt{\textbackslash{}@ref(thm:tri)}, for example, check out this smart theorem \ref{thm:tri}.
+\hypertarget{pricing-currencies}{%
+\chapter{Pricing Currencies}\label{pricing-currencies}}
 
-\begin{theorem}
-\protect\hypertarget{thm:tri}{}\label{thm:tri}For a right triangle, if \(c\) denotes the \emph{length} of the hypotenuse
-and \(a\) and \(b\) denote the lengths of the \textbf{other} two sides, we have
-\[a^2 + b^2 = c^2\]
-\end{theorem}
+\hypertarget{pricing-volatility}{%
+\chapter{Pricing Volatility}\label{pricing-volatility}}
 
-Read more here \url{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html}.
+\hypertarget{pricing-corporate-bonds}{%
+\chapter{Pricing Corporate Bonds}\label{pricing-corporate-bonds}}
 
-\hypertarget{callout-blocks}{%
-\section{Callout blocks}\label{callout-blocks}}
+\hypertarget{pricing-government-bonds}{%
+\chapter{Pricing Government Bonds}\label{pricing-government-bonds}}
 
-The R Markdown Cookbook provides more help on how to use custom blocks to design your own callouts: \url{https://bookdown.org/yihui/rmarkdown-cookbook/custom-blocks.html}
+\hypertarget{pricing-equity-strips}{%
+\chapter{Pricing Equity Strips}\label{pricing-equity-strips}}
 
-\hypertarget{sharing-your-book}{%
-\chapter{Sharing your book}\label{sharing-your-book}}
+\hypertarget{part-selected-topics}{%
+\part*{SELECTED TOPICS}\label{part-selected-topics}}
+\addcontentsline{toc}{part}{SELECTED TOPICS}
 
-\hypertarget{publishing}{%
-\section{Publishing}\label{publishing}}
+\hypertarget{asset-pricing-around-announcements}{%
+\chapter{Asset Pricing around Announcements}\label{asset-pricing-around-announcements}}
 
-HTML books can be published online, see: \url{https://bookdown.org/yihui/bookdown/publishing.html}
+\hypertarget{machine-learning-in-asset-pricing}{%
+\chapter{Machine Learning in Asset Pricing}\label{machine-learning-in-asset-pricing}}
 
-\hypertarget{pages}{%
-\section{404 pages}\label{pages}}
+\hypertarget{demand-system-approach}{%
+\chapter{Demand System Approach}\label{demand-system-approach}}
 
-By default, users will be directed to a 404 page if they try to access a webpage that cannot be found. If you'd like to customize your 404 page instead of using the default, you may add either a \texttt{\_404.Rmd} or \texttt{\_404.md} file to your project root and use code and/or Markdown syntax.
+\hypertarget{subjective-beliefs-in-asset-pricing}{%
+\chapter{Subjective Beliefs in Asset Pricing}\label{subjective-beliefs-in-asset-pricing}}
 
-\hypertarget{metadata-for-sharing}{%
-\section{Metadata for sharing}\label{metadata-for-sharing}}
+\hypertarget{insurance}{%
+\chapter{Insurance}\label{insurance}}
 
-Bookdown HTML books will provide HTML metadata for social sharing on platforms like Twitter, Facebook, and LinkedIn, using information you provide in the \texttt{index.Rmd} YAML. To setup, set the \texttt{url} for your book and the path to your \texttt{cover-image} file. Your book's \texttt{title} and \texttt{description} are also used.
+\hypertarget{international-finance}{%
+\chapter{International Finance}\label{international-finance}}
 
-This \texttt{gitbook} uses the same social sharing data across all chapters in your book- all links shared will look the same.
+\hypertarget{part-monetary-policy}{%
+\part*{MONETARY POLICY}\label{part-monetary-policy}}
+\addcontentsline{toc}{part}{MONETARY POLICY}
 
-Specify your book's source repository on GitHub using the \texttt{edit} key under the configuration options in the \texttt{\_output.yml} file, which allows users to suggest an edit by linking to a chapter's source file.
+\hypertarget{basics-of-new-keynesian-framework}{%
+\chapter{Basics of New Keynesian Framework}\label{basics-of-new-keynesian-framework}}
 
-Read more about the features of this output format here:
+\hypertarget{monetary-policy-shocks}{%
+\chapter{Monetary Policy Shocks}\label{monetary-policy-shocks}}
 
-\url{https://pkgs.rstudio.com/bookdown/reference/gitbook.html}
-
-Or use:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{?bookdown}\SpecialCharTok{::}\NormalTok{gitbook}
-\end{Highlighting}
-\end{Shaded}
-
+\hypertarget{central-banks-and-asset-prices}{%
+\chapter{Central Banks and Asset Prices}\label{central-banks-and-asset-prices}}
 
   \bibliography{book.bib,packages.bib}
 
