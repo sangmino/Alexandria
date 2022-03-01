@@ -1,4 +1,5 @@
 \contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Approaches to Asset Pricing}{5}{section.1.1}%
 \contentsline {part}{CLASSICAL AP ESSENTIALS}{9}{part*.2}%
 \contentsline {chapter}{\numberline {2}Portfolio Choice}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Mean-Variance}{9}{section.2.1}%
@@ -7,33 +8,52 @@
 \contentsline {section}{\numberline {3.1}SDF Basics}{11}{section.3.1}%
 \contentsline {subsection}{\numberline {3.1.1}Properties of SDFs}{12}{subsection.3.1.1}%
 \contentsline {chapter}{\numberline {4}Present Value Relations}{15}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Dynamic Factor Models}{17}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Estimating and Evaluating Models}{19}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Paper Highlights}{21}{chapter.7}%
-\contentsline {subsection}{\numberline {7.0.1}Hansen and Jagannathan (1991)}{21}{subsection.7.0.1}%
-\contentsline {part}{SHOULDERS OF GIANTS}{25}{part*.3}%
-\contentsline {chapter}{\numberline {8}Epstein-Zin Preferences and Long-Run Risks}{25}{chapter.8}%
-\contentsline {chapter}{\numberline {9}Incomplete Markets}{27}{chapter.9}%
-\contentsline {chapter}{\numberline {10}Rare Events and Disasters}{29}{chapter.10}%
-\contentsline {chapter}{\numberline {11}Habit Formation}{31}{chapter.11}%
-\contentsline {chapter}{\numberline {12}Ambiguity Aversion}{33}{chapter.12}%
-\contentsline {chapter}{\numberline {13}Learning}{35}{chapter.13}%
-\contentsline {chapter}{\numberline {14}Production-based Models}{37}{chapter.14}%
-\contentsline {chapter}{\numberline {15}Term Structure}{39}{chapter.15}%
-\contentsline {part}{PRICING SPECIFIC ASSETS}{43}{part*.4}%
-\contentsline {chapter}{\numberline {16}Pricing Currencies}{43}{chapter.16}%
-\contentsline {chapter}{\numberline {17}Pricing Volatility}{45}{chapter.17}%
-\contentsline {chapter}{\numberline {18}Pricing Corporate Bonds}{47}{chapter.18}%
-\contentsline {chapter}{\numberline {19}Pricing Government Bonds}{49}{chapter.19}%
-\contentsline {chapter}{\numberline {20}Pricing Equity Strips}{51}{chapter.20}%
-\contentsline {part}{SELECTED TOPICS}{55}{part*.5}%
-\contentsline {chapter}{\numberline {21}Asset Pricing around Announcements}{55}{chapter.21}%
-\contentsline {chapter}{\numberline {22}Machine Learning in Asset Pricing}{57}{chapter.22}%
-\contentsline {chapter}{\numberline {23}Demand System Approach}{59}{chapter.23}%
-\contentsline {chapter}{\numberline {24}Subjective Beliefs in Asset Pricing}{61}{chapter.24}%
-\contentsline {chapter}{\numberline {25}Insurance}{63}{chapter.25}%
-\contentsline {chapter}{\numberline {26}International Finance}{65}{chapter.26}%
-\contentsline {part}{MONETARY POLICY}{69}{part*.6}%
-\contentsline {chapter}{\numberline {27}Basics of New Keynesian Framework}{69}{chapter.27}%
-\contentsline {chapter}{\numberline {28}Monetary Policy Shocks}{71}{chapter.28}%
-\contentsline {chapter}{\numberline {29}Central Banks and Asset Prices}{73}{chapter.29}%
+\contentsline {section}{\numberline {4.1}Constant Discount Rates}{15}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}\textbf {Simplest PV Model}}{15}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}\textbf {Rational Bubbles}}{16}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Time-varying Discount Rates}{17}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Campbell-Shiller (1988) Approximation}{17}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Vuolteenaho (2002) Approximation}{18}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Campbell (1991) Approximation}{19}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Predictability Galore}{19}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.5}VAR Analysis of Returns}{22}{subsection.4.2.5}%
+\contentsline {chapter}{\numberline {5}Dynamic Factor Models}{23}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Estimating and Evaluating Models}{25}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Paper Highlights}{27}{chapter.7}%
+\contentsline {subsection}{\numberline {7.0.1}Hansen and Jagannathan (1991)}{27}{subsection.7.0.1}%
+\contentsline {part}{SHOULDERS OF GIANTS}{31}{part*.3}%
+\contentsline {chapter}{\numberline {8}Epstein-Zin Preferences and Long-Run Risks}{31}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Incomplete Markets}{33}{chapter.9}%
+\contentsline {chapter}{\numberline {10}Rare Events and Disasters}{35}{chapter.10}%
+\contentsline {chapter}{\numberline {11}Habit Formation}{37}{chapter.11}%
+\contentsline {chapter}{\numberline {12}Ambiguity Aversion}{39}{chapter.12}%
+\contentsline {chapter}{\numberline {13}Learning}{41}{chapter.13}%
+\contentsline {chapter}{\numberline {14}Production-based Models}{43}{chapter.14}%
+\contentsline {chapter}{\numberline {15}Term Structure}{45}{chapter.15}%
+\contentsline {part}{PRICING SPECIFIC ASSETS}{49}{part*.4}%
+\contentsline {chapter}{\numberline {16}Pricing Currencies}{49}{chapter.16}%
+\contentsline {chapter}{\numberline {17}Pricing Volatility}{51}{chapter.17}%
+\contentsline {chapter}{\numberline {18}Pricing Corporate Bonds}{53}{chapter.18}%
+\contentsline {section}{\numberline {18.1}Overview}{53}{section.18.1}%
+\contentsline {chapter}{\numberline {19}Pricing Government Bonds}{55}{chapter.19}%
+\contentsline {section}{\numberline {19.1}Overview}{55}{section.19.1}%
+\contentsline {subsection}{\numberline {19.1.1}Treasury Securities}{55}{subsection.19.1.1}%
+\contentsline {subsection}{\numberline {19.1.2}Agency MBS}{55}{subsection.19.1.2}%
+\contentsline {subsubsection}{\numberline {19.1.2.1}Fannie Mae and Freddie Mac}{56}{subsubsection.19.1.2.1}%
+\contentsline {chapter}{\numberline {20}Pricing Equity Strips}{57}{chapter.20}%
+\contentsline {part}{SELECTED TOPICS}{61}{part*.5}%
+\contentsline {chapter}{\numberline {21}Asset Pricing around Announcements}{61}{chapter.21}%
+\contentsline {chapter}{\numberline {22}Machine Learning in Asset Pricing}{63}{chapter.22}%
+\contentsline {chapter}{\numberline {23}Demand System Approach}{65}{chapter.23}%
+\contentsline {subsection}{\numberline {23.0.1}Asset Demand System for Equities}{65}{subsection.23.0.1}%
+\contentsline {subsubsection}{\numberline {23.0.1.1}Motivation}{65}{subsubsection.23.0.1.1}%
+\contentsline {subsubsection}{\numberline {23.0.1.2}SDF and Demand System Approaches}{65}{subsubsection.23.0.1.2}%
+\contentsline {subsubsection}{\numberline {23.0.1.3}Demand Elasticities in Standard Asset Pricing Models}{66}{subsubsection.23.0.1.3}%
+\contentsline {subsection}{\numberline {23.0.2}Macro Finance in Inelastic Markets}{66}{subsection.23.0.2}%
+\contentsline {chapter}{\numberline {24}Subjective Beliefs in Asset Pricing}{67}{chapter.24}%
+\contentsline {chapter}{\numberline {25}Insurance}{69}{chapter.25}%
+\contentsline {chapter}{\numberline {26}International Finance}{71}{chapter.26}%
+\contentsline {part}{MONETARY POLICY}{75}{part*.6}%
+\contentsline {chapter}{\numberline {27}Basics of New Keynesian Framework}{75}{chapter.27}%
+\contentsline {chapter}{\numberline {28}Monetary Policy Shocks}{77}{chapter.28}%
+\contentsline {chapter}{\numberline {29}Central Banks and Asset Prices}{79}{chapter.29}%
