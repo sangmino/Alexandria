@@ -17,6 +17,7 @@ campbell-1991-approximation
 predictability-galore
 var-analysis-of-returns
 dynamic-factor-models
+topic
 estimating-and-evaluating-models
 paper-highlights
 hansen-and-jagannathan-1991
