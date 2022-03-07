@@ -17,11 +17,16 @@ vuolteenaho-2002-approximation
 campbell-1991-approximation
 predictability-galore
 var-analysis-of-returns
+<<<<<<< HEAD
 static-and-dynamic-factor-models
 capital-asset-pricing-model-capm
 arbitrage-pricing-theory-apt
 intertemporal-capm-icapm
 conditional-capm
+=======
+dynamic-factor-models
+topic
+>>>>>>> f44e38643d3ac2e8eabaf30ef041605198e6df53
 estimating-and-evaluating-models
 paper-highlights
 hansen-and-jagannathan-1991
