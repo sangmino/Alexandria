@@ -42,4 +42,8 @@ It's common to consider the representation of the following form:
 $$
 \mathbb{E}[R^i] = \alpha + \beta_{i,a}\lambda_a + \beta_{i,b}\lambda_b +\cdots
 $$
-It says that assets with higher betas should get higher average returns. $\beta_{i,a}$, often referred to as quantity of risk, is interpreted as the amount of exposure of asset $i$ to factor $a$ risks, and $\lambda_a$ is the **price of risk**. In other words, for each unit of exposure $\beta$ to risk factor $a$, you must provide investors with an expected return premium $\lambda_a$. 
+It says that assets with higher betas should get higher average returns. $\beta_{i,a}$, often referred to as quantity of risk, is interpreted as the amount of exposure of asset $i$ to factor $a$ risks, and $\lambda_a$ is the **price of risk (risk price)**. In other words, for each unit of exposure $\beta$ to risk factor $a$, you must provide investors with an expected return premium $\lambda_a$. 
+
+**Sign of the Risk Price**
+
+A positive risk price is analogous to positive shocks to the market return being good news for equity investors, and market risk earning a positive risk price. 

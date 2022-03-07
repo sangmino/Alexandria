@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 23 Demand System Approach | Small Handbook of Asset Pricing Essentials</title>
 <meta name="author" content="Sangmin S. Oh">
-<meta name="description" content="This handbook, conveniently abbreviated as SHAPE, is designed to facilitate the review of key ideas and concepts necessary for asset pricing research. Much of the material is based primarily on my coursework at Chicago Booth, independent follow-ups, and discussions with my peers.">
+<meta name="description" content="The materials presented here are a summary based on Ralph Koijen’s lectures.  23.0.1 Asset Demand System for Equities  23.0.1.1 Motivation There are some questions that traditional asset pricing...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
 <meta property="og:title" content="Chapter 23 Demand System Approach | Small Handbook of Asset Pricing Essentials">
 <meta property="og:type" content="book">
-<meta property="og:description" content="This handbook, conveniently abbreviated as SHAPE, is designed to facilitate the review of key ideas and concepts necessary for asset pricing research. Much of the material is based primarily on my coursework at Chicago Booth, independent follow-ups, and discussions with my peers.">
+<meta property="og:description" content="The materials presented here are a summary based on Ralph Koijen’s lectures.  23.0.1 Asset Demand System for Equities  23.0.1.1 Motivation There are some questions that traditional asset pricing...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 23 Demand System Approach | Small Handbook of Asset Pricing Essentials">
-<meta name="twitter:description" content="This handbook, conveniently abbreviated as SHAPE, is designed to facilitate the review of key ideas and concepts necessary for asset pricing research. Much of the material is based primarily on my coursework at Chicago Booth, independent follow-ups, and discussions with my peers.">
+<meta name="twitter:description" content="The materials presented here are a summary based on Ralph Koijen’s lectures.  23.0.1 Asset Demand System for Equities  23.0.1.1 Motivation There are some questions that traditional asset pricing...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -44,7 +44,7 @@
 <li><a class="" href="portfolio-choice.html"><span class="header-section-number">2</span> Portfolio Choice</a></li>
 <li><a class="" href="stochastic-discount-factor.html"><span class="header-section-number">3</span> Stochastic Discount Factor</a></li>
 <li><a class="" href="present-value-relations.html"><span class="header-section-number">4</span> Present Value Relations</a></li>
-<li><a class="" href="dynamic-factor-models.html"><span class="header-section-number">5</span> Dynamic Factor Models</a></li>
+<li><a class="" href="static-and-dynamic-factor-models.html"><span class="header-section-number">5</span> Static and Dynamic Factor Models</a></li>
 <li><a class="" href="estimating-and-evaluating-models.html"><span class="header-section-number">6</span> Estimating and Evaluating Models</a></li>
 <li><a class="" href="paper-highlights.html"><span class="header-section-number">7</span> Paper Highlights</a></li>
 <li class="book-part">SHOULDERS OF GIANTS</li>
@@ -84,14 +84,57 @@
 <h1>
 <span class="header-section-number">23</span> Demand System Approach<a class="anchor" aria-label="anchor" href="#demand-system-approach"><i class="fas fa-link"></i></a>
 </h1>
+<p>The materials presented here are a summary based on Ralph Koijen’s lectures.</p>
+<div id="asset-demand-system-for-equities" class="section level3" number="23.0.1">
+<h3>
+<span class="header-section-number">23.0.1</span> Asset Demand System for Equities<a class="anchor" aria-label="anchor" href="#asset-demand-system-for-equities"><i class="fas fa-link"></i></a>
+</h3>
+<div id="motivation" class="section level4" number="23.0.1.1">
+<h4>
+<span class="header-section-number">23.0.1.1</span> Motivation<a class="anchor" aria-label="anchor" href="#motivation"><i class="fas fa-link"></i></a>
+</h4>
+<p>There are some questions that traditional asset pricing theories are ill-equipped to answer.</p>
+<ul>
+<li>What is the impact of QE on asset prices?</li>
+<li>How effective is ESG investing in affecting the cost of capital?</li>
+<li>How does the capital regulation of insurers affect corporate bond prices?</li>
+</ul>
+<p>Looking at Euler equation of a class of investors is limited because it does not impose market clearing, and existing macro-finance models may be helpful but they end up yielding counterfactual predictions.</p>
+</div>
+<div id="sdf-and-demand-system-approaches" class="section level4" number="23.0.1.2">
+<h4>
+<span class="header-section-number">23.0.1.2</span> SDF and Demand System Approaches<a class="anchor" aria-label="anchor" href="#sdf-and-demand-system-approaches"><i class="fas fa-link"></i></a>
+</h4>
+<p>Any asset pricing model that starts from preferences implies (1) an SDF that can be used to price assets using <span class="math inline">\(\mathbb{E}[MR]=1\)</span> and a demand system <span class="math inline">\((Q_i(P),S(P))\)</span> that can be used to price assets by imposing market clearing: <span class="math inline">\(\sum_i Q_i(P) = S(P)\)</span>.</p>
+<p><strong>Demand system approaches can also offer more powerful tests.</strong> With the SDF-based tests, we form a time-series average of <span class="math display">\[M_t R_t\]</span> and see if it equals 1. In reality, returns are volatile and SDF is also very volatile, so this test is quite challenging. Demand curves, on the other hand, depend on ex-ante information and can provide more powerful tests of asset pricing models. For example, the asset demand from CAPM is <span class="math inline">\(\gamma^{-1} \Sigma^{-1} \mu\)</span> which can be computed before we know the prices.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;In insurance: to what extent are people uninsured? Is it because of bequest motives or is it imperfect insurance? The old literature looked at the dynamics of consumption and wealth realization and it was difficult to get at the bequest motives. A more powerful test emerged, however, where one would look at life insurance purchase decisions.&lt;/p&gt;"><sup>3</sup></a></p>
+</div>
+<div id="demand-elasticities-in-standard-asset-pricing-models" class="section level4" number="23.0.1.3">
+<h4>
+<span class="header-section-number">23.0.1.3</span> Demand Elasticities in Standard Asset Pricing Models<a class="anchor" aria-label="anchor" href="#demand-elasticities-in-standard-asset-pricing-models"><i class="fas fa-link"></i></a>
+</h4>
+<p>All models imply downward-sloping demand. Petajisto (2009) provides one stylized model with CAPM for a basic calculation. The punchline from this model is that the demand elasticity <span class="math inline">\(-\frac{d\ln Q}{d\ln P}\)</span> is really high, i.e. even when an investor buys 10% of the shares outstanding of an individual stock, prices go up only by 0.1 basis points.</p>
+<p>Why is this the case? Stocks are very close substitutes – what matters is a stock’s beta and its contribution to aggregate risk.</p>
+</div>
+</div>
+<div id="macro-finance-in-inelastic-markets" class="section level3" number="23.0.2">
+<h3>
+<span class="header-section-number">23.0.2</span> Macro Finance in Inelastic Markets<a class="anchor" aria-label="anchor" href="#macro-finance-in-inelastic-markets"><i class="fas fa-link"></i></a>
+</h3>
 
 </div>
+</div>
+
   <div class="chapter-nav">
 <div class="prev"><a href="machine-learning-in-asset-pricing.html"><span class="header-section-number">22</span> Machine Learning in Asset Pricing</a></div>
 <div class="next"><a href="subjective-beliefs-in-asset-pricing.html"><span class="header-section-number">24</span> Subjective Beliefs in Asset Pricing</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#demand-system-approach"><span class="header-section-number">23</span> Demand System Approach</a></li></ul>
+      <ul class="nav navbar-nav"><li>
+<a class="nav-link" href="#demand-system-approach"><span class="header-section-number">23</span> Demand System Approach</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#asset-demand-system-for-equities"><span class="header-section-number">23.0.1</span> Asset Demand System for Equities</a></li>
+<li><a class="nav-link" href="#macro-finance-in-inelastic-markets"><span class="header-section-number">23.0.2</span> Macro Finance in Inelastic Markets</a></li>
+</ul>
+</li></ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

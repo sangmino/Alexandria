@@ -1,4 +1,4 @@
---- 
+---
 title: "Small Handbook of Asset Pricing Essentials"
 author: "Sangmin S. Oh"
 output: bookdown::bs4_book
@@ -25,3 +25,15 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+## Approaches to Asset Pricing
+
+1. Empirical models with traded factors
+   - Fama and French; Recent ML-based approaches
+2. Empirical models with non-traded factors
+   - Chen, Roll, and Ross (1986) and work using macroeconomic series as pricing factors
+3. Euler equation models based on a class of investors
+   - Vissing-Jorgensen (2002) as well as recent literature on broker-dealers
+4. Macro-finance models that specify preferences, beliefs, technology constraints
+5. Asset demand system approach
+   - Koijen and Yogo (2019) and others

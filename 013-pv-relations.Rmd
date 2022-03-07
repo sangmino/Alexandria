@@ -1,1 +1,235 @@
 # Present Value Relations
+
+## Constant Discount Rates
+
+### **Simplest PV Model**
+
+Start with writing $\mathbb{E}_{t}\left[R_{t+1}\right]=R$ in which case we have:
+$$
+P_{t}=\mathbb{E}_{t}\left[\frac{P_{t+1}+D_{t+1}}{1+R}\right]
+$$
+Solving forward $K$ periods, we obtain
+$$
+P_{t}=\mathbb{E}_{t}\left[\sum_{k=1}^{K}\left(\frac{1}{1+R}\right)^{k}D_{t+k}\right]+\mathbb{E}_{t}\left[\left(\frac{1}{1+R}\right)^{k}P_{t+K}\right]
+$$
+Letting $K\to\infty$ and assuming the second term converges to zero, we have 
+$$
+P_{t}=\mathbb{E}_{t}\left[\sum_{k=1}^{\infty}\left(\frac{1}{1+R}\right)^{k}D_{t+k}\right]
+$$
+While the stock price $P_t$ is not a martingale, as $\mathbb{E}_{t}P_{t+1}=\left(1+R\right)P_{t}-\mathbb{E}_{t}D_{t+1}\neq P_{t}$, the discounted value of the resulting portfolio, given by,
+$$
+V_{t}=\frac{N_{t}P_{t}}{\left(1+R\right)^{t}}
+$$
+is a martingale once we assume that the investor reinvests all dividends in buying more shares, i.e. $N_{t+1}=N_{t}\left(1+\frac{D_{t+1}}{P_{t+1}}\right)$.
+
+**Shiller (1981)'s Excess Volatility Puzzle**
+
+Shiller (1981) observed that from the price equation (3), the realized discounted value of future dividends should equal the stock price plus unpredictable noise and therefore should have greater variance than the stock price. However, he argued that this was not the case -- stock price was too volatile.
+
+Solution. Kleidon (1986) and Marsh and Merton (1986) emphasized that both dividends and stock prices follow highly persistent processes with unit roots, in which case the population variances of prices and of realized discounted dividends are undefined. Campbell and Shiller (1987) responded by showing that when the dividend process has a unit root, prices and dividends are cointegrated, which they tested and rejected. Excess volatility still persists, this time in the spread between prices and current dividends rather than in the level of prices.
+
+**Earnings-based Models**
+
+Solution. Denote earnings as $X_{t}$ and the book equity of the firm as $B_{t}$. We further assume that reinvested earnings $X_{t}-D_{t}$ augment book equity one-for-one, i.e. $B_{t}=B_{t-1}+X_{t}-D_{t}$.[^1] Then, defining return on equity (ROE) as $ROE_{t}=X_{t}/B_{t-1}$ and the retention ratio $\lambda_t$ as $D_{t}=\left(1-\lambda_{t}\right)X_{t}$, we can compute the growth rate $G$ as
+$$
+G=\frac{B_{t}-B_{t-1}}{B_{t-1}}=\frac{X_{t}-D_{t}}{B_{t-1}}=\lambda\frac{X_{t}}{B_{t-1}}=\lambda ROE
+$$
+Substituting these into the Gordon growth model, we have
+$$
+\frac{X}{P}=\frac{R-\lambda ROE}{1-\lambda}
+$$
+Therefore, stock prices increase with the retention ratio.
+
+[^1]: Note that this is exactly true under so-called clean-surplus accounting and approximately true under real-world accounting.
+
+### **Rational Bubbles**
+
+**Defining Rational Bubbles**
+
+Recall that in the simplest present value case, we assumed that the second term in (2) converges to zero, i.e. the limit of the discounted stock price equals zero. Models of rational bubbles drop this assumption -- then, $$P_t = P_{Dt} + Q_t$$ where $P_{Dt}$ is the price implied by the dividend discount model and the rational bubble $Q_{t}$ satisfies:
+$$
+Q_{t}=\mathbb{E}_{t}\left[\frac{Q_{t+1}}{1+R}\right]
+$$
+One can similarly assume a non-constant discount rates. Consider an asset that pays dividend $D_t$ in each period, and denote its price at time $t$ by $P_t$. If $$\xi_{t,t+1}$$ is a valid stochastic discount factor for this asset, then
+$$
+P_t = \mathbb{E}_t[\xi_{t,t+1}(P_{t+1} + D_{t+1})]
+$$
+which leads to,
+$$
+P_t = \sum_{s=1}^\infty \mathbb{E}_t[\xi_{t,t+s}D_{t+s}]+B_t,\quad B_t \equiv \lim_{T\to\infty} \mathbb{E}_t[\xi_{t,t+T}P_{t+T}]
+$$
+where $\xi_{t,t+s}$ is the SDF between periods $t$ and $t+s$. In this case, $B_t=0$ if there is no bubble and the transversality condition is not violated, and $B_t > 0$.
+
+**Generating Rational Bubbles**
+
+The conditions for rational bubbles to exist are restrictive:
+
+1. Rational bubbles cannot exist on finite-lived assets.
+
+2. Negative rational bubbles cannot exist if there is a lower bound on the asset price.
+
+3. Rational bubbles cannot exist in a representative-agent economy with an infinite-lived agent because the agent’s investment in a bubble violates the transversality condition[^2], so a bubble cannot be consistent with infinite-horizon rational-expectations equilibrium.
+
+   [^2]: Transversality condition requires the present value of payments occurring infinitely far in the future to be zero. 
+
+4. Tirole (1985) showed that rational bubbles cannot exist in a deterministic over- lapping generations (OLG) economy where the interest rate exceeds the growth rate of the economy, because in such an economy a bubble growing at the interest rate will eventually exhaust the wealth of the young generation that must purchase assets from the old generation.
+
+The classic rational bubble has a longstanding tradition in the theoretical literature, with seminal papers by Samuelson (1958), Diamond (1965), Blanchard and Watson (1982), Tirole (1982, 1985), and Froot and Obstfeld (1991). It has since become the workhorse model of bubbles in macroeconomics (e.g., Caballero and Krishnamurthy (2006), Arce and López-Salido (2011), Martin and Ventura (2012, 2014), Farhi and Tirole (2012), Doblas-Madrid (2012), Giglio and Severo (2012), Galí (2014), Galí and Gambetti (2015), Caballero and Farhi (2014)).
+
+
+
+## Time-varying Discount Rates
+
+### Campbell-Shiller (1988) Approximation
+
+**Approximation for Returns**
+
+Campbell and Shiller (1988) start from the definition of the log stock return:
+$$
+r_{t+1}	=\log\left(1+R_{t+1}\right)=\log\left(P_{t+1}+D_{t+1}\right)-\log P_{t}\\
+	=p_{t+1}-p_{t}+\log\left(1+\exp\left(d_{t+1}-p_{t+1}\right)\right)
+$$
+First-order Taylor approximation of the nonlinear function is 
+$$
+\log\left(1+\exp\left(d_{t+1}-p_{t+1}\right)\right)	=f\left(d_{t+1}-p_{t+1}\right)\\
+\approx f\left(\overline{d-p}\right)+f'\left(\overline{d-p}\right)\left(d_{t+1}-p_{t+1}-\left(\overline{d-p}\right)\right)
+$$
+where the corresponding function is 
+$$
+f\left(z\right)=\log\left(1+\exp\left(z\right)\right),f'\left(z\right)=\exp\left(z\right)/\left(1+\exp\left(z\right)\right)
+$$
+The resulting approximation for the log return is then 
+$$
+r_{t+1}\approx k+\rho p_{t+1}+\left(1-\rho\right)d_{t+1}-p_{t}
+$$
+where
+$$
+\rho=\frac{1}{1+\exp\left(\overline{d-p}\right)},k=-\log\rho-\left(1-\rho\right)\log\left(\frac{1}{\rho}-1\right)
+$$
+**Approximation for Prices**
+
+Solution. The approximate expression for the log stock return is a difference equation in log price, dividend, and return. Solving forward and imposing the terminal condition that $\lim_{j\to\infty}\rho^{j}p_{t+j}=0$, we obtain:
+$$
+p_{t}=\frac{k}{1-\rho}+\sum_{j=0}^{\infty}\rho^{j}\left[\left(1-\rho\right)d_{t+1+j}-r_{t+1+j}\right]
+$$
+This equation holds ex post, as an accounting identity. It should therefore hold ex ante, not only for rational expectations but also for irrational expectations that respect identities. We can further write it as 
+$$
+p_{t}=\mathbb{E}_{t}\left[p_{t}\right]=\frac{k}{1-\rho}+p_{CF,t}+p_{DR,t}
+$$
+where
+$$
+p_{CF,t}=\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}\left(1-\rho\right)d_{t+1+j}\\
+p_{DR,t}=-\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}r_{t+1+j}
+$$
+are the components of the log stock price driven by cash flow (dividend) expectations and discount rate (return) expectations, respectively.
+
+### Vuolteenaho (2002) Approximation
+
+Solution. Vuolteenaho (2002) starts with the book-to-market ratio expressed as 
+$$
+\frac{B}{P}=\frac{R-\lambda ROE}{\left(1-\lambda\right)ROE}=1+\left(\frac{R/ROE-1}{1-\lambda}\right)
+$$
+Applying a similar loglinear approximation, we obtain:
+$$
+b_{t}-v_{t}=\mu+\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}\left[-roe_{t+1+j}+r_{t+1+j}\right]
+$$
+where $b_{t}$ is the log book value of the firm and $v_{t}$ is the log market value. It is natural to use this formula in studies of individual firms, since firm-level dividend policy may be unstable over time and some firms do not pay dividends at all in historical data.
+
+### Campbell (1991) Approximation
+
+Solution. Campbell (1991) used the Campbell-Shiller loglinearization to decompose the variation in stock returns, rather than prices, into revisions in expectations of dividend growth and future returns:
+$$
+r_{t+1}-\mathbb{E}_{t}r_{t+1}=N_{CF,t+1}-N_{DR,t+1}
+$$
+where
+$$
+N_{CF,t+1}=\left(\mathbb{E}_{t+1}-\mathbb{E}_{t}\right)\sum_{j=0}^{\infty}\rho^{j}\Delta d_{t+1+j}\\N_{DR,t+1}=\left(\mathbb{E}_{t+1}-\mathbb{E}_{t}\right)\sum_{j=1}^{\infty}\rho^{j}r_{t+1+j}
+$$
+are revisions in expectations or “news” about cash flows (dividends) and discount rates (expected future returns).
+
+The return decomposition above implies that better information about future dividends reduces the volatility of returns. The reason is that news about dividends must enter prices at some point; the earlier it does, the more heavily the effect is discounted.
+
+### Predictability Galore
+
+A few important points to note:
+
+1. The return-prediction regression measures whether expected returns vary over time. The predictability literature is thus a quest to find out whether expected returns are time-varying. 
+2. We use forecasting regressions in finance to understand how the RHS variable is formed from expectations of the LHS variable. For example, when we return returns and dividend growth on $D/P$, what we learn is that $D/P$ is moving around, on average, in reaction to discount rate news not to cashflow news. 
+3. Efficient markets does not mean "nothing is unpredictable."
+
+**Importance of the Log Dividend-Price Ratio**
+
+Using the expression for prices and taking expectations, we have
+$$
+d_{t}-p_{t}=-\frac{k}{1-\rho}+dp_{CF,t}+dp_{DR,t}
+$$
+where
+$$
+dp_{CF,t}=d_{t}-p_{CF,t}=-\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}\Delta d_{t+1+j}\\dp_{DR,t}=-p_{DR,t}=\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}r_{t+1+j}
+$$
+This decomposition shows why the log dividend-price ratio is a natural candidate to predict stock returns. If there is any predictable variation in stock returns, it will be reflected in $dp_{DR,t}$. While the log dividend-price ratio also reflects expectations of dividend growth in the component $dp_{CF,t}$, aggregate US dividend payments have been relatively smooth and close to a random walk since World War II. Hence, forecasts of future growth rates of dividends may not be too volatile, allowing return forecasts to be the primary influence on the ratio $d_t-p_t$. 
+
+- If price variation comes from news about dividend growth, then price-dividend ratios should forecast dividend growth. Conversely,
+- If price variation comes from news about changing discount rates, then price-dividend ratios should forecast returns.
+- Our world cannot feature both unpredictable dividends and unpredictable returns!
+
+**Excess Volatility = Return Forecastability**
+
+We can tie predictability to the volatility of prices. Specifically, excess volatility of stock returns is exactly the same as the presence of return predictability and the absence of dividend growth predictability.
+
+Intuitively, volatility is another way to see the economic implications of return forecastability. With constant discount rates, which Shiller assumed, then high prices must be followed on average by higher dividend growth. But they are not. Already, we see that excess volatility is the same thing as the fact that high prices do not forecast dividend growth.
+
+**Persistence in Expected Returns**
+
+If expected returns follow a persistent time-series process, then movements in expected returns will have a large impact on asset prices: prices are much less sensitive to transitory fluctuations in expected returns. 
+
+When expected returns are highly persistent, then the log dividend-price ratio can be very volatile. For example, consider a specific model of time-varying expected returns in which the expected return is an $AR\left(1\right)$ process:
+$$
+r_{t+1}=\bar{r}+x_{t}+u_{t+1}\\x_{t+1}=\phi x_{t}+\xi_{t+1}
+$$
+The process for $x_t$  implies that
+$$
+dp_{DR,t}=\frac{\bar{r}}{1-\rho}+\frac{x_{t}}{1-\rho\phi},\quad Var\left(dp_{DR,t}\right)=\frac{\sigma_{x}^{2}}{\left(1-\rho\phi\right)^{2}}
+$$
+Therefore, expected return may have a very small volatility yet may still have a very large effect on the log dividend-price ratio (or equivalently the stock price) if it is highly persistent.
+
+**Long-run Regressions**
+
+Consider the regressions of long-run returns and dividend growth on $d_t-p_t$, which is essentially what equation (26) is. The long-run return forecasting regression coefficient and the long-run dividend growth forecasting regression coefficients must add up to one.
+
+**Short vs. Long-Horizon Predictive Regressions**
+
+Predictability improves at long horizons, almost mechanically. This is also equivalent to the fact that a high dividend-price ratio predicts a high return for many years in the future. 
+
+Specifically, the ratio of the $K$-period $R^{2}$ to the 1-period $R^{2}$ is
+$$
+\frac{R^{2}\left(K\right)}{R^{2}\left(1\right)}=\left[\frac{Var\left(\mathbb{E}_{t}r_{t+1}+\cdots+\mathbb{E}_{t}r_{t+K}\right)}{Var\left(r_{t+1}+\cdots+r_{t+K}\right)}\right]/\left[\frac{Var\left(\mathbb{E}_{t}r_{t+1}\right)}{Var\left(r_{t+1}\right)}\right]\\=\frac{\beta\left(K\right)^{2}}{\beta\left(1\right)^{2}}\frac{1}{KV\left(K\right)}
+$$
+where $\beta\left(K\right)=1+\phi+\cdots+\phi^{K-1}$. 
+
+Therefore, there is nothing special or different about long-run forecasts. They are the mechanical result of short-run forecasts and a persistent forecasting variable.
+
+**Predictive System of Pastor and Stambaugh (2009)**
+
+Pástor and Stambaugh (2009) have argued for the use of a “predictive system,” in which an AR(1) model for the expected return is combined with a vector of return predictors that are used to deliver filtered estimates of the unobservable expected return.
+
+**Dividend-price ratio fails to forecast dividend growth but does predict returns**
+
+An extensive empirical literature has found that in US historical data, the dividend-price ratio has little ability to forecast dividend growth.This is particularly true since World War II, when corporations began to smooth dividends in the manner documented by Lintner (1956), but even in the earlier part of the Shiller sample period dividend growth is forecastable only over a year or two. There is little evidence of long swings in the dividend growth rate that could justify the long swings in the dividend-price ratio.
+
+The dividend-price ratio does, however, predict returns in historical US data. This suggests that most of the variation in the series should be attributed to changing discount rates rather than changing expectations of dividend growth—at least if we take the perspective of rational investors.
+
+### VAR Analysis of Returns
+
+An alternative to direct long-horizon return regression is to use a time-series model and calculate its implications for long-horizon return behavior. Most obviously, if one is willing to assume that a vector autoregression (VAR) describes the data, then the news components of returns can be calculated directly from the VAR coefficients (Campbell and Shiller 1988a, Campbell 1991).
+
+**Parameter Restriction from the Campbell-Shiller Decomposition**
+
+Forecasts of either returns or dividend growth along with the log dividend-price ratio imply forecasts of the missing variable; and returns and dividend growth should not both be included in the system along with the log dividend-price ratio, because the resulting system will have perfectly collinear variables (except for a small approximation error). 
+
+**Summary of Empirical Findings using VAR Approach**
+
+1. Empirical work starting with Campbell (1991) typically finds that for broad stock indexes, the standard deviation of discount-rate news is about twice the standard deviation of cash-flow news.
+
+2. Results are quite different for individual stocks as shown by Vuolteenaho (2002) and Cohen, Polk, and Vuolteenaho (2009). Explanatory power of a time-series regression of an individual stock’s return on characteristics is very small even at long horizons, implying that most stock-level return variation is attributed to cash-flow news.
+3. This finding for individual stocks does not contradict the evidence for aggregate stock indexes because much of the stock-level cash-flow news is idiosyncratic, so it diversifies away at the aggregate level; whereas the stock-level discount-rate news has an important aggregate component that does not diversify away but accounts for a large part of the variation in aggregate stock returns.

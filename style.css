@@ -12,3 +12,20 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+/* for editing */
+p .md-image:only-child {
+    display: inline-block;
+    width: 100%;
+}
+
+p > .md-image:only-child:not(.md-img-error) img {
+    display: block;
+    margin: auto;
+}
+
+/* for exporting */
+p > img:only-child {
+    display: block;
+    margin: auto;
+}

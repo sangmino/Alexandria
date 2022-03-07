@@ -1,1 +1,12 @@
 # Pricing Corporate Bonds
+
+## Overview
+
+Corporate bonds are held by a wide range of investors, the largest of which are insurance companies, pension funds, and mutual funds. A small but increasingly important investor class are ETF funds.
+
+Broadly speaking, the market is divided into an investment-grade universe (bonds rated BBB- and above) and a high-yield universe (bonds rated below BBB-, also known as junk bonds).
+
+- Insurance companies and pensions funds tend to be more conservative in their investments, so their corporate bond holdings are largely investment grade, while mutual funds ETFs vary significantly according to their investment strategies. 
+- Mutual funds and ETFs that offer high yields will have a higher composition of high-yield bonds.
+
+In recent years, the investment-grade corporate bond market has grown tremendously as interest rates and corporate bond spreads reached record lows. In the high-yield space, commercial banks can offer a comparable product called leveraged loans, which are essentially high-interest loans. In practice, banks often originate and then sell the leveraged loans into a Collateralized Loan Obligation (CLO) investment vehicle, which then securitizes the loans. The bank will retain only the highest rated senior bonds of the CLO and the rest will go to investors with higher risk appetites.

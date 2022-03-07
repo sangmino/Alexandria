@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 19 Pricing Government Bonds | Small Handbook of Asset Pricing Essentials</title>
 <meta name="author" content="Sangmin S. Oh">
-<meta name="description" content="This handbook, conveniently abbreviated as SHAPE, is designed to facilitate the review of key ideas and concepts necessary for asset pricing research. Much of the material is based primarily on my coursework at Chicago Booth, independent follow-ups, and discussions with my peers.">
+<meta name="description" content="19.1 Overview  19.1.1 Treasury Securities Treasuries are issued by the U.S. government in regular auctions in a range of tenors, broadly divided into bills and coupons. Treasury debt is auctioned...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
 <meta property="og:title" content="Chapter 19 Pricing Government Bonds | Small Handbook of Asset Pricing Essentials">
 <meta property="og:type" content="book">
-<meta property="og:description" content="This handbook, conveniently abbreviated as SHAPE, is designed to facilitate the review of key ideas and concepts necessary for asset pricing research. Much of the material is based primarily on my coursework at Chicago Booth, independent follow-ups, and discussions with my peers.">
+<meta property="og:description" content="19.1 Overview  19.1.1 Treasury Securities Treasuries are issued by the U.S. government in regular auctions in a range of tenors, broadly divided into bills and coupons. Treasury debt is auctioned...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 19 Pricing Government Bonds | Small Handbook of Asset Pricing Essentials">
-<meta name="twitter:description" content="This handbook, conveniently abbreviated as SHAPE, is designed to facilitate the review of key ideas and concepts necessary for asset pricing research. Much of the material is based primarily on my coursework at Chicago Booth, independent follow-ups, and discussions with my peers.">
+<meta name="twitter:description" content="19.1 Overview  19.1.1 Treasury Securities Treasuries are issued by the U.S. government in regular auctions in a range of tenors, broadly divided into bills and coupons. Treasury debt is auctioned...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -44,7 +44,7 @@
 <li><a class="" href="portfolio-choice.html"><span class="header-section-number">2</span> Portfolio Choice</a></li>
 <li><a class="" href="stochastic-discount-factor.html"><span class="header-section-number">3</span> Stochastic Discount Factor</a></li>
 <li><a class="" href="present-value-relations.html"><span class="header-section-number">4</span> Present Value Relations</a></li>
-<li><a class="" href="dynamic-factor-models.html"><span class="header-section-number">5</span> Dynamic Factor Models</a></li>
+<li><a class="" href="static-and-dynamic-factor-models.html"><span class="header-section-number">5</span> Static and Dynamic Factor Models</a></li>
 <li><a class="" href="estimating-and-evaluating-models.html"><span class="header-section-number">6</span> Estimating and Evaluating Models</a></li>
 <li><a class="" href="paper-highlights.html"><span class="header-section-number">7</span> Paper Highlights</a></li>
 <li class="book-part">SHOULDERS OF GIANTS</li>
@@ -84,14 +84,59 @@
 <h1>
 <span class="header-section-number">19</span> Pricing Government Bonds<a class="anchor" aria-label="anchor" href="#pricing-government-bonds"><i class="fas fa-link"></i></a>
 </h1>
+<div id="overview-1" class="section level2" number="19.1">
+<h2>
+<span class="header-section-number">19.1</span> Overview<a class="anchor" aria-label="anchor" href="#overview-1"><i class="fas fa-link"></i></a>
+</h2>
+<div id="treasury-securities" class="section level3" number="19.1.1">
+<h3>
+<span class="header-section-number">19.1.1</span> Treasury Securities<a class="anchor" aria-label="anchor" href="#treasury-securities"><i class="fas fa-link"></i></a>
+</h3>
+<p>Treasuries are issued by the U.S. government in regular auctions in a range of tenors, broadly divided into bills and coupons. Treasury debt is auctioned by the New York Fed to primary dealers, who then resell the debt to their clients. <strong>Coupons are auctioned monthly in sizes that are announced at the beginning of each quarter, while bills are auctioned twice weekly in flexible sizes.</strong></p>
+<p>The most recent issue of coupons is called “on the run,” while coupons issued from previous auctions are called “off the run.”</p>
+<ul>
+<li>On-the-run coupons are very liquid, but become progressively less liquid as time goes on.</li>
+<li>An owner of a deep off-the- run coupon can still instantly borrow cash against the coupon in the repo market, but would have more trouble selling it outright. This makes investors of coupons a bit more cautious, so while bills can be elastically sold, coupon supply sticks to a schedule.</li>
+</ul>
+</div>
+<div id="agency-mbs" class="section level3" number="19.1.2">
+<h3>
+<span class="header-section-number">19.1.2</span> Agency MBS<a class="anchor" aria-label="anchor" href="#agency-mbs"><i class="fas fa-link"></i></a>
+</h3>
+<p>Agency MBS are mortgage-backed securities guaranteed by the government. Mortgage-backed securities are bonds that receive the cash flow generated by a pool of mortgage loans. The government can either guarantee the mortgage-backed securities or the mortgage loans underlying those securities.</p>
+<p>Agency MBS have minimal credit risk, are very liquid, and have returns that are slightly higher than Treasuries, so they are very popular with conservative investors like insurance companies and foreign central banks worldwide.</p>
+<p>The Fed has been an active buyer in the Agency MBS market since the 2008 Financial Crisis with the stated objective of supporting the housing market and placing downwards pressure on interest rates.</p>
+<div id="fannie-mae-and-freddie-mac" class="section level4" number="19.1.2.1">
+<h4>
+<span class="header-section-number">19.1.2.1</span> Fannie Mae and Freddie Mac<a class="anchor" aria-label="anchor" href="#fannie-mae-and-freddie-mac"><i class="fas fa-link"></i></a>
+</h4>
+<p>Fannie and Freddie are the two giants of the mortgage bond market. They support the U.S. housing market by buying mortgage loans and packaging them into securities that can be sold to investors. The loans underlying the securities are guaranteed by Fannie and Freddie, so investors don’t have to worry about any homeowner defaulting.</p>
+<p>Fannie and Freddie offer commercial banks the additional option of selling the mortgage loan, provided the loan meets certain minimal credit standards. This additional flexibility was designed to encourage commercial banks to make more mortgage loans since they always had the option of selling them to Fannie or Freddie in case they needed to raise money. This created a robust secondary market for mortgage loans and also made possible an “originate to distribute” business model where mortgage loans were primarily originated to be sold rather than held as investments.</p>
+<p>Today, most mortgage loans are originated by nonbank mortgage lenders who specialize in the “originate to distribute” business model. These mortgage lenders take out a loan from a commercial bank, lend the money to a home buyer, sell the mortgage to Fannie or Freddie, and then repeat the process by taking the proceeds from the sale and lending to another mortgage borrower.</p>
+<ul>
+<li>Nonbank mortgage lenders make money off the origination fees, not the interest from the loan.</li>
+</ul>
+<p>Fannie and Freddie take the mortgage loans, add a guarantee onto them, package them into securities, and return them to the mortgage seller to be sold to investors. A guarantee from Fannie and Freddie make the mortgage securities virtually risk-free.</p>
+<p>When house prices crashed in 2008, Fannie and Freddie had guaranteed around half of all the mortgage loans in the U.S. The mass foreclosures following the crash quickly made Fannie and Freddie insolvent and compelled a government rescue. Since then Fannie and Freddie have remained in government conservatorship.</p>
 
+</div>
+</div>
+</div>
 </div>
   <div class="chapter-nav">
 <div class="prev"><a href="pricing-corporate-bonds.html"><span class="header-section-number">18</span> Pricing Corporate Bonds</a></div>
 <div class="next"><a href="pricing-equity-strips.html"><span class="header-section-number">20</span> Pricing Equity Strips</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav"><li><a class="nav-link" href="#pricing-government-bonds"><span class="header-section-number">19</span> Pricing Government Bonds</a></li></ul>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#pricing-government-bonds"><span class="header-section-number">19</span> Pricing Government Bonds</a></li>
+<li>
+<a class="nav-link" href="#overview-1"><span class="header-section-number">19.1</span> Overview</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#treasury-securities"><span class="header-section-number">19.1.1</span> Treasury Securities</a></li>
+<li><a class="nav-link" href="#agency-mbs"><span class="header-section-number">19.1.2</span> Agency MBS</a></li>
+</ul>
+</li>
+</ul>
 
       <div class="book-extra">
         <ul class="list-unstyled">

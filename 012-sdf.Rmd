@@ -31,11 +31,13 @@ P(X) = \frac{1}{R_f} \sum_s=1^S \pi^*(s) X(s) = \frac{1}{R_f} \mathbb{E}^*[X]
 $$
 So the price of any asset is the pseudo-expectation of its payoff, discounted at the riskless interest rate. 
 
-### Properties of SDFs
+## Properties of SDFs
 
 **Linear Factor Pricing Model**
 
-We can show that returns always obey a linear factor pricing model with the SDF as the single factor. To see this, start with the fundamental equation of asset pricing:
+We can show that returns always obey a linear factor pricing model with the SDF as the single factor. 
+
+To see this, start with the fundamental equation of asset pricing:
 $$
 P_{it} = \mathbb{E}_t[M_{t+1}X_{i,t+1}] = \mathbb{E}_t[M_{t+1}]\mathbb{E}_t[X_{i,t+1}] + Cov_t(M_{t+1}, X_{i,t+1})
 $$
@@ -74,3 +76,38 @@ Hansen and Jagannathan (1991) also derive the bound even when there is no riskfr
 The HJ frontier is commonly used as a quick check on the ability of a parametric asset pricing model to fit the properties of asset returns. The mean and volatility of the SDF can be calculated for different parameter values of the model, and if they fail to satisfy the SDF volatility bounds, then this indicates that the model fails to price the assets.
 
 - For example, Hansen and Jagannathan (1991) calculate SDF volatility bounds using return data on Treasury bills and an aggregate stock index. They find that a simple consumption-based asset pricing model with a power-utility representative agent can only satisfy these bounds if very high risk aversion coefficients are used.
+
+**Hansen and Richard (1987) Critique**
+
+Hansen and Richard (1987) highlight the effect of conditioning information on tests of asset pricing models. 
+
+Their basic point is as follows. Recall that we can take the unconditional expectations of a conditional asset pricing equation to obtain:
+$$
+\mathbb{E}P_{it} = \mathbb{E}[M_{t+1} X_{i,t+1}] = \mathbb{E}[M_{t+1}]\mathbb{E}[X_{i,t+1}] + Cov(M_{t+1}, X_{i,t+1})
+$$
+Now suppose one has an economic model that expresses the SDF as a conditional linear function of some economic variable, i.e. $M_{t+1} = a_t + b_t R_{m,t+1}$ where $R_{m,t+1}$ is the return on the market portfolio in the CAPM sense. In this case, the conditional covariance $Cov_t(M_{t+1}, X_{i,t+1})$ can be written as
+$$
+Cov_t(M_{t+1}, X_{i,t+1}) = b_t Cov_t(R_{m,t+1}, X_{i,t+1})
+$$
+but the unconditional covariance does not take this simple form:
+$$
+Cov(M_{t+1}, X_{i,t+1}) = Cov(a_t + b_t R_{m,t+1}, X_{i,t+1})
+$$
+This implies that even if the CAPM holds conditionally, it need not hold unconditionally. This observation has then spurred a subsequent empirical literature searching for conditional models. 
+
+## Representations of SDFs
+
+I next describe key results regarding the representation of SDFs.
+
+**1. $R^{mv}$ is on mean-variance frontier $\Rightarrow m = a+bR^{mv}$**
+
+For any return on the mean-variance frontier, we can define a discount factor $m$ that price assets as a linear function of the mean-variance efficient return.
+
+**2. $\mathbb{E}[R^i] = a + \lambda'\beta_i \Leftrightarrow m = a + b'f$**
+
+Suppose we have an expected return - beta model such as CAPM, APT, or ICAPM. What discount factor model does this imply? This result says that they are **equivalent ** to a model that is a linear function of the factors in the beta model. 
+
+**Conditional Affine SDFs**
+
+In conditional versions of the classical CAPM and its multi-factor extensions, the SDF takes the conditionally affine form, $m_{t+1} = a_t + b_t'f_{t+1}$. This version also arises in linearized consumption-based asset pricing models in which $m_{t+1}$ is a representative agent's marginal rate of substitution such as Lettau and Ludvigson (2001) and Santos and Veronesi (2006).
+
