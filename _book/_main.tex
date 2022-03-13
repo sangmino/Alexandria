@@ -1,0 +1,1304 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Small Handbook of Asset Pricing Essentials},
+  pdfauthor={Sangmin S. Oh},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
+
+\title{Small Handbook of Asset Pricing Essentials}
+\author{Sangmin S. Oh}
+\date{}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+This handbook is designed to facilitate the review of key ideas and concepts necessary for asset pricing research. Much of the material is based primarily on my coursework at Chicago Booth, independent follow-ups, and discussions with my peers.
+
+\hypertarget{approaches-to-asset-pricing}{%
+\section{Approaches to Asset Pricing}\label{approaches-to-asset-pricing}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Empirical models with traded factors
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Fama and French; Recent ML-based approaches
+  \end{itemize}
+\item
+  Empirical models with non-traded factors
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Chen, Roll, and Ross (1986) and work using macroeconomic series as pricing factors
+  \end{itemize}
+\item
+  Euler equation models based on a class of investors
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Vissing-Jorgensen (2002) as well as recent literature on broker-dealers
+  \end{itemize}
+\item
+  Macro-finance models that specify preferences, beliefs, technology constraints
+\item
+  Asset demand system approach
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Koijen and Yogo (2019) and others
+  \end{itemize}
+\end{enumerate}
+
+\hypertarget{part-classical-ap-essentials}{%
+\part*{CLASSICAL AP ESSENTIALS}\label{part-classical-ap-essentials}}
+\addcontentsline{toc}{part}{CLASSICAL AP ESSENTIALS}
+
+\hypertarget{portfolio-choice}{%
+\chapter{Portfolio Choice}\label{portfolio-choice}}
+
+\hypertarget{mean-variance}{%
+\section{Mean-Variance}\label{mean-variance}}
+
+\textbf{CARA-Normal Framework}
+
+One useful benchmark is what is referred to as the CARA-Normal framework, in which the agent has CARA utility and the risky asset has returns that are normally distributed. While tractable, a key disadvantage of this approach is that wealth does not affect the amount invested in a risky asset.
+
+\textbf{CRRA Utility} \textbf{and Mean-Variance}
+
+Instead, we now first assume that returns are lognormally distributed. It's appealing to assume that returns are lognormal in a discrete-time model with IID returns because returns will then be lognormal over multiple periods as well. Furthermore, let's introduce CRRA utility:
+\[
+\max \left[\mathbb{E}_t \frac{W_{t+1}^{1-\gamma}}{1-\gamma}\right]
+\]
+Then we can show that the investor indeed trades off mean against variance if we assume that investor's wealth is lognormally distributed. To see this, rewrite above as
+\[
+\max[\log\mathbb{E}_tW_{t+1}^{1-\gamma}] = \max\left[(1-\gamma) \mathbb{E}_tw_{t+1} + \frac{1}{2}(1-\gamma)^2 \sigma_{wt}^2\right]
+\]
+where \(w_t =\log W_t\) and \(\sigma_{wt}^2\) is the conditional variance of log wealth. We can then use the budget constraint \(w_{t+1} = r_{p,t+1}+w_t\) to restate the problem:
+\[
+\max \left[\mathbb{E}_t r_{p,t+1} + \frac{1}{2} (1-\gamma) \sigma_{pt}^2\right]=\max\left[\log \mathbb{E}_t r_{p,t+1} - \frac{\gamma}{2} \sigma_{pt}^2\right]
+\]
+Thus the investor trades the log of the arithmetic mean return linearly against the variance of the log return.
+
+\textbf{Mutual Fund Theorem}
+
+The mutual fund theorem of Tobin (1958) says that all minimum-variance portfolios can be obtained by mixing just two minimum-variance portfolios in different proportions. Thus, if all investors hold minimum-variance portfolios, all investors hold combinations of just two underlying portfolios or ``mutual funds.''
+
+In the presence of a riskless asset, the mutual fund theorem simplifies because one of the mutual funds is the riskless asset and the other, the tangency portfolio, contains only risky assets. Thus it says that all investor, regardless of their risk aversion, should hold risky assets in the same proportion.
+
+Interpreting bonds and stocks as two alternative risky assets, the mutual fund theorem implies that the ratio of bonds to stocks should be constant across recommended portfolios, while the ratio of cash to (bonds + stocks) should move in the same direction as risk aversion. Canner, Mankiw, and Weil (1997) find that the ratio of bonds to stocks moves with risk aversion.
+
+\hypertarget{expected-return---beta-representations}{%
+\section{Expected Return - Beta Representations}\label{expected-return---beta-representations}}
+
+\textbf{Price and Quantity of Risk}
+
+It's common to consider the representation of the following form:
+\[
+\mathbb{E}[R^i] = \alpha + \beta_{i,a}\lambda_a + \beta_{i,b}\lambda_b +\cdots
+\]
+It says that assets with higher betas should get higher average returns. \(\beta_{i,a}\), often referred to as quantity of risk, is interpreted as the amount of exposure of asset \(i\) to factor \(a\) risks, and \(\lambda_a\) is the \textbf{price of risk (risk price)}. In other words, for each unit of exposure \(\beta\) to risk factor \(a\), you must provide investors with an expected return premium \(\lambda_a\).
+
+\textbf{Sign of the Risk Price}
+
+A positive risk price is analogous to positive shocks to the market return being good news for equity investors, and market risk earning a positive risk price.
+
+\hypertarget{stochastic-discount-factor}{%
+\chapter{Stochastic Discount Factor}\label{stochastic-discount-factor}}
+
+\hypertarget{sdf-basics}{%
+\section{SDF Basics}\label{sdf-basics}}
+
+\textbf{Existence of SDFs}
+
+There are two key theorems regarding the existence of an SDF:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  There is a discount factor that prices all the payoffs by \(P=\mathbb{E}[MX]\) if and only if the law of one price holds.
+\item
+  There is a \emph{positive} discount factor that prices all the payoffs by \(P = \mathbb{E}[MX]\) if and only if there are no arbitrage opportunities.
+\end{enumerate}
+
+These theorems are useful to show that we can use SDFs without implicitly assuming anything about utility functions, aggregate, and market completeness.
+
+\textbf{Fundamental Equation of Asset Pricing}
+
+Law of one price implies that we must have
+\[
+P(X) = \sum_{s=1}^S q(s)X(s) = \sum_{s=1}^S \pi(s)\left(\frac{q(s)}{\pi(s)}\right)X(s) = \mathbb{E}[MX]
+\]
+where \(M(s) = q(s) / \pi(s)\) is the ratio of state price to probability for state \(s\).
+
+\textbf{Risk-Neutral Pricing}
+
+We can further rewrite the above equation by defining risk-neutral probabilities as \(\pi^*(s)\):
+\[
+\pi^*(s) = R_f q(s) =\frac{M(s)}{\mathbb{E}[M]} \pi(s)
+\]
+which allows us to rewrite the asset pricing equation:
+\[
+P(X) = \frac{1}{R_f} \sum_s=1^S \pi^*(s) X(s) = \frac{1}{R_f} \mathbb{E}^*[X]
+\]
+So the price of any asset is the pseudo-expectation of its payoff, discounted at the riskless interest rate.
+
+\hypertarget{properties-of-sdfs}{%
+\section{Properties of SDFs}\label{properties-of-sdfs}}
+
+\textbf{Linear Factor Pricing Model}
+
+We can show that returns always obey a linear factor pricing model with the SDF as the single factor.
+
+To see this, start with the fundamental equation of asset pricing:
+\[
+P_{it} = \mathbb{E}_t[M_{t+1}X_{i,t+1}] = \mathbb{E}_t[M_{t+1}]\mathbb{E}_t[X_{i,t+1}] + Cov_t(M_{t+1}, X_{i,t+1})
+\]
+Dividing each side by \(P_{it}\) and using the fact that \(1+R_{f,t+1} = 1 / \mathbb{E}_t[M_{t+1}]\) yields:
+\[
+\mathbb{E}_t[1+R_{i,t+1}] = (1 + R_{f,t+1})(1 - Cov_t(M_{t+1}, R_{i,t+1}))
+\]
+which says that expected return on any asset is the riskless return times an adjustment factor for the covariance of return with the SDF.
+
+As a final step, we can subtract the gross risk-free rate from each side:
+\[
+\begin{aligned}
+\mathbb{E}_t[R_{i,t+1} - R_{f,t+1}] &= -(1+R_{f,t+1}) Cov_t(M_t+1, R_{i,t+1} - R_{f,t+1})\\
+                                    &= \underbrace{-(1+R_{f,t+1})Var_t(M_{t+1})}_{\equiv \lambda_{Mt}}\underbrace{\frac{Cov_t(M_t+1, R_{i,t+1} - R_{f,t+1})}{Var_t(M_{t+1})}}_{\equiv \beta_{iMt}}
+\end{aligned}
+\]
+We denote \(\lambda_{Mt}\) as the price of risk or the factor risk premium of the SDF. Immediately, we see that it depends on the volatility of the SDF.
+
+\textbf{Deriving the Hansen-Jagannathan Bound}
+
+Hansen--Jagannathan bound, introduced in \protect\hyperlink{HansJaga:91}{Hansen and Jagannathan (1991)} is a theorem that says that the ratio of the standard deviation of a stochastic discount factor to its mean exceeds the Sharpe ratio attained by any portfolio. Deriving the bound with a risky and a riskless asset is easy. Specifically, write:
+\[
+\begin{aligned}
+\mathbb{E}_t[R_{i,t+1} - R_{f,t+1}] &= -\frac{Cov_t(M_{t+1}, R_{i,t+1} - R_{f,t+1})}{\mathbb{E}_t[M_{t+1}]}\\
+                                    &\leq \frac{\sigma_t(M_{t+1})\sigma_t(R_{i,t+1} - R_{f,t+1})}{\mathbb{E}_t[M_{t+1}]}
+\end{aligned}
+\]
+Rearranging therefore yields:
+\[
+\frac{\sigma_t(M_{t+1})}{\mathbb{E}_t[M_{t+1}]} \geq \frac{\mathbb{E}_t[R_{i,t+1} - R_{f,t+1}]}{\sigma_t(R_{i,t+1} - R_{f,t+1})}
+\]
+Hansen and Jagannathan (1991) also derive the bound even when there is no riskfree asset pinning down the mean of the SDF. The idea is to treat the mean of the SDF as an unknown parameter, and for each possible value of the mean, augment the set of basis assets with a hypothetical riskfree payoff whose return equals \(1/\bar{M}\).
+
+\textbf{Usefulness of the Hansen-Jagannathan Bound}
+
+The HJ frontier is commonly used as a quick check on the ability of a parametric asset pricing model to fit the properties of asset returns. The mean and volatility of the SDF can be calculated for different parameter values of the model, and if they fail to satisfy the SDF volatility bounds, then this indicates that the model fails to price the assets.
+
+\begin{itemize}
+\tightlist
+\item
+  For example, Hansen and Jagannathan (1991) calculate SDF volatility bounds using return data on Treasury bills and an aggregate stock index. They find that a simple consumption-based asset pricing model with a power-utility representative agent can only satisfy these bounds if very high risk aversion coefficients are used.
+\end{itemize}
+
+\textbf{Hansen and Richard (1987) Critique}
+
+Hansen and Richard (1987) highlight the effect of conditioning information on tests of asset pricing models.
+
+Their basic point is as follows. Recall that we can take the unconditional expectations of a conditional asset pricing equation to obtain:
+\[
+\mathbb{E}P_{it} = \mathbb{E}[M_{t+1} X_{i,t+1}] = \mathbb{E}[M_{t+1}]\mathbb{E}[X_{i,t+1}] + Cov(M_{t+1}, X_{i,t+1})
+\]
+Now suppose one has an economic model that expresses the SDF as a conditional linear function of some economic variable, i.e.~\(M_{t+1} = a_t + b_t R_{m,t+1}\) where \(R_{m,t+1}\) is the return on the market portfolio in the CAPM sense. In this case, the conditional covariance \(Cov_t(M_{t+1}, X_{i,t+1})\) can be written as
+\[
+Cov_t(M_{t+1}, X_{i,t+1}) = b_t Cov_t(R_{m,t+1}, X_{i,t+1})
+\]
+but the unconditional covariance does not take this simple form:
+\[
+Cov(M_{t+1}, X_{i,t+1}) = Cov(a_t + b_t R_{m,t+1}, X_{i,t+1})
+\]
+This implies that even if the CAPM holds conditionally, it need not hold unconditionally. This observation has then spurred a subsequent empirical literature searching for conditional models.
+
+\hypertarget{representations-of-sdfs}{%
+\section{Representations of SDFs}\label{representations-of-sdfs}}
+
+I next describe key results regarding the representation of SDFs.
+
+\textbf{1. \(R^{mv}\) is on mean-variance frontier \(\Rightarrow m = a+bR^{mv}\)}
+
+For any return on the mean-variance frontier, we can define a discount factor \(m\) that price assets as a linear function of the mean-variance efficient return.
+
+\textbf{2. \(\mathbb{E}[R^i] = a + \lambda'\beta_i \Leftrightarrow m = a + b'f\)}
+
+Suppose we have an expected return - beta model such as CAPM, APT, or ICAPM. What discount factor model does this imply? This result says that they are \textbf{equivalent } to a model that is a linear function of the factors in the beta model.
+
+\textbf{Conditional Affine SDFs}
+
+In conditional versions of the classical CAPM and its multi-factor extensions, the SDF takes the conditionally affine form, \(m_{t+1} = a_t + b_t'f_{t+1}\). This version also arises in linearized consumption-based asset pricing models in which \(m_{t+1}\) is a representative agent's marginal rate of substitution such as Lettau and Ludvigson (2001) and Santos and Veronesi (2006).
+
+\hypertarget{present-value-relations}{%
+\chapter{Present Value Relations}\label{present-value-relations}}
+
+\hypertarget{constant-discount-rates}{%
+\section{Constant Discount Rates}\label{constant-discount-rates}}
+
+\hypertarget{simplest-pv-model}{%
+\subsection{\texorpdfstring{\textbf{Simplest PV Model}}{Simplest PV Model}}\label{simplest-pv-model}}
+
+Start with writing \(\mathbb{E}_{t}\left[R_{t+1}\right]=R\) in which case we have:
+\[
+P_{t}=\mathbb{E}_{t}\left[\frac{P_{t+1}+D_{t+1}}{1+R}\right]
+\]
+Solving forward \(K\) periods, we obtain
+\[
+P_{t}=\mathbb{E}_{t}\left[\sum_{k=1}^{K}\left(\frac{1}{1+R}\right)^{k}D_{t+k}\right]+\mathbb{E}_{t}\left[\left(\frac{1}{1+R}\right)^{k}P_{t+K}\right]
+\]
+Letting \(K\to\infty\) and assuming the second term converges to zero, we have
+\[
+P_{t}=\mathbb{E}_{t}\left[\sum_{k=1}^{\infty}\left(\frac{1}{1+R}\right)^{k}D_{t+k}\right]
+\]
+While the stock price \(P_t\) is not a martingale, as \(\mathbb{E}_{t}P_{t+1}=\left(1+R\right)P_{t}-\mathbb{E}_{t}D_{t+1}\neq P_{t}\), the discounted value of the resulting portfolio, given by,
+\[
+V_{t}=\frac{N_{t}P_{t}}{\left(1+R\right)^{t}}
+\]
+is a martingale once we assume that the investor reinvests all dividends in buying more shares, i.e.~\(N_{t+1}=N_{t}\left(1+\frac{D_{t+1}}{P_{t+1}}\right)\).
+
+\textbf{Shiller (1981)'s Excess Volatility Puzzle}
+
+Shiller (1981) observed that from the price equation (3), the realized discounted value of future dividends should equal the stock price plus unpredictable noise and therefore should have greater variance than the stock price. However, he argued that this was not the case -- stock price was too volatile.
+
+Solution. Kleidon (1986) and Marsh and Merton (1986) emphasized that both dividends and stock prices follow highly persistent processes with unit roots, in which case the population variances of prices and of realized discounted dividends are undefined. Campbell and Shiller (1987) responded by showing that when the dividend process has a unit root, prices and dividends are cointegrated, which they tested and rejected. Excess volatility still persists, this time in the spread between prices and current dividends rather than in the level of prices.
+
+\textbf{Earnings-based Models}
+
+Solution. Denote earnings as \(X_{t}\) and the book equity of the firm as \(B_{t}\). We further assume that reinvested earnings \(X_{t}-D_{t}\) augment book equity one-for-one, i.e.~\(B_{t}=B_{t-1}+X_{t}-D_{t}\).\footnote{In insurance: to what extent are people uninsured? Is it because of bequest motives or is it imperfect insurance? The old literature looked at the dynamics of consumption and wealth realization and it was difficult to get at the bequest motives. A more powerful test emerged, however, where one would look at life insurance purchase decisions.} Then, defining return on equity (ROE) as \(ROE_{t}=X_{t}/B_{t-1}\) and the retention ratio \(\lambda_t\) as \(D_{t}=\left(1-\lambda_{t}\right)X_{t}\), we can compute the growth rate \(G\) as
+\[
+G=\frac{B_{t}-B_{t-1}}{B_{t-1}}=\frac{X_{t}-D_{t}}{B_{t-1}}=\lambda\frac{X_{t}}{B_{t-1}}=\lambda ROE
+\]
+Substituting these into the Gordon growth model, we have
+\[
+\frac{X}{P}=\frac{R-\lambda ROE}{1-\lambda}
+\]
+Therefore, stock prices increase with the retention ratio.
+
+\hypertarget{rational-bubbles}{%
+\subsection{\texorpdfstring{\textbf{Rational Bubbles}}{Rational Bubbles}}\label{rational-bubbles}}
+
+\textbf{Defining Rational Bubbles}
+
+Recall that in the simplest present value case, we assumed that the second term in (2) converges to zero, i.e.~the limit of the discounted stock price equals zero. Models of rational bubbles drop this assumption -- then, \[P_t = P_{Dt} + Q_t\] where \(P_{Dt}\) is the price implied by the dividend discount model and the rational bubble \(Q_{t}\) satisfies:
+\[
+Q_{t}=\mathbb{E}_{t}\left[\frac{Q_{t+1}}{1+R}\right]
+\]
+One can similarly assume a non-constant discount rates. Consider an asset that pays dividend \(D_t\) in each period, and denote its price at time \(t\) by \(P_t\). If \[\xi_{t,t+1}\] is a valid stochastic discount factor for this asset, then
+\[
+P_t = \mathbb{E}_t[\xi_{t,t+1}(P_{t+1} + D_{t+1})]
+\]
+which leads to,
+\[
+P_t = \sum_{s=1}^\infty \mathbb{E}_t[\xi_{t,t+s}D_{t+s}]+B_t,\quad B_t \equiv \lim_{T\to\infty} \mathbb{E}_t[\xi_{t,t+T}P_{t+T}]
+\]
+where \(\xi_{t,t+s}\) is the SDF between periods \(t\) and \(t+s\). In this case, \(B_t=0\) if there is no bubble and the transversality condition is not violated, and \(B_t > 0\).
+
+\textbf{Generating Rational Bubbles}
+
+The conditions for rational bubbles to exist are restrictive:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Rational bubbles cannot exist on finite-lived assets.
+\item
+  Negative rational bubbles cannot exist if there is a lower bound on the asset price.
+\item
+  Rational bubbles cannot exist in a representative-agent economy with an infinite-lived agent because the agent's investment in a bubble violates the transversality condition\footnote{Transversality condition requires the present value of payments occurring infinitely far in the future to be zero.}, so a bubble cannot be consistent with infinite-horizon rational-expectations equilibrium.
+\item
+  Tirole (1985) showed that rational bubbles cannot exist in a deterministic over- lapping generations (OLG) economy where the interest rate exceeds the growth rate of the economy, because in such an economy a bubble growing at the interest rate will eventually exhaust the wealth of the young generation that must purchase assets from the old generation.
+\end{enumerate}
+
+The classic rational bubble has a longstanding tradition in the theoretical literature, with seminal papers by Samuelson (1958), Diamond (1965), Blanchard and Watson (1982), Tirole (1982, 1985), and Froot and Obstfeld (1991). It has since become the workhorse model of bubbles in macroeconomics (e.g., Caballero and Krishnamurthy (2006), Arce and López-Salido (2011), Martin and Ventura (2012, 2014), Farhi and Tirole (2012), Doblas-Madrid (2012), Giglio and Severo (2012), Galí (2014), Galí and Gambetti (2015), Caballero and Farhi (2014)).
+
+\hypertarget{time-varying-discount-rates}{%
+\section{Time-varying Discount Rates}\label{time-varying-discount-rates}}
+
+\hypertarget{campbell-shiller-1988-approximation}{%
+\subsection{Campbell-Shiller (1988) Approximation}\label{campbell-shiller-1988-approximation}}
+
+\textbf{Approximation for Returns}
+
+Campbell and Shiller (1988) start from the definition of the log stock return:
+\[
+r_{t+1} =\log\left(1+R_{t+1}\right)=\log\left(P_{t+1}+D_{t+1}\right)-\log P_{t}\\
+    =p_{t+1}-p_{t}+\log\left(1+\exp\left(d_{t+1}-p_{t+1}\right)\right)
+\]
+First-order Taylor approximation of the nonlinear function is
+\[
+\log\left(1+\exp\left(d_{t+1}-p_{t+1}\right)\right) =f\left(d_{t+1}-p_{t+1}\right)\\
+\approx f\left(\overline{d-p}\right)+f'\left(\overline{d-p}\right)\left(d_{t+1}-p_{t+1}-\left(\overline{d-p}\right)\right)
+\]
+where the corresponding function is
+\[
+f\left(z\right)=\log\left(1+\exp\left(z\right)\right),f'\left(z\right)=\exp\left(z\right)/\left(1+\exp\left(z\right)\right)
+\]
+The resulting approximation for the log return is then
+\[
+r_{t+1}\approx k+\rho p_{t+1}+\left(1-\rho\right)d_{t+1}-p_{t}
+\]
+where
+\[
+\rho=\frac{1}{1+\exp\left(\overline{d-p}\right)},k=-\log\rho-\left(1-\rho\right)\log\left(\frac{1}{\rho}-1\right)
+\]
+\textbf{Approximation for Prices}
+
+Solution. The approximate expression for the log stock return is a difference equation in log price, dividend, and return. Solving forward and imposing the terminal condition that \(\lim_{j\to\infty}\rho^{j}p_{t+j}=0\), we obtain:
+\[
+p_{t}=\frac{k}{1-\rho}+\sum_{j=0}^{\infty}\rho^{j}\left[\left(1-\rho\right)d_{t+1+j}-r_{t+1+j}\right]
+\]
+This equation holds ex post, as an accounting identity. It should therefore hold ex ante, not only for rational expectations but also for irrational expectations that respect identities. We can further write it as
+\[
+p_{t}=\mathbb{E}_{t}\left[p_{t}\right]=\frac{k}{1-\rho}+p_{CF,t}+p_{DR,t}
+\]
+where
+\[
+p_{CF,t}=\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}\left(1-\rho\right)d_{t+1+j}\\
+p_{DR,t}=-\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}r_{t+1+j}
+\]
+are the components of the log stock price driven by cash flow (dividend) expectations and discount rate (return) expectations, respectively.
+
+\hypertarget{vuolteenaho-2002-approximation}{%
+\subsection{Vuolteenaho (2002) Approximation}\label{vuolteenaho-2002-approximation}}
+
+Solution. Vuolteenaho (2002) starts with the book-to-market ratio expressed as
+\[
+\frac{B}{P}=\frac{R-\lambda ROE}{\left(1-\lambda\right)ROE}=1+\left(\frac{R/ROE-1}{1-\lambda}\right)
+\]
+Applying a similar loglinear approximation, we obtain:
+\[
+b_{t}-v_{t}=\mu+\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}\left[-roe_{t+1+j}+r_{t+1+j}\right]
+\]
+where \(b_{t}\) is the log book value of the firm and \(v_{t}\) is the log market value. It is natural to use this formula in studies of individual firms, since firm-level dividend policy may be unstable over time and some firms do not pay dividends at all in historical data.
+
+\hypertarget{campbell-1991-approximation}{%
+\subsection{Campbell (1991) Approximation}\label{campbell-1991-approximation}}
+
+Solution. Campbell (1991) used the Campbell-Shiller loglinearization to decompose the variation in stock returns, rather than prices, into revisions in expectations of dividend growth and future returns:
+\[
+r_{t+1}-\mathbb{E}_{t}r_{t+1}=N_{CF,t+1}-N_{DR,t+1}
+\]
+where
+\[
+N_{CF,t+1}=\left(\mathbb{E}_{t+1}-\mathbb{E}_{t}\right)\sum_{j=0}^{\infty}\rho^{j}\Delta d_{t+1+j}\\N_{DR,t+1}=\left(\mathbb{E}_{t+1}-\mathbb{E}_{t}\right)\sum_{j=1}^{\infty}\rho^{j}r_{t+1+j}
+\]
+are revisions in expectations or ``news'' about cash flows (dividends) and discount rates (expected future returns).
+
+The return decomposition above implies that better information about future dividends reduces the volatility of returns. The reason is that news about dividends must enter prices at some point; the earlier it does, the more heavily the effect is discounted.
+
+\hypertarget{predictability-galore}{%
+\subsection{Predictability Galore}\label{predictability-galore}}
+
+A few important points to note:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The return-prediction regression measures whether expected returns vary over time. The predictability literature is thus a quest to find out whether expected returns are time-varying.
+\item
+  We use forecasting regressions in finance to understand how the RHS variable is formed from expectations of the LHS variable. For example, when we return returns and dividend growth on \(D/P\), what we learn is that \(D/P\) is moving around, on average, in reaction to discount rate news not to cashflow news.
+\item
+  Efficient markets does not mean ``nothing is unpredictable.''
+\end{enumerate}
+
+\textbf{Importance of the Log Dividend-Price Ratio}
+
+Using the expression for prices and taking expectations, we have
+\[
+d_{t}-p_{t}=-\frac{k}{1-\rho}+dp_{CF,t}+dp_{DR,t}
+\]
+where
+\[
+dp_{CF,t}=d_{t}-p_{CF,t}=-\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}\Delta d_{t+1+j}\\dp_{DR,t}=-p_{DR,t}=\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}r_{t+1+j}
+\]
+This decomposition shows why the log dividend-price ratio is a natural candidate to predict stock returns. If there is any predictable variation in stock returns, it will be reflected in \(dp_{DR,t}\). While the log dividend-price ratio also reflects expectations of dividend growth in the component \(dp_{CF,t}\), aggregate US dividend payments have been relatively smooth and close to a random walk since World War II. Hence, forecasts of future growth rates of dividends may not be too volatile, allowing return forecasts to be the primary influence on the ratio \(d_t-p_t\).
+
+\begin{itemize}
+\tightlist
+\item
+  If price variation comes from news about dividend growth, then price-dividend ratios should forecast dividend growth. Conversely,
+\item
+  If price variation comes from news about changing discount rates, then price-dividend ratios should forecast returns.
+\item
+  Our world cannot feature both unpredictable dividends and unpredictable returns!
+\end{itemize}
+
+\textbf{Excess Volatility = Return Forecastability}
+
+We can tie predictability to the volatility of prices. Specifically, excess volatility of stock returns is exactly the same as the presence of return predictability and the absence of dividend growth predictability.
+
+Intuitively, volatility is another way to see the economic implications of return forecastability. With constant discount rates, which Shiller assumed, then high prices must be followed on average by higher dividend growth. But they are not. Already, we see that excess volatility is the same thing as the fact that high prices do not forecast dividend growth.
+
+\textbf{Persistence in Expected Returns}
+
+If expected returns follow a persistent time-series process, then movements in expected returns will have a large impact on asset prices: prices are much less sensitive to transitory fluctuations in expected returns.
+
+When expected returns are highly persistent, then the log dividend-price ratio can be very volatile. For example, consider a specific model of time-varying expected returns in which the expected return is an \(AR\left(1\right)\) process:
+\[
+r_{t+1}=\bar{r}+x_{t}+u_{t+1}\\x_{t+1}=\phi x_{t}+\xi_{t+1}
+\]
+The process for \(x_t\) implies that
+\[
+dp_{DR,t}=\frac{\bar{r}}{1-\rho}+\frac{x_{t}}{1-\rho\phi},\quad Var\left(dp_{DR,t}\right)=\frac{\sigma_{x}^{2}}{\left(1-\rho\phi\right)^{2}}
+\]
+Therefore, expected return may have a very small volatility yet may still have a very large effect on the log dividend-price ratio (or equivalently the stock price) if it is highly persistent.
+
+\textbf{Long-run Regressions}
+
+Consider the regressions of long-run returns and dividend growth on \(d_t-p_t\), which is essentially what equation (26) is. The long-run return forecasting regression coefficient and the long-run dividend growth forecasting regression coefficients must add up to one.
+
+\textbf{Short vs.~Long-Horizon Predictive Regressions}
+
+Predictability improves at long horizons, almost mechanically. This is also equivalent to the fact that a high dividend-price ratio predicts a high return for many years in the future.
+
+Specifically, the ratio of the \(K\)-period \(R^{2}\) to the 1-period \(R^{2}\) is
+\[
+\frac{R^{2}\left(K\right)}{R^{2}\left(1\right)}=\left[\frac{Var\left(\mathbb{E}_{t}r_{t+1}+\cdots+\mathbb{E}_{t}r_{t+K}\right)}{Var\left(r_{t+1}+\cdots+r_{t+K}\right)}\right]/\left[\frac{Var\left(\mathbb{E}_{t}r_{t+1}\right)}{Var\left(r_{t+1}\right)}\right]\\=\frac{\beta\left(K\right)^{2}}{\beta\left(1\right)^{2}}\frac{1}{KV\left(K\right)}
+\]
+where \(\beta\left(K\right)=1+\phi+\cdots+\phi^{K-1}\).
+
+Therefore, there is nothing special or different about long-run forecasts. They are the mechanical result of short-run forecasts and a persistent forecasting variable.
+
+\textbf{Predictive System of Pastor and Stambaugh (2009)}
+
+Pástor and Stambaugh (2009) have argued for the use of a ``predictive system,'' in which an AR(1) model for the expected return is combined with a vector of return predictors that are used to deliver filtered estimates of the unobservable expected return.
+
+\textbf{Dividend-price ratio fails to forecast dividend growth but does predict returns}
+
+An extensive empirical literature has found that in US historical data, the dividend-price ratio has little ability to forecast dividend growth.This is particularly true since World War II, when corporations began to smooth dividends in the manner documented by Lintner (1956), but even in the earlier part of the Shiller sample period dividend growth is forecastable only over a year or two. There is little evidence of long swings in the dividend growth rate that could justify the long swings in the dividend-price ratio.
+
+The dividend-price ratio does, however, predict returns in historical US data. This suggests that most of the variation in the series should be attributed to changing discount rates rather than changing expectations of dividend growth---at least if we take the perspective of rational investors.
+
+\hypertarget{var-analysis-of-returns}{%
+\subsection{VAR Analysis of Returns}\label{var-analysis-of-returns}}
+
+An alternative to direct long-horizon return regression is to use a time-series model and calculate its implications for long-horizon return behavior. Most obviously, if one is willing to assume that a vector autoregression (VAR) describes the data, then the news components of returns can be calculated directly from the VAR coefficients (Campbell and Shiller 1988a, Campbell 1991).
+
+\textbf{Parameter Restriction from the Campbell-Shiller Decomposition}
+
+Forecasts of either returns or dividend growth along with the log dividend-price ratio imply forecasts of the missing variable; and returns and dividend growth should not both be included in the system along with the log dividend-price ratio, because the resulting system will have perfectly collinear variables (except for a small approximation error).
+
+\textbf{Summary of Empirical Findings using VAR Approach}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Empirical work starting with Campbell (1991) typically finds that for broad stock indexes, the standard deviation of discount-rate news is about twice the standard deviation of cash-flow news.
+\item
+  Results are quite different for individual stocks as shown by Vuolteenaho (2002) and Cohen, Polk, and Vuolteenaho (2009). Explanatory power of a time-series regression of an individual stock's return on characteristics is very small even at long horizons, implying that most stock-level return variation is attributed to cash-flow news.
+\item
+  This finding for individual stocks does not contradict the evidence for aggregate stock indexes because much of the stock-level cash-flow news is idiosyncratic, so it diversifies away at the aggregate level; whereas the stock-level discount-rate news has an important aggregate component that does not diversify away but accounts for a large part of the variation in aggregate stock returns.
+\end{enumerate}
+
+\hypertarget{static-and-dynamic-factor-models}{%
+\chapter{Static and Dynamic Factor Models}\label{static-and-dynamic-factor-models}}
+
+\hypertarget{capital-asset-pricing-model-capm}{%
+\section{Capital Asset Pricing Model (CAPM)}\label{capital-asset-pricing-model-capm}}
+
+The CAPM can be stated in both the SDF space as well as in the return space.
+
+\begin{itemize}
+\item
+  In the SDF space, we have:
+  \[
+  m_{t+1}=a+bR_{t+1}^{W}
+  \]
+  where \(a\) and \(b\) are free parameters.
+\item
+  In the return space, we have:
+  \[
+  \mathbb{E}\left(R^{i}\right)=\alpha+\beta_{i,R^{W}}\left[\mathbb{E}\left(R^{W}\right)-\alpha\right]
+  \]
+\end{itemize}
+
+\textbf{Derivation}
+
+In the simplest possible case, we can show that two-period investors with no labor income and quadratic utility imply the CAPM. Since quadratic utility assumption means marginal utility is linear in consumption, we have:
+\[
+m_{t+1}=\beta\frac{u'\left(c_{t+1}\right)}{u'\left(c_{t}\right)}=\beta\frac{c_{t+1}-c^{*}}{c_{t}-c^{*}}
+\]
+The budget constraint is \(c_{t+1}=W_{t+1}=R_{t+1}^{W}\left(W_{t}-c_{t}\right)\). Furthermore, two-period implies that investors consume everything in the second period, which allows us to substitute wealth and return on wealth for consumption:
+\[
+m_{t+1}=\beta\frac{R_{t+1}^{W}\left(W_{t}-c_{t}\right)-c^{*}}{c_{t}-c^{*}}=-\frac{\beta c^{*}}{c_{t}-c^{*}}+\frac{\beta\left(W_{t}-c_{t}\right)}{c_{t}-c^{*}}R_{t+1}^{W}
+\]
+Another case is when \(u\left(c\right)=-e^{-\alpha c}\) and returns are normally distributed.
+
+\hypertarget{arbitrage-pricing-theory-apt}{%
+\section{Arbitrage Pricing Theory (APT)}\label{arbitrage-pricing-theory-apt}}
+
+The APT states that if a set of asset returns are generated by a linear factor model,
+\[
+R^{i}=\mathbb{E}\left(R^{i}\right)+\sum_{j=1}^{N}\beta_{ij}\tilde{f}_{j}+\epsilon^{i}
+\]
+with \(\mathbb{E}\left(\epsilon^{i}\right)=\mathbb{E}\left(\epsilon^{i}\tilde{f}_{j}\right)=0\), then there is a discount factor \(m\) linear in the factors \(m=a+b'f\) that prices the returns.
+
+\textbf{Informal Derivation}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Assume a linear factor model for asset returns.} Specifically,
+  \[
+  R_{i}=\mu_{i}+\beta_{i}\Lambda+\epsilon_{i},\quad\mathbb{E}\left(\Lambda\right)=\mathbb{E}\left[\epsilon\right]=\mathbb{E}\left[\Lambda\epsilon\right]=0
+  \]
+  In matrix notation, \(R=\mu+\beta\Lambda+\epsilon\).
+\item
+  \textbf{Construct an arbitrage portfolio.} This is a portfolio such that the weights \(w_{a}\) sum to zero \(\left(w_{a}'\iota=0\right)\) i.e.~there is no net investment. Then the return on the portfolio will be given as
+  \[
+  R_{a}=w_{a}'R=w_{a}'\mu+w_{a}'\beta\Lambda+w_{a}'\epsilon
+  \]
+  If this a large enough portfolio, \(w_{a}'\epsilon\approx0.\) So we can further choose a portfolio such that \(w_{a}'\beta=0.\) Then the portfolio has \(R_{a}=w_{a}'\mu\) i.e.~no idiosyncratic risk and no factor risk.
+\item
+  \textbf{Impose no-arbitrage condition.} This implies the above portfolio must have zero return, i.e.~\(w_{a}'R=w_{a}'\mu=0\).
+\end{enumerate}
+
+\textbf{Shortcomings of APT}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  We know that some portfolio is always mean- variance efficient ex post. Thus we know that ex post, we can always get a single-factor model to fit the data if we happen to choose the ex post mean-variance efficient portfolio as the single factor. It must then be even easier to get a K-factor model to fit the data. This does not tell us anything about the world unless we can have some confidence that the K-factor model holds ex ante as well as ex post. In other words, we need theoretical reasons to believe that a K-factor model is structural.
+\item
+  APT does not determine the signs or magnitudes of the risk prices.
+\end{enumerate}
+
+\hypertarget{intertemporal-capm-icapm}{%
+\section{Intertemporal CAPM (ICAPM)}\label{intertemporal-capm-icapm}}
+
+The ICAPM states that risk premia depend on covariances with market wealth and with state variables that determine investment opportunities and/or future labor income.
+
+Specifically, the ICAPM generates linear discount factor models of the form:
+\[
+m_{t+1} = a + b'f_{t+1}
+\]
+in which the factors are the state variables for the investor's consumption-portfolio decision. Current wealth is obviously a state variable. Additional state variables describe the conditional distribution of income and asset returns the agent will face in the future or ``shifts in the investment opportunity set.''
+
+\textbf{Comparison to APT}
+
+As a multifactor model, the ICAPM and APT are similar. However, APT is silent on what the factors should be, whereas the ICAPM states that the factors should be market wealth and variables that predict future returns and labor income (or the projections of such variables).
+
+The APT suggests that one start with a statistical analysis of the covariance matrix of returns and find portfolios that characterize common movement. The ICAPM suggests that one start by thinking about state variables that describe the conditional distribution of future asset returns and non-asset income. More generally, the idea of proxying for marginal utility growth suggests macroeconomic indicators, and indicators of shocks to non-asset income in particular.
+
+\hypertarget{conditional-capm}{%
+\section{Conditional CAPM}\label{conditional-capm}}
+
+The source of risk in the traditional CAPM is the fact that the value drops when the market goes down. This is the ``market risk.''
+
+In the conditional CAPM, there is an additional source of risk: risk exposure increases in bad times, i.e.~the countercyclicality of the market beta (higher beta in recessions).
+
+\textbf{Lewellen-Nagel (JFE 2006) Critique}
+
+This critique says that the variations in betas and the expected market risk premium are too small to make the conditional CAPM successful in explaining the return differentials between different groups of stocks we observe in the real-life data.
+
+\hypertarget{estimating-and-evaluating-models}{%
+\chapter{Estimating and Evaluating Models}\label{estimating-and-evaluating-models}}
+
+\hypertarget{regression-based-tests-of-linear-factor-models}{%
+\section{Regression-based Tests of Linear Factor Models}\label{regression-based-tests-of-linear-factor-models}}
+
+Consider the \(K\) factor model, written as:
+\[
+\mathbb{E}[R^e_i]=\beta_i'\lambda
+\]
+Our goal is to evaluate this factor model, which essentially amounts to: (1) estimating the parameters, (2) calculating the standard errors of the estimated parameters, (3) calculating standard errors of the pricing errors, and (4) testing the model usually with a test statistic of the form \(\hat{\alpha}'V^{-1}\hat{\alpha}\).
+
+\hypertarget{when-factors-are-returns-time-series-regressions}{%
+\subsection{When Factors are Returns: Time-series Regressions}\label{when-factors-are-returns-time-series-regressions}}
+
+The time-series approach regression starts from the regression of excess returns:
+\[
+R_{it}^{e}=\alpha_{i}+\beta_{i}f_t+\epsilon_{it}
+\]
+with the null hypothesis that \(\alpha_i = 0\).
+
+\begin{itemize}
+\tightlist
+\item
+  The estimate of the factor risk premium is just the sample mean of the factor: \(\hat{\lambda} = \mathbb{E}_T[f]\).
+\end{itemize}
+
+For any one asset this is easy, but the challenge is to test it jointly for a set of N assets. We will assume that the residuals \(\epsilon_{it}\) are iid and independent of the excess return on the market. Then we have an asymptotic test
+\[
+T\left[1+\left(\frac{\bar{R}_{m}^{e}}{\hat{\sigma}\left(\bar{R}_{mt}^{e}\right)}\right)^{2}\right]^{-1}\hat{\alpha}'\hat{\Omega}^{-1}\hat{\alpha}\sim\chi_{N}^{2}
+\]
+where \(\alpha\) is the vector of intercepts and \(\Omega\) is the variance-covariance matrix of the residuals. The term in square brackets corrects for the presence of market return in the model; uncertainty about the betas affects the alphas, and more so when the market has a high expected return relative to its variance.
+
+\hypertarget{when-factors-are-not-returns-cross-sectional-regressions}{%
+\subsection{When Factors are Not Returns: Cross-Sectional Regressions}\label{when-factors-are-not-returns-cross-sectional-regressions}}
+
+There is an alternate approach that can be implemented even when the factor is not the return on a traded portfolio. This approach first estimates betas from a time-series regression:
+\[
+R_{it}^{e}=\alpha_{i}+\beta_{i}f_t+\epsilon_{it}
+\]
+and then runs a \textbf{single} cross-sectional regression of \textbf{average} returns on the betas:
+\[
+\bar{R}_{i}^{e}=\lambda\hat{\beta}_{i}+a_{i}
+\]
+where we do not include an intercept and \(\lambda\) is the cross-sectional reward for bearing the market risk. As we see, as \(T\to\infty\), \(\lambda\to\mathbb{E}[R_{mt}^e]\). This is known as a \textbf{two-pass} regression estimate.
+
+To get asymptotically efficient estimates, we can run generalized least squares (GLS) since the residuals in the cross-sectional regression are correlated with each other. The GLS regression can be understood as a transformation of the space of returns to focus attention on the statistically most informative portfolios.
+
+\begin{itemize}
+\tightlist
+\item
+  Suppose you can find a matrix \(C\) such that \(CC'=\Sigma^{-1}\). Then the GLS regression is the same as the OLS regression of \(C\mathbb{E}_T[R^e]\) on \(C\beta\), i.e.~testing the model on the portfolios \(CR^e\).
+\end{itemize}
+
+\hypertarget{fama-macbeth-procedure}{%
+\subsection{Fama-MacBeth Procedure}\label{fama-macbeth-procedure}}
+
+Fama and MacBeth (1973) suggest an alternative procedure for running cross-sectional regressions, and for producing standard errors and test statistics. First, you would find beta estimates similarly as before, but now instead of estimating a single cross-sectional regression with the sample averages, we now run a cross-sectional regression at each time period, i.e.
+\[
+R_{it}^{e}=\lambda_{t}\hat{\beta}_{i}+a_{it}
+\]
+We can then estimate \(\lambda\) and \(a_i\) as the average of the cross-sectional estimates:
+\[
+\hat{\lambda}=\frac{1}{T}\sum_{t=1}^{T}\hat{\lambda}_{t},\quad\hat{\alpha}_{i}=\frac{1}{T}\sum_{t=1}^{T}\hat{\alpha}_{it}
+\]
+and \textbf{most importantly}, we use the standard deviations of the cross-sectional regression estimates to generate the sampling errors for these estimates.
+
+\textbf{When should we use Fama-MacBeth?}
+
+Note that Fama MacBeth regressions provide standard errors corrected only for cross-sectional correlation. The standard errors from this method do not correct for time-series autocorrelation.
+
+This is usually not a problem for stock trading since stocks have weak time-series autocorrelation in daily and weekly holding periods, but autocorrelation is stronger over long horizons. This means Fama-MacBeth regressions may be inappropriate to use in many corporate finance settings where project holding periods tend to be long.
+
+\textbf{Estimating Returns to a Stock-Level Characteristics}
+
+The Fama-Macbeth approach for estimating the return to a stock-level characteristic \(X_{it}\) is to run a series of cross-sectional regressions of excess returns on the characteristic, one for each date \(t\):
+\[
+R_{it}^{e}=\theta_{t}+\lambda_{t}X_{it}+a_{it}
+\]
+Then, the cross-sectional slope coefficients \(\hat{\lambda}_{t}\) can be interpreted as payoffs on long-short portfolios with zero initial investment, and \(\hat{\theta}_{t}\) as the excess return on an equal-weighted portfolio of all the assets.
+
+An alternative way to estimate the rewards to observable characteristics is to estimate a panel regression. This requires adjusting the standard errors of the regression for the cross-sectional correlation of asset returns at a point in time, an adjustment that is now straightforward using clustered standard error commands in panel regression software packages.
+
+\begin{itemize}
+\tightlist
+\item
+  When the explanatory variables in the regression do not vary over time, the Fama-MacBeth estimates and standard errors are identical to those of the panel regression as well as those of the cross-sectional regression.
+\item
+  When the explanatory variables do vary over time, Fama-MacBeth is different because it gives equal weight to each time period, even if the explanatory variables are more dispersed in one period than another.
+\end{itemize}
+
+\hypertarget{nota-bene}{%
+\subsection{Nota Bene}\label{nota-bene}}
+
+\textbf{Addressing Potential Non-Linearity}
+
+One way is to present tables of average returns for portfolios sorted by one of more characteristics. The idea is that such tables will reveal non-linearity if it is present.
+
+However, the regression methodology is a superior tool for understanding how multiple characteristics affect stock returns, and it can accommodate non-linearity where necessary by using non-linear transformations of raw characteristics as explanatory variables.
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2511246}{Lewellen (2015)} is an example that explores the non-linear relationship.
+\end{itemize}
+
+\textbf{Selecting Test Assets}
+
+Looking at more assets (increasing \(N\)) will tend to find larger deviations from the model. However, increasing \(N\) also increases the size of the deviations required to reject the CAPM statistically. Thus, to get a powerful test, one may wish to select a few test assets that one believes on prior grounds to be mispriced. However, a valid test cannot select assets using their average returns during the sample period used to test the model, which can lead to spurious rejections of the model (Lo and MacKinlay, 1990)
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3493458}{Bryzgalova, Pelger, and Zhu (2021)} build a set of test assets borrowing tools from machine learning.
+\end{itemize}
+
+\textbf{Grouping Test Assets into Portfolios}
+
+This procedure is commonly used because the diversification of idiosyncratic risk in portfolios increases the precision with which their factor loadings can be estimated and because it is easier to provide summary statistics. This approach, however, discards some of the information in the cross-section of individual stock returns and reduces the precision with which factor risk prices are estimated.
+
+\hypertarget{gmm-for-linear-factor-models}{%
+\section{GMM for Linear Factor Models}\label{gmm-for-linear-factor-models}}
+
+The Generalized Method of Moments (GMM) of Hansen (1982b) is an econometric approach that is particularly well suited for estimating and testing models of the SDF.
+
+\hypertarget{a-gentle-introduction}{%
+\subsection{A Gentle Introduction}\label{a-gentle-introduction}}
+
+In contrast to other econometric methods such as maximum likelihood that require a complete specification of the stochastic processes obeyed by the time series of the model, GMM allows the econometrician to estimate and evaluate a model based on particular features or predictions provided by the researcher in the form of moment conditions.
+
+The traditional method of moments approach considers a construction where \(N=K\), that is when there are exactly as many conditions as parameters. GMM extends this approach to settings where there are more moment restrictions than parameters, \(N\geq K\).
+
+A GMM estimate is constructed by setting \(K\) linear combinations of the \(N\) sample moments to zero. The information not used in estimation (the remaining \(N-K\) combinations of the moments that are predicted to be zero) can be used to evaluate the model through a test of overidentifying restrictions.
+
+\textbf{GMM in Asset Pricing Context}
+
+An important advantage of the GMM framework is that it can easily accommodate nonlinear, dynamic models of the kind studied in asset pricing.
+
+\textbf{Example: Time-Series Approach}
+
+Recall the time-series regression for the market model, written in vector notation:
+\[
+R_t^e = \alpha + \beta_m R_{mt}^e + \epsilon_t
+\]
+The OLS estimation here easily maps to the GMM framework with the moment conditions:
+\[
+\mathbb{E}\left[u_{t}\left(\left[\begin{array}{c}
+\alpha\\
+\beta_{m}
+\end{array}\right]\right)\right]=\mathbb{E}\left[\begin{array}{c}
+R_{t}^{e}-\alpha-\beta_{m}R_{mt}^{e}\\
+\left(R_{t}^{e}-\alpha-\beta_{m}R_{mt}^{e}\right)R_{mt}^{e}
+\end{array}\right]=\mathbb{E}\left[\begin{array}{c}
+\epsilon_{t}\\
+\epsilon_{t}R_{mt}^{e}
+\end{array}\right]=0
+\]
+which is an exactly identified system of \(2N\) restriction and \(2N\) parameters.
+
+\hypertarget{managed-portfolio-theorem}{%
+\subsection{Managed Portfolio Theorem}\label{managed-portfolio-theorem}}
+
+The managed portfolio theorem is the important insight that we can test the conditional hypothesis for individual assets by performing unconditional tests on managed portfolios.
+
+\textbf{Simple SDF}
+
+Suppose we want to test the hypothesis that a stochastic process \(Z\) is a sequence of single-period SDFs. In this case, the hypothesis is:
+\[
+\left(\forall i,t\right)\quad\mathbb{E}_{t}\left[Z_{t+1}\left(R_{i,t+1}-R_{f,t+1}\right)\right]=0
+\]
+By iterated expectations:
+\[
+\left(\forall i,t\right)\quad\mathbb{E}\left[Z_{t+1}\left(R_{i,t+1}-R_{f,t+1}\right)\right]=0
+\]
+Hence, we can test whether the sample mean of \(Z_t(R_{it} - R_{ft})\) is zero for some set of returns.
+
+\textbf{Using Managed Portfolios}
+
+We now derive a more powerful test than the one presented above. Start with the same equation:
+\[
+\left(\forall i,t\right)\quad\mathbb{E}_{t}\left[Z_{t+1}\left(R_{i,t+1}-R_{f,t+1}\right)\right]=0
+\]
+which implies:
+\[
+\left(\forall i,t\right)\quad\mathbb{E}\left[Z_{t+1}\left(R_{i,t+1}-R_{f,t+1}\right)\pi_{it}\right]=0
+\]
+for every random variable \(\pi_{it}\) that depends on only date-\(t\) information and has a finite mean.
+
+Adding this equation across assets, we obtain:
+\[
+\left(\forall t\right)\quad\mathbb{E}\left[Z_{t+1}\pi_{t}'\left(R_{i,t+1}-R_{f,t+1}\iota\right)\right]=0
+\]
+which says that \(Z_{t+1}\) is orthogonal to the excess return of the portfolio \(\pi_t\). Therefore, the hypothesis that \(Z_t\) is a sequence of single-period SDFs is equivalent to the above relationship holding for each portfolio process \(\pi\). The only restriction is that each portfolio must be formed using information available at the beginning of the return period.
+
+\hypertarget{paper-highlights}{%
+\chapter{Paper Highlights}\label{paper-highlights}}
+
+\hypertarget{hansen-and-jagannathan-1991}{%
+\subsection{Hansen and Jagannathan (1991)}\label{hansen-and-jagannathan-1991}}
+
+This paper\ldots{}
+
+\hypertarget{part-shoulders-of-giants}{%
+\part*{SHOULDERS OF GIANTS}\label{part-shoulders-of-giants}}
+\addcontentsline{toc}{part}{SHOULDERS OF GIANTS}
+
+\hypertarget{epstein-zin-preferences-and-long-run-risks}{%
+\chapter{Epstein-Zin Preferences and Long-Run Risks}\label{epstein-zin-preferences-and-long-run-risks}}
+
+\hypertarget{epstein-zin-preferences}{%
+\section{Epstein-Zin Preferences}\label{epstein-zin-preferences}}
+
+The Epstein-Zin objective function is a member of a class of preferences defined recursively by
+\[
+U_t = f(C_t, \mu(U_{t+1}))
+\]
+The \(f(\cdot)\) evaluates the tradeoffs between present and future, and \(\mu(\cdot)\) is a certainty-equivalent function that encodes attitudes towards risk:
+\[
+U_{t}=\left\{ \left(1-\beta\right)C_{t}^{1-\rho}+\beta\left(\mathbb{E}_{t}\left[U_{t+1}^{1-\gamma}\right]\right)^{\frac{1-\rho}{1-\gamma}}\right\} ^{\frac{1}{1-\rho}}
+\]
+where \(\gamma>0\) is the relative risk aversion, \(\rho^{-1}\) is the intertemporal elasticity of substitution (IES), and \(\beta\) is the subjective discount factor. If \(\rho = \gamma\), the given equation collapses to power utility.
+
+\hypertarget{sdf-under-epstein-zin-preferences}{%
+\subsection{SDF under Epstein-Zin Preferences}\label{sdf-under-epstein-zin-preferences}}
+
+Suppose returns and consumption are jointly lognormal and homoskedastic. Then the SDF is given as
+\[
+M_{t+1}=\left(\delta\left(\frac{C_{t+1}}{C_{t}}\right)^{-\frac{1}{\psi}}\right)^{\theta}\left(\frac{1}{1+R_{W,t+1}}\right)^{1-\theta}
+\]
+which then implies:
+\[
+r_{f,t+1} = -\log\delta+\frac{1}{\psi}\mathbb{E}_{t}\left[\Delta c_{t+1}\right]-\frac{\theta}{2\psi^{2}}\sigma_{c}^{2}+\frac{\theta-1}{2}\sigma_{W}^{2}
+\]
+
+\[
+\mathbb{E}_t[r_{i,t+1}]-r_{f,t+1} +\frac{\sigma_{i}^{2}}{2}=\theta\frac{\sigma_{ic}}{\psi}+\left(1-\theta\right)\sigma_{iw} 
+\]
+
+where \(\sigma_{ic}\) and \(\sigma_{iw}\) denote the covariances between innovations in log returns on asset \(i\) and log consumption growth and the log wealth return, respectively.
+
+\hypertarget{solving-the-equity-premium-and-risk-free-puzzles}{%
+\subsection{Solving the Equity Premium and Risk-free Puzzles}\label{solving-the-equity-premium-and-risk-free-puzzles}}
+
+There are several reasons why EZ preferences have the potential to explain the dual puzzles.
+
+First, EZ preferences decouple the coefficient of relative risk aversion and the intertemporal elasticity of substitution (IES).
+
+\begin{itemize}
+\tightlist
+\item
+  The usage of power utility tightly links risk aversion and the IES, making one the reciprocal of the other. Therefore, under such framework, risk aversion cannot be increased to solve the equity premium puzzle without lowering the IES.
+\item
+  A very low value for the IES, however, implies implausible behavior of the riskfree interest rate. Therefore, the dual puzzles can be solved by decoupling these two parameters of the model.
+\end{itemize}
+
+Second, for EZ preferences to explain the two puzzles, it is important that the consumption growth not be IID. To see this, consider a shock that affects expected consumption growth (so it affects future consumption) but does not affect current consumption.
+
+\begin{itemize}
+\item
+  In time-additive CRRA model, such a shock does not affect current marginal utility since it only depends on current consumption. Thus an asset's covariance with this shock does not affect its risk premium.
+\item
+  With EZ preferences, variables can affect the market return even if they do not affect consumption. Since the SDF depends on the market return in addition to consumption, such variables also enter the SDF.
+\item
+  Differently put, recall that the SDF under EZ preferences depends on aggregate consumption growth and the market return. In continuous time, this produces a two-factor pricing model; when consumption growth is IID, however, this two-factor model collapses to a single-factor model since the market return is proportional to consumption growth when consumption growth is IID.
+\end{itemize}
+
+\hypertarget{long-run-risk}{%
+\section{Long-Run Risk}\label{long-run-risk}}
+
+There are two key modeling assumptions behind the long-run risk model:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The representative agent has Epstein-Zin preferences with moderately high risk aversion and a high elasticity of intertemporal substitution.
+\item
+  Aggregate consumption growth is persistent and conditionally heteroskedastic.
+\end{enumerate}
+
+\hypertarget{bansal-and-yaron-2004-and-its-extensions}{%
+\subsection{Bansal and Yaron (2004) and Its Extensions}\label{bansal-and-yaron-2004-and-its-extensions}}
+
+Bansal and Yaron (2004) have argued that the extended consumption CAPM can solve the equity premium, riskfree rate, and equity volatility puzzles if one assumes that a representative agent has Epstein-Zin preferences with moderately high risk aversion and a high EIS greater than one, and that aggregate consumption growth is both persistent and conditionally heteroskedastic.
+
+The basic logic is that even if consumption is adjusted continuously, investors are averse to covariance with long-run consumption growth if they have Epstein-Zin preferences with a relatively high elasticity of intertemporal substitution.
+
+\textbf{Empirical Model}
+
+The model is usually specified as the following:
+\[
+\Delta c_{t+1}=\mu_{c}+x_{t}+\sigma_{t}\eta_{t+1}\\
+x_{t+1}=\rho_{x}x_{t}+\varphi_{\epsilon}\sigma_{t}e_{t+1}\\
+\sigma_{t+1}^{2}=\bar{\sigma}^{2}+\nu\left(\sigma_{t}^{2}-\bar{\sigma}^{2}\right)+\sigma_{w}w_{t+1}\\
+\Delta d_{t+1}=\mu_{d}+\phi x_{t}+\varphi\sigma_{t}u_{t+1}+\pi\sigma_{t}\eta_{t+1}
+\]
+In this model, the dividends are imperfectly correlated with consumption, but:
+
+\begin{itemize}
+\tightlist
+\item
+  Their growth rates share the same persistent and predictable component \(x_t\) scaled by \(\phi\)
+\item
+  The conditional volatility of dividend growth is proportional to the conditional volatility of consumption growth \(\sigma_t \eta_{t+1}\)
+\item
+\end{itemize}
+
+\textbf{Solving the Model: Bansal and Yaron (2004)}
+
+The model is solved using loglinear analytical approximations. By doing so, and assuming that the wealth portfolio is an exponentiated linear function of the state variables in the economy, the authors obtain:
+\[
+m_{t+1}=\theta\log\delta-\frac{\theta}{\psi}g_{t+1}+\left(\theta+1\right)r_{a,t+1}
+\]
+The log-linearization also implies that log wealth-consumption ratio for a consumption claim and the log price-dividend ratio for a dividend claim are linear in the conditional mean and variance of consumption growth, the two state variables of the model.
+
+\textbf{Persistence of Volatility}
+
+The greater persistence of volatility makes conditional heteroskedascitiy much more important for asset prices in two ways.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Changing volatility affects the equity premium and the price-dividend ratio. This weakens the tight relationship between the price-dividend ratio and expected consumption growth in the homoskedastic model.
+\item
+  Changing volatility helps explain the ability of the price-dividend ratio to predict excess stock returns.**
+\end{enumerate}
+
+\textbf{Term Structure}
+
+The model implies a downward-sloping term structure for real fixed-income securities but an upward-sloping term structure for risky securities. For bonds, this is because a decrease in expected future consumption growth lowers interest rates and increases bond prices. Therefore, bonds are good hedges against bad news about future consumption growth.
+
+Here's a more detailed logic:
+
+\begin{itemize}
+\tightlist
+\item
+  A shock that decrease expected future consumption growth (which increases marginal utility) has the effect of lowering interest rates (\(\rightarrow\) higher bond prices) and lowering future dividends (\(\to\) lower stock prices).
+\item
+  A shock that increases the volatility of consumption growth, which increases marginal utility, has the effect of lowering interest rate (\(\to\) higher bond prices, through the precautionary savings effect) and lowering the price of risky dividend claims.
+\end{itemize}
+
+Therefore, bonds are intertemporal hedges while stocks are intertemporally risky.
+
+Both of these effects are more powerful for long-term claims, so the riskless and risky term structures have opposite slopes.
+
+\hypertarget{appendix}{%
+\section{Appendix}\label{appendix}}
+
+\hypertarget{derivation-of-the-sdf-under-epstein-zin-preferences}{%
+\subsection{Derivation of the SDF under Epstein-Zin Preferences}\label{derivation-of-the-sdf-under-epstein-zin-preferences}}
+
+Recall that the utility function is given as
+\[
+U_{t}=\left\{ \left(1-\beta\right)C_{t}^{1-\rho}+\beta R_{t}\left(U_{t+1}\right)^{1-\rho}\right\} ^{\frac{1}{1-\rho}}
+\]
+where \(R_{t}\left(U_{t+1}\right)=\left(\mathbb{E}_{t}\left(U_{t+1}^{1-\gamma}\right)\right)^{\frac{1}{1-\gamma}}\). To derive the SDF ,we proceed in two steps.
+
+First, we show that
+\[
+SDF_{t+1}\equiv\frac{M_{t+1}}{M_{t}}=\beta\left(\frac{U_{t+1}}{R_{t}\left(U_{t+1}\right)}\right)^{\rho-\gamma}\left(\frac{C_{t+1}}{C_{t}}\right)^{-\rho}
+\]
+
+\begin{itemize}
+\item
+  Define \(MC_{t}\equiv\partial U_{t}/\partial C_{t}\) and \(MU_{t+1}\equiv\partial U_{t}/\partial U_{t+1}\). We can then use Euler's Theorem to write:
+  \[
+  U_{t}=MC_{t}\cdot C_{t}+\mathbb{E}_{t}\left[MU_{t+1}\cdot U_{t+1}\right]
+  \]
+  since \(U_t\) is homogeneous of degree 1.
+\item
+  Taking the derivatives:
+  \[
+  MC_{t}=\left(1-\beta\right)U_{t}^{\rho}C_{t}^{-\rho}
+  \]
+
+  \[
+  MU_{t+1} =\frac{\partial U_{t}}{\partial R_{t}\left(U_{t+1}\right)}\frac{\partial R_{t}\left(U_{t+1}\right)}{\partial U_{t+1}}= \beta U_{t}^{\rho}R_{t}\left(U_{t+1}\right)^{\gamma-\rho}U_{t+1}^{-\gamma}
+  \]
+\item
+  With EZ preferences, the Euler equation can be written as
+  \[
+  W_{1}\left(t\right)=W_{2}\left(t\right)\mathbb{E}_{t}\left[W_{1}\left(t+1\right)R_{t+1}\right]
+  \]
+  where \(U_{t}=W\left(C_{t},R_{t}\left(U_{t+1}\right)\right)\). This is saying that giving up a unit of consumption today, which costs \(W_1(t)\), should equal the expected utility value of the future payoff \(\mathbb{E}_{t}\left[W_{1}\left(t+1\right)R_{t+1}\right]\) expressed in units of time-\(t\) utility.
+\item
+  The equation above implies:
+  \[
+  \frac{M_{t+1}}{M_{t}}=W_{2}\left(t\right)\frac{W_{1}\left(t+1\right)}{W_{1}\left(t\right)}=MU_{t+1}\frac{MC_{t+1}}{MC_{t}}
+  \]
+  Plugging in the expressions yields the desired equation. The equation says that the SDF increases in response to contemporaneous reductions in consumption growth. When \(\gamma>\rho\), it also increases in response to negative innovations in anticipated future utility. This injects an additional source of volatility into the SDF, which helps the model fit the data.
+\end{itemize}
+
+Next, we show:
+\[
+SDF_{t+1}\equiv\frac{M_{t+1}}{M_{t}}=\beta^{\theta}\left(\frac{C_{t+1}}{C_{t}}\right)^{-\rho\theta}R_{w,t+1}^{\theta-t}\quad\theta=\frac{1-\gamma}{1-\rho}
+\]
+where \(R_{W,t+1}=W_{t+1}/\left(W_{t}-C_{t}\right)\) is the return on the wealth portfolio.
+
+\begin{itemize}
+\item
+  Going back to the Euler equation:
+  \[
+  U_{t}=MC_{t}\cdot C_{t}+\mathbb{E}_{t}\left[MU_{t+1}\cdot U_{t+1}\right]
+  \]
+  we can rearrange it to write:
+  \[
+  W_{t}\equiv\frac{U_{t}}{MC_{t}}=C_{t}+\mathbb{E}_{t}\left[\frac{MU_{t+1}MC_{t+1}}{MC_{t}}\frac{U_{t+1}}{MC_{t+1}}\right]
+  \]
+
+  \[
+  =C_{t}+\mathbb{E}_{t}\left[\frac{M_{t+1}}{M_{t}}\frac{U_{t+1}}{MC_{t+1}}\right]=C_{t}+\mathbb{E}_{t}\left[\frac{M_{t+1}}{M_{t}}W_{t+1}\right]
+  \]
+
+  where \(W_t\) has the interpretation of agent's wealth. This is because optimally managed wealth can be viewed as an asset that pays consumption as its dividend.
+\item
+  Define the return on this ``asset'' as
+  \[
+  R_{W,t+1}=\frac{W_{t+1}}{W_{t}-C_{t}}
+  \]
+  and using the expression for \(MC_t\), we have
+  \[
+  W_{t+1}=\frac{1}{1-\beta}C_{t+1}^{\rho}U_{t+1}^{1-\rho}
+  \]
+
+  \[
+  W_t-C_t = \frac{1}{1-\beta}C_{t}^{\rho}U_{t}^{1-\rho}-C_{t}=\frac{1}{1-\beta}C_{t}^{\rho}\left(U_{t}^{1-\rho}-\left(1-\beta\right)C_{t}^{1-\rho}\right)
+  \]
+
+  \[
+  =\frac{1}{1-\beta}C_{t}\left(\left(\frac{U_{t}}{C_{t}}\right)^{1-\rho}-\left(1-\beta\right)\right)=\frac{1}{1-\beta}C_{t}\left(\frac{R_{t}\left(U_{t+1}\right)}{C_{t}}\right)^{1-\rho}
+  \]
+
+  where at the last step we used the recursion in the definition of EZ preferences.
+\item
+  Therefore, we have
+  \[
+  R_{W,t+1}=\frac{1}{\delta}\left(\frac{C_{t+1}}{C_{t}}\right)^{\rho}\left[\frac{U_{t+1}}{R_{t}\left(U_{t+1}\right)}\right]^{1-\rho}
+  \]
+  Plugging in yields the desired expression.
+\end{itemize}
+
+\hypertarget{incomplete-markets}{%
+\chapter{Incomplete Markets}\label{incomplete-markets}}
+
+\hypertarget{rare-events-and-disasters}{%
+\chapter{Rare Events and Disasters}\label{rare-events-and-disasters}}
+
+\hypertarget{habit-formation}{%
+\chapter{Habit Formation}\label{habit-formation}}
+
+\hypertarget{ambiguity-aversion}{%
+\chapter{Ambiguity Aversion}\label{ambiguity-aversion}}
+
+\hypertarget{learning}{%
+\chapter{Learning}\label{learning}}
+
+\hypertarget{production-based-models}{%
+\chapter{Production-based Models}\label{production-based-models}}
+
+\hypertarget{term-structure}{%
+\chapter{Term Structure}\label{term-structure}}
+
+\hypertarget{part-pricing-specific-assets}{%
+\part*{PRICING SPECIFIC ASSETS}\label{part-pricing-specific-assets}}
+\addcontentsline{toc}{part}{PRICING SPECIFIC ASSETS}
+
+\hypertarget{pricing-currencies}{%
+\chapter{Pricing Currencies}\label{pricing-currencies}}
+
+\hypertarget{pricing-volatility}{%
+\chapter{Pricing Volatility}\label{pricing-volatility}}
+
+\hypertarget{pricing-corporate-bonds}{%
+\chapter{Pricing Corporate Bonds}\label{pricing-corporate-bonds}}
+
+\hypertarget{overview}{%
+\section{Overview}\label{overview}}
+
+Corporate bonds are held by a wide range of investors, the largest of which are insurance companies, pension funds, and mutual funds. A small but increasingly important investor class are ETF funds.
+
+Broadly speaking, the market is divided into an investment-grade universe (bonds rated BBB- and above) and a high-yield universe (bonds rated below BBB-, also known as junk bonds).
+
+\begin{itemize}
+\tightlist
+\item
+  Insurance companies and pensions funds tend to be more conservative in their investments, so their corporate bond holdings are largely investment grade, while mutual funds ETFs vary significantly according to their investment strategies.
+\item
+  Mutual funds and ETFs that offer high yields will have a higher composition of high-yield bonds.
+\end{itemize}
+
+In recent years, the investment-grade corporate bond market has grown tremendously as interest rates and corporate bond spreads reached record lows. In the high-yield space, commercial banks can offer a comparable product called leveraged loans, which are essentially high-interest loans. In practice, banks often originate and then sell the leveraged loans into a Collateralized Loan Obligation (CLO) investment vehicle, which then securitizes the loans. The bank will retain only the highest rated senior bonds of the CLO and the rest will go to investors with higher risk appetites.
+
+\hypertarget{pricing-government-bonds}{%
+\chapter{Pricing Government Bonds}\label{pricing-government-bonds}}
+
+\hypertarget{overview-1}{%
+\section{Overview}\label{overview-1}}
+
+\hypertarget{treasury-securities}{%
+\subsection{Treasury Securities}\label{treasury-securities}}
+
+Treasuries are issued by the U.S. government in regular auctions in a range of tenors, broadly divided into bills and coupons. Treasury debt is auctioned by the New York Fed to primary dealers, who then resell the debt to their clients. \textbf{Coupons are auctioned monthly in sizes that are announced at the beginning of each quarter, while bills are auctioned twice weekly in flexible sizes.}
+
+The most recent issue of coupons is called ``on the run,'' while coupons issued from previous auctions are called ``off the run.''
+
+\begin{itemize}
+\tightlist
+\item
+  On-the-run coupons are very liquid, but become progressively less liquid as time goes on.
+\item
+  An owner of a deep off-the- run coupon can still instantly borrow cash against the coupon in the repo market, but would have more trouble selling it outright. This makes investors of coupons a bit more cautious, so while bills can be elastically sold, coupon supply sticks to a schedule.
+\end{itemize}
+
+\hypertarget{agency-mbs}{%
+\subsection{Agency MBS}\label{agency-mbs}}
+
+Agency MBS are mortgage-backed securities guaranteed by the government. Mortgage-backed securities are bonds that receive the cash flow generated by a pool of mortgage loans. The government can either guarantee the mortgage-backed securities or the mortgage loans underlying those securities.
+
+Agency MBS have minimal credit risk, are very liquid, and have returns that are slightly higher than Treasuries, so they are very popular with conservative investors like insurance companies and foreign central banks worldwide.
+
+The Fed has been an active buyer in the Agency MBS market since the 2008 Financial Crisis with the stated objective of supporting the housing market and placing downwards pressure on interest rates.
+
+\hypertarget{fannie-mae-and-freddie-mac}{%
+\subsubsection{Fannie Mae and Freddie Mac}\label{fannie-mae-and-freddie-mac}}
+
+Fannie and Freddie are the two giants of the mortgage bond market. They support the U.S. housing market by buying mortgage loans and packaging them into securities that can be sold to investors. The loans underlying the securities are guaranteed by Fannie and Freddie, so investors don't have to worry about any homeowner defaulting.
+
+Fannie and Freddie offer commercial banks the additional option of selling the mortgage loan, provided the loan meets certain minimal credit standards. This additional flexibility was designed to encourage commercial banks to make more mortgage loans since they always had the option of selling them to Fannie or Freddie in case they needed to raise money. This created a robust secondary market for mortgage loans and also made possible an ``originate to distribute'' business model where mortgage loans were primarily originated to be sold rather than held as investments.
+
+Today, most mortgage loans are originated by nonbank mortgage lenders who specialize in the ``originate to distribute'' business model. These mortgage lenders take out a loan from a commercial bank, lend the money to a home buyer, sell the mortgage to Fannie or Freddie, and then repeat the process by taking the proceeds from the sale and lending to another mortgage borrower.
+
+\begin{itemize}
+\tightlist
+\item
+  Nonbank mortgage lenders make money off the origination fees, not the interest from the loan.
+\end{itemize}
+
+Fannie and Freddie take the mortgage loans, add a guarantee onto them, package them into securities, and return them to the mortgage seller to be sold to investors. A guarantee from Fannie and Freddie make the mortgage securities virtually risk-free.
+
+When house prices crashed in 2008, Fannie and Freddie had guaranteed around half of all the mortgage loans in the U.S. The mass foreclosures following the crash quickly made Fannie and Freddie insolvent and compelled a government rescue. Since then Fannie and Freddie have remained in government conservatorship.
+
+\hypertarget{pricing-equity-strips}{%
+\chapter{Pricing Equity Strips}\label{pricing-equity-strips}}
+
+\hypertarget{part-selected-topics}{%
+\part*{SELECTED TOPICS}\label{part-selected-topics}}
+\addcontentsline{toc}{part}{SELECTED TOPICS}
+
+\hypertarget{asset-pricing-around-announcements}{%
+\chapter{Asset Pricing around Announcements}\label{asset-pricing-around-announcements}}
+
+\hypertarget{machine-learning-in-asset-pricing}{%
+\chapter{Machine Learning in Asset Pricing}\label{machine-learning-in-asset-pricing}}
+
+\url{http://www.gcoqueret.com/files/SLIDES/AAP/AAP.html\#1}
+
+\hypertarget{demand-system-approach}{%
+\chapter{Demand System Approach}\label{demand-system-approach}}
+
+The materials presented here are a summary based on Ralph Koijen's lectures.
+
+\hypertarget{asset-demand-system-for-equities}{%
+\subsection{Asset Demand System for Equities}\label{asset-demand-system-for-equities}}
+
+\hypertarget{motivation}{%
+\subsubsection{Motivation}\label{motivation}}
+
+There are some questions that traditional asset pricing theories are ill-equipped to answer.
+
+\begin{itemize}
+\tightlist
+\item
+  What is the impact of QE on asset prices?
+\item
+  How effective is ESG investing in affecting the cost of capital?
+\item
+  How does the capital regulation of insurers affect corporate bond prices?
+\end{itemize}
+
+Looking at Euler equation of a class of investors is limited because it does not impose market clearing, and existing macro-finance models may be helpful but they end up yielding counterfactual predictions.
+
+\hypertarget{sdf-and-demand-system-approaches}{%
+\subsubsection{SDF and Demand System Approaches}\label{sdf-and-demand-system-approaches}}
+
+Any asset pricing model that starts from preferences implies (1) an SDF that can be used to price assets using \(\mathbb{E}[MR]=1\) and a demand system \((Q_i(P),S(P))\) that can be used to price assets by imposing market clearing: \(\sum_i Q_i(P) = S(P)\).
+
+\textbf{Demand system approaches can also offer more powerful tests.} With the SDF-based tests, we form a time-series average of \[M_t R_t\] and see if it equals 1. In reality, returns are volatile and SDF is also very volatile, so this test is quite challenging. Demand curves, on the other hand, depend on ex-ante information and can provide more powerful tests of asset pricing models. For example, the asset demand from CAPM is \(\gamma^{-1} \Sigma^{-1} \mu\) which can be computed before we know the prices.\footnote{In insurance: to what extent are people uninsured? Is it because of bequest motives or is it imperfect insurance? The old literature looked at the dynamics of consumption and wealth realization and it was difficult to get at the bequest motives. A more powerful test emerged, however, where one would look at life insurance purchase decisions.}
+
+\hypertarget{demand-elasticities-in-standard-asset-pricing-models}{%
+\subsubsection{Demand Elasticities in Standard Asset Pricing Models}\label{demand-elasticities-in-standard-asset-pricing-models}}
+
+All models imply downward-sloping demand. Petajisto (2009) provides one stylized model with CAPM for a basic calculation. The punchline from this model is that the demand elasticity \(-\frac{d\ln Q}{d\ln P}\) is really high, i.e.~even when an investor buys 10\% of the shares outstanding of an individual stock, prices go up only by 0.1 basis points.
+
+Why is this the case? Stocks are very close substitutes -- what matters is a stock's beta and its contribution to aggregate risk.
+
+\hypertarget{macro-finance-in-inelastic-markets}{%
+\subsection{Macro Finance in Inelastic Markets}\label{macro-finance-in-inelastic-markets}}
+
+\hypertarget{subjective-beliefs-in-asset-pricing}{%
+\chapter{Subjective Beliefs in Asset Pricing}\label{subjective-beliefs-in-asset-pricing}}
+
+\hypertarget{insurance}{%
+\chapter{Insurance}\label{insurance}}
+
+\hypertarget{international-finance}{%
+\chapter{International Finance}\label{international-finance}}
+
+\hypertarget{part-monetary-policy}{%
+\part*{MONETARY POLICY}\label{part-monetary-policy}}
+\addcontentsline{toc}{part}{MONETARY POLICY}
+
+\hypertarget{basics-of-new-keynesian-framework}{%
+\chapter{Basics of New Keynesian Framework}\label{basics-of-new-keynesian-framework}}
+
+\hypertarget{monetary-policy-shocks}{%
+\chapter{Monetary Policy Shocks}\label{monetary-policy-shocks}}
+
+\hypertarget{central-banks-and-asset-prices}{%
+\chapter{Central Banks and Asset Prices}\label{central-banks-and-asset-prices}}
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

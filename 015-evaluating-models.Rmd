@@ -1,0 +1,164 @@
+# Estimating and Evaluating Models
+
+## Regression-based Tests of Linear Factor Models
+
+Consider the $K$ factor model, written as:
+$$
+\mathbb{E}[R^e_i]=\beta_i'\lambda
+$$
+Our goal is to evaluate this factor model, which essentially amounts to: (1) estimating the parameters, (2) calculating the standard errors of the estimated parameters, (3) calculating standard errors of the pricing errors, and (4) testing the model usually with a test statistic of the form $\hat{\alpha}'V^{-1}\hat{\alpha}$.
+
+### When Factors are Returns: Time-series Regressions
+
+The time-series approach regression starts from the regression of excess returns:
+$$
+R_{it}^{e}=\alpha_{i}+\beta_{i}f_t+\epsilon_{it}
+$$
+with the null hypothesis that $\alpha_i = 0$. 
+
+- The estimate of the factor risk premium is just the sample mean of the factor: $\hat{\lambda} = \mathbb{E}_T[f]$.
+
+For any one asset this is easy, but the challenge is to test it jointly for a set of N assets. We will assume that the residuals $\epsilon_{it}$ are iid and independent of the excess return on the market. Then we have an asymptotic test
+$$
+T\left[1+\left(\frac{\bar{R}_{m}^{e}}{\hat{\sigma}\left(\bar{R}_{mt}^{e}\right)}\right)^{2}\right]^{-1}\hat{\alpha}'\hat{\Omega}^{-1}\hat{\alpha}\sim\chi_{N}^{2}
+$$
+where $\alpha$ is the vector of intercepts and $\Omega$ is the variance-covariance matrix of the residuals. The term in square brackets corrects for the presence of market return in the model; uncertainty about the betas affects the alphas, and more so when the market has a high expected return relative to its variance.
+
+### When Factors are Not Returns: Cross-Sectional Regressions
+
+There is an alternate approach that can be implemented even when the factor is not the return on a traded portfolio. This approach first estimates betas from a time-series regression:
+$$
+R_{it}^{e}=\alpha_{i}+\beta_{i}f_t+\epsilon_{it}
+$$
+ and then runs a **single** cross-sectional regression of **average** returns on the betas:
+$$
+\bar{R}_{i}^{e}=\lambda\hat{\beta}_{i}+a_{i}
+$$
+where we do not include an intercept and $\lambda$ is the cross-sectional reward for bearing the market risk. As we see, as $T\to\infty$, $\lambda\to\mathbb{E}[R_{mt}^e]$. This is known as a **two-pass** regression estimate.
+
+To get asymptotically efficient estimates, we can run generalized least squares (GLS) since the residuals in the cross-sectional regression are correlated with each other. The GLS regression can be understood as a transformation of the space of returns to focus attention on the statistically most informative portfolios. 
+
+- Suppose you can find a matrix $C$ such that $CC'=\Sigma^{-1}$. Then the GLS regression is the same as the OLS regression of $C\mathbb{E}_T[R^e]$ on $C\beta$, i.e. testing the model on the portfolios $CR^e$. 
+
+### Fama-MacBeth Procedure
+
+Fama and MacBeth (1973) suggest an alternative procedure for running cross-sectional regressions, and for producing standard errors and test statistics. First, you would find beta estimates similarly as before, but now instead of estimating a single cross-sectional regression with the sample averages, we now run a cross-sectional regression at each time period, i.e.
+$$
+R_{it}^{e}=\lambda_{t}\hat{\beta}_{i}+a_{it}
+$$
+We can then estimate $\lambda$ and $a_i$ as the average of the cross-sectional estimates:
+$$
+\hat{\lambda}=\frac{1}{T}\sum_{t=1}^{T}\hat{\lambda}_{t},\quad\hat{\alpha}_{i}=\frac{1}{T}\sum_{t=1}^{T}\hat{\alpha}_{it}
+$$
+and **most importantly**, we use the standard deviations of the cross-sectional regression estimates to generate the sampling errors for these estimates.
+
+**When should we use Fama-MacBeth?**
+
+Note that Fama MacBeth regressions provide standard errors corrected only for cross-sectional correlation. The standard errors from this method do not correct for time-series autocorrelation.
+
+This is usually not a problem for stock trading since stocks have weak time-series autocorrelation in daily and weekly holding periods, but autocorrelation is stronger over long horizons. This means Fama-MacBeth regressions may be inappropriate to use in many corporate finance settings where project holding periods tend to be long.
+
+**Estimating Returns to a Stock-Level Characteristics**
+
+The Fama-Macbeth approach for estimating the return to a stock-level characteristic $X_{it}$ is to run a series of cross-sectional regressions of excess returns on the characteristic, one for each date $t$:
+$$
+R_{it}^{e}=\theta_{t}+\lambda_{t}X_{it}+a_{it}
+$$
+Then, the cross-sectional slope coefficients $\hat{\lambda}_{t}$ can be interpreted as payoffs on long-short portfolios with zero initial investment, and $\hat{\theta}_{t}$ as the excess return on an equal-weighted portfolio of all the assets.
+
+An alternative way to estimate the rewards to observable characteristics is to estimate a panel regression. This requires adjusting the standard errors of the regression for the cross-sectional correlation of asset returns at a point in time, an adjustment that is now straightforward using clustered standard error commands in panel regression software packages.
+
+- When the explanatory variables in the regression do not vary over time, the Fama-MacBeth estimates and standard errors are identical to those of the panel regression as well as those of the cross-sectional regression.
+- When the explanatory variables do vary over time, Fama-MacBeth is different because it gives equal weight to each time period, even if the explanatory variables are more dispersed in one period than another.
+
+### Nota Bene
+
+**Addressing Potential Non-Linearity**
+
+One way is to present tables of average returns for portfolios sorted by one of more characteristics. The idea is that such tables will reveal non-linearity if it is present. 
+
+However, the regression methodology is a superior tool for understanding how multiple characteristics affect stock returns, and it can accommodate non-linearity where necessary by using non-linear transformations of raw characteristics as explanatory variables. 
+
+- [Lewellen (2015)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2511246) is an example that explores the non-linear relationship.
+
+**Selecting Test Assets**
+
+Looking at more assets (increasing $N$) will tend to find larger deviations from the model. However, increasing $N$ also increases the size of the deviations required to reject the CAPM statistically. Thus, to get a powerful test, one may wish to select a few test assets that one believes on prior grounds to be mispriced. However, a valid test cannot select assets using their average returns during the sample period used to test the model, which can lead to spurious rejections of the model (Lo and MacKinlay, 1990)
+
+- [Bryzgalova, Pelger, and Zhu (2021)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3493458) build a set of test assets borrowing tools from machine learning.
+
+**Grouping Test Assets into Portfolios**
+
+This procedure is commonly used because the diversification of idiosyncratic risk in portfolios increases the precision with which their factor loadings can be estimated and because it is easier to provide summary statistics. This approach, however, discards some of the information in the cross-section of individual stock returns and reduces the precision with which factor risk prices are estimated. 
+
+## GMM for Linear Factor Models
+
+The Generalized Method of Moments (GMM) of Hansen (1982b) is an econometric approach that is particularly well suited for estimating and testing models of the SDF.
+
+### A Gentle Introduction
+
+In contrast to other econometric methods such as maximum likelihood that require a complete specification of the stochastic processes obeyed by the time series of the model, GMM allows the econometrician to estimate and evaluate a model based on particular features or predictions provided by the researcher in the form of moment conditions.
+
+The traditional method of moments approach considers a construction where $N=K$, that is when there are exactly as many conditions as parameters. GMM extends this approach to settings where there are more moment restrictions than parameters, $N\geq K$. 
+
+A GMM estimate is constructed by setting $K$ linear combinations of the $N$ sample moments to zero. The information not used in estimation (the remaining $N-K$ combinations of the moments that are predicted to be zero) can be used to evaluate the model through a test of overidentifying restrictions.
+
+**GMM in Asset Pricing Context**
+
+An important advantage of the GMM framework is that it can easily accommodate nonlinear, dynamic models of the kind studied in asset pricing. 
+
+**Example: Time-Series Approach**
+
+Recall the time-series regression for the market model, written in vector notation:
+$$
+R_t^e = \alpha + \beta_m R_{mt}^e + \epsilon_t
+$$
+The OLS estimation here easily maps to the GMM framework with the moment conditions:
+$$
+\mathbb{E}\left[u_{t}\left(\left[\begin{array}{c}
+\alpha\\
+\beta_{m}
+\end{array}\right]\right)\right]=\mathbb{E}\left[\begin{array}{c}
+R_{t}^{e}-\alpha-\beta_{m}R_{mt}^{e}\\
+\left(R_{t}^{e}-\alpha-\beta_{m}R_{mt}^{e}\right)R_{mt}^{e}
+\end{array}\right]=\mathbb{E}\left[\begin{array}{c}
+\epsilon_{t}\\
+\epsilon_{t}R_{mt}^{e}
+\end{array}\right]=0
+$$
+which is an exactly identified system of $2N$ restriction and $2N$ parameters. 
+
+### Managed Portfolio Theorem
+
+The managed portfolio theorem is the important insight that we can test the conditional hypothesis for individual assets by performing unconditional tests on managed portfolios.
+
+**Simple SDF**
+
+Suppose we want to test the hypothesis that a stochastic process $Z$ is a sequence of single-period SDFs. In this case, the hypothesis is:
+$$
+\left(\forall i,t\right)\quad\mathbb{E}_{t}\left[Z_{t+1}\left(R_{i,t+1}-R_{f,t+1}\right)\right]=0
+$$
+By iterated expectations:
+$$
+\left(\forall i,t\right)\quad\mathbb{E}\left[Z_{t+1}\left(R_{i,t+1}-R_{f,t+1}\right)\right]=0
+$$
+Hence, we can test whether the sample mean of $Z_t(R_{it} - R_{ft})$ is zero for some set of returns. 
+
+**Using Managed Portfolios**
+
+We now derive a more powerful test than the one presented above. Start with the same equation:
+$$
+\left(\forall i,t\right)\quad\mathbb{E}_{t}\left[Z_{t+1}\left(R_{i,t+1}-R_{f,t+1}\right)\right]=0
+$$
+which implies:
+$$
+\left(\forall i,t\right)\quad\mathbb{E}\left[Z_{t+1}\left(R_{i,t+1}-R_{f,t+1}\right)\pi_{it}\right]=0
+$$
+for every random variable $\pi_{it}$ that depends on only date-$t$ information and has a finite mean.
+
+Adding this equation across assets, we obtain:
+$$
+\left(\forall t\right)\quad\mathbb{E}\left[Z_{t+1}\pi_{t}'\left(R_{i,t+1}-R_{f,t+1}\iota\right)\right]=0
+$$
+which says that $Z_{t+1}$ is orthogonal to the excess return of the portfolio $\pi_t$. Therefore, the hypothesis that $Z_t$ is a sequence of single-period SDFs is equivalent to the above relationship holding for each portfolio process $\pi$. The only restriction is that each portfolio must be formed using information available at the beginning of the return period.
+

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>4 Present Value Relations | Small Handbook of Asset Pricing Essentials</title>
+<meta name="author" content="Sangmin S. Oh">
+<meta name="description" content="4.1 Constant Discount Rates  4.1.1 Simplest PV Model Start with writing \(\mathbb{E}_{t}\left[R_{t+1}\right]=R\) in which case we have: \[...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="4 Present Value Relations | Small Handbook of Asset Pricing Essentials">
+<meta property="og:type" content="book">
+<meta property="og:description" content="4.1 Constant Discount Rates  4.1.1 Simplest PV Model Start with writing \(\mathbb{E}_{t}\left[R_{t+1}\right]=R\) in which case we have: \[...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="4 Present Value Relations | Small Handbook of Asset Pricing Essentials">
+<meta name="twitter:description" content="4.1 Constant Discount Rates  4.1.1 Simplest PV Model Start with writing \(\mathbb{E}_{t}\left[R_{t+1}\right]=R\) in which case we have: \[...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Small Handbook of Asset Pricing Essentials</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li class="book-part">CLASSICAL AP ESSENTIALS</li>
+<li><a class="" href="portfolio-choice.html"><span class="header-section-number">2</span> Portfolio Choice</a></li>
+<li><a class="" href="stochastic-discount-factor.html"><span class="header-section-number">3</span> Stochastic Discount Factor</a></li>
+<li><a class="active" href="present-value-relations.html"><span class="header-section-number">4</span> Present Value Relations</a></li>
+<li><a class="" href="static-and-dynamic-factor-models.html"><span class="header-section-number">5</span> Static and Dynamic Factor Models</a></li>
+<li><a class="" href="estimating-and-evaluating-models.html"><span class="header-section-number">6</span> Estimating and Evaluating Models</a></li>
+<li><a class="" href="paper-highlights.html"><span class="header-section-number">7</span> Paper Highlights</a></li>
+<li class="book-part">SHOULDERS OF GIANTS</li>
+<li><a class="" href="epstein-zin-preferences-and-long-run-risks.html"><span class="header-section-number">8</span> Epstein-Zin Preferences and Long-Run Risks</a></li>
+<li><a class="" href="incomplete-markets.html"><span class="header-section-number">9</span> Incomplete Markets</a></li>
+<li><a class="" href="rare-events-and-disasters.html"><span class="header-section-number">10</span> Rare Events and Disasters</a></li>
+<li><a class="" href="habit-formation.html"><span class="header-section-number">11</span> Habit Formation</a></li>
+<li><a class="" href="ambiguity-aversion.html"><span class="header-section-number">12</span> Ambiguity Aversion</a></li>
+<li><a class="" href="learning.html"><span class="header-section-number">13</span> Learning</a></li>
+<li><a class="" href="production-based-models.html"><span class="header-section-number">14</span> Production-based Models</a></li>
+<li><a class="" href="term-structure.html"><span class="header-section-number">15</span> Term Structure</a></li>
+<li class="book-part">PRICING SPECIFIC ASSETS</li>
+<li><a class="" href="pricing-currencies.html"><span class="header-section-number">16</span> Pricing Currencies</a></li>
+<li><a class="" href="pricing-volatility.html"><span class="header-section-number">17</span> Pricing Volatility</a></li>
+<li><a class="" href="pricing-corporate-bonds.html"><span class="header-section-number">18</span> Pricing Corporate Bonds</a></li>
+<li><a class="" href="pricing-government-bonds.html"><span class="header-section-number">19</span> Pricing Government Bonds</a></li>
+<li><a class="" href="pricing-equity-strips.html"><span class="header-section-number">20</span> Pricing Equity Strips</a></li>
+<li class="book-part">SELECTED TOPICS</li>
+<li><a class="" href="asset-pricing-around-announcements.html"><span class="header-section-number">21</span> Asset Pricing around Announcements</a></li>
+<li><a class="" href="machine-learning-in-asset-pricing.html"><span class="header-section-number">22</span> Machine Learning in Asset Pricing</a></li>
+<li><a class="" href="demand-system-approach.html"><span class="header-section-number">23</span> Demand System Approach</a></li>
+<li><a class="" href="subjective-beliefs-in-asset-pricing.html"><span class="header-section-number">24</span> Subjective Beliefs in Asset Pricing</a></li>
+<li><a class="" href="insurance.html"><span class="header-section-number">25</span> Insurance</a></li>
+<li><a class="" href="international-finance.html"><span class="header-section-number">26</span> International Finance</a></li>
+<li class="book-part">MONETARY POLICY</li>
+<li><a class="" href="basics-of-new-keynesian-framework.html"><span class="header-section-number">27</span> Basics of New Keynesian Framework</a></li>
+<li><a class="" href="monetary-policy-shocks.html"><span class="header-section-number">28</span> Monetary Policy Shocks</a></li>
+<li><a class="" href="central-banks-and-asset-prices.html"><span class="header-section-number">29</span> Central Banks and Asset Prices</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="present-value-relations" class="section level1" number="4">
+<h1>
+<span class="header-section-number">4</span> Present Value Relations<a class="anchor" aria-label="anchor" href="#present-value-relations"><i class="fas fa-link"></i></a>
+</h1>
+<div id="constant-discount-rates" class="section level2" number="4.1">
+<h2>
+<span class="header-section-number">4.1</span> Constant Discount Rates<a class="anchor" aria-label="anchor" href="#constant-discount-rates"><i class="fas fa-link"></i></a>
+</h2>
+<div id="simplest-pv-model" class="section level3" number="4.1.1">
+<h3>
+<span class="header-section-number">4.1.1</span> <strong>Simplest PV Model</strong><a class="anchor" aria-label="anchor" href="#simplest-pv-model"><i class="fas fa-link"></i></a>
+</h3>
+<p>Start with writing <span class="math inline">\(\mathbb{E}_{t}\left[R_{t+1}\right]=R\)</span> in which case we have:
+<span class="math display">\[
+P_{t}=\mathbb{E}_{t}\left[\frac{P_{t+1}+D_{t+1}}{1+R}\right]
+\]</span>
+Solving forward <span class="math inline">\(K\)</span> periods, we obtain
+<span class="math display">\[
+P_{t}=\mathbb{E}_{t}\left[\sum_{k=1}^{K}\left(\frac{1}{1+R}\right)^{k}D_{t+k}\right]+\mathbb{E}_{t}\left[\left(\frac{1}{1+R}\right)^{k}P_{t+K}\right]
+\]</span>
+Letting <span class="math inline">\(K\to\infty\)</span> and assuming the second term converges to zero, we have
+<span class="math display">\[
+P_{t}=\mathbb{E}_{t}\left[\sum_{k=1}^{\infty}\left(\frac{1}{1+R}\right)^{k}D_{t+k}\right]
+\]</span>
+While the stock price <span class="math inline">\(P_t\)</span> is not a martingale, as <span class="math inline">\(\mathbb{E}_{t}P_{t+1}=\left(1+R\right)P_{t}-\mathbb{E}_{t}D_{t+1}\neq P_{t}\)</span>, the discounted value of the resulting portfolio, given by,
+<span class="math display">\[
+V_{t}=\frac{N_{t}P_{t}}{\left(1+R\right)^{t}}
+\]</span>
+is a martingale once we assume that the investor reinvests all dividends in buying more shares, i.e. <span class="math inline">\(N_{t+1}=N_{t}\left(1+\frac{D_{t+1}}{P_{t+1}}\right)\)</span>.</p>
+<p><strong>Shiller (1981)’s Excess Volatility Puzzle</strong></p>
+<p>Shiller (1981) observed that from the price equation (3), the realized discounted value of future dividends should equal the stock price plus unpredictable noise and therefore should have greater variance than the stock price. However, he argued that this was not the case – stock price was too volatile.</p>
+<p>Solution. Kleidon (1986) and Marsh and Merton (1986) emphasized that both dividends and stock prices follow highly persistent processes with unit roots, in which case the population variances of prices and of realized discounted dividends are undefined. Campbell and Shiller (1987) responded by showing that when the dividend process has a unit root, prices and dividends are cointegrated, which they tested and rejected. Excess volatility still persists, this time in the spread between prices and current dividends rather than in the level of prices.</p>
+<p><strong>Earnings-based Models</strong></p>
+<p>Solution. Denote earnings as <span class="math inline">\(X_{t}\)</span> and the book equity of the firm as <span class="math inline">\(B_{t}\)</span>. We further assume that reinvested earnings <span class="math inline">\(X_{t}-D_{t}\)</span> augment book equity one-for-one, i.e. <span class="math inline">\(B_{t}=B_{t-1}+X_{t}-D_{t}\)</span>.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;In insurance: to what extent are people uninsured? Is it because of bequest motives or is it imperfect insurance? The old literature looked at the dynamics of consumption and wealth realization and it was difficult to get at the bequest motives. A more powerful test emerged, however, where one would look at life insurance purchase decisions.&lt;/p&gt;"><sup>1</sup></a> Then, defining return on equity (ROE) as <span class="math inline">\(ROE_{t}=X_{t}/B_{t-1}\)</span> and the retention ratio <span class="math inline">\(\lambda_t\)</span> as <span class="math inline">\(D_{t}=\left(1-\lambda_{t}\right)X_{t}\)</span>, we can compute the growth rate <span class="math inline">\(G\)</span> as
+<span class="math display">\[
+G=\frac{B_{t}-B_{t-1}}{B_{t-1}}=\frac{X_{t}-D_{t}}{B_{t-1}}=\lambda\frac{X_{t}}{B_{t-1}}=\lambda ROE
+\]</span>
+Substituting these into the Gordon growth model, we have
+<span class="math display">\[
+\frac{X}{P}=\frac{R-\lambda ROE}{1-\lambda}
+\]</span>
+Therefore, stock prices increase with the retention ratio.</p>
+</div>
+<div id="rational-bubbles" class="section level3" number="4.1.2">
+<h3>
+<span class="header-section-number">4.1.2</span> <strong>Rational Bubbles</strong><a class="anchor" aria-label="anchor" href="#rational-bubbles"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Defining Rational Bubbles</strong></p>
+<p>Recall that in the simplest present value case, we assumed that the second term in (2) converges to zero, i.e. the limit of the discounted stock price equals zero. Models of rational bubbles drop this assumption – then, <span class="math display">\[P_t = P_{Dt} + Q_t\]</span> where <span class="math inline">\(P_{Dt}\)</span> is the price implied by the dividend discount model and the rational bubble <span class="math inline">\(Q_{t}\)</span> satisfies:
+<span class="math display">\[
+Q_{t}=\mathbb{E}_{t}\left[\frac{Q_{t+1}}{1+R}\right]
+\]</span>
+One can similarly assume a non-constant discount rates. Consider an asset that pays dividend <span class="math inline">\(D_t\)</span> in each period, and denote its price at time <span class="math inline">\(t\)</span> by <span class="math inline">\(P_t\)</span>. If <span class="math display">\[\xi_{t,t+1}\]</span> is a valid stochastic discount factor for this asset, then
+<span class="math display">\[
+P_t = \mathbb{E}_t[\xi_{t,t+1}(P_{t+1} + D_{t+1})]
+\]</span>
+which leads to,
+<span class="math display">\[
+P_t = \sum_{s=1}^\infty \mathbb{E}_t[\xi_{t,t+s}D_{t+s}]+B_t,\quad B_t \equiv \lim_{T\to\infty} \mathbb{E}_t[\xi_{t,t+T}P_{t+T}]
+\]</span>
+where <span class="math inline">\(\xi_{t,t+s}\)</span> is the SDF between periods <span class="math inline">\(t\)</span> and <span class="math inline">\(t+s\)</span>. In this case, <span class="math inline">\(B_t=0\)</span> if there is no bubble and the transversality condition is not violated, and <span class="math inline">\(B_t &gt; 0\)</span>.</p>
+<p><strong>Generating Rational Bubbles</strong></p>
+<p>The conditions for rational bubbles to exist are restrictive:</p>
+<ol style="list-style-type: decimal">
+<li><p>Rational bubbles cannot exist on finite-lived assets.</p></li>
+<li><p>Negative rational bubbles cannot exist if there is a lower bound on the asset price.</p></li>
+<li><p>Rational bubbles cannot exist in a representative-agent economy with an infinite-lived agent because the agent’s investment in a bubble violates the transversality condition<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content="&lt;p&gt;Transversality condition requires the present value of payments occurring infinitely far in the future to be zero.&lt;/p&gt;"><sup>2</sup></a>, so a bubble cannot be consistent with infinite-horizon rational-expectations equilibrium.</p></li>
+<li><p>Tirole (1985) showed that rational bubbles cannot exist in a deterministic over- lapping generations (OLG) economy where the interest rate exceeds the growth rate of the economy, because in such an economy a bubble growing at the interest rate will eventually exhaust the wealth of the young generation that must purchase assets from the old generation.</p></li>
+</ol>
+<p>The classic rational bubble has a longstanding tradition in the theoretical literature, with seminal papers by Samuelson (1958), Diamond (1965), Blanchard and Watson (1982), Tirole (1982, 1985), and Froot and Obstfeld (1991). It has since become the workhorse model of bubbles in macroeconomics (e.g., Caballero and Krishnamurthy (2006), Arce and López-Salido (2011), Martin and Ventura (2012, 2014), Farhi and Tirole (2012), Doblas-Madrid (2012), Giglio and Severo (2012), Galí (2014), Galí and Gambetti (2015), Caballero and Farhi (2014)).</p>
+</div>
+</div>
+<div id="time-varying-discount-rates" class="section level2" number="4.2">
+<h2>
+<span class="header-section-number">4.2</span> Time-varying Discount Rates<a class="anchor" aria-label="anchor" href="#time-varying-discount-rates"><i class="fas fa-link"></i></a>
+</h2>
+<div id="campbell-shiller-1988-approximation" class="section level3" number="4.2.1">
+<h3>
+<span class="header-section-number">4.2.1</span> Campbell-Shiller (1988) Approximation<a class="anchor" aria-label="anchor" href="#campbell-shiller-1988-approximation"><i class="fas fa-link"></i></a>
+</h3>
+<p><strong>Approximation for Returns</strong></p>
+<p>Campbell and Shiller (1988) start from the definition of the log stock return:
+<span class="math display">\[
+r_{t+1} =\log\left(1+R_{t+1}\right)=\log\left(P_{t+1}+D_{t+1}\right)-\log P_{t}\\
+    =p_{t+1}-p_{t}+\log\left(1+\exp\left(d_{t+1}-p_{t+1}\right)\right)
+\]</span>
+First-order Taylor approximation of the nonlinear function is
+<span class="math display">\[
+\log\left(1+\exp\left(d_{t+1}-p_{t+1}\right)\right) =f\left(d_{t+1}-p_{t+1}\right)\\
+\approx f\left(\overline{d-p}\right)+f'\left(\overline{d-p}\right)\left(d_{t+1}-p_{t+1}-\left(\overline{d-p}\right)\right)
+\]</span>
+where the corresponding function is
+<span class="math display">\[
+f\left(z\right)=\log\left(1+\exp\left(z\right)\right),f'\left(z\right)=\exp\left(z\right)/\left(1+\exp\left(z\right)\right)
+\]</span>
+The resulting approximation for the log return is then
+<span class="math display">\[
+r_{t+1}\approx k+\rho p_{t+1}+\left(1-\rho\right)d_{t+1}-p_{t}
+\]</span>
+where
+<span class="math display">\[
+\rho=\frac{1}{1+\exp\left(\overline{d-p}\right)},k=-\log\rho-\left(1-\rho\right)\log\left(\frac{1}{\rho}-1\right)
+\]</span>
+<strong>Approximation for Prices</strong></p>
+<p>Solution. The approximate expression for the log stock return is a difference equation in log price, dividend, and return. Solving forward and imposing the terminal condition that <span class="math inline">\(\lim_{j\to\infty}\rho^{j}p_{t+j}=0\)</span>, we obtain:
+<span class="math display">\[
+p_{t}=\frac{k}{1-\rho}+\sum_{j=0}^{\infty}\rho^{j}\left[\left(1-\rho\right)d_{t+1+j}-r_{t+1+j}\right]
+\]</span>
+This equation holds ex post, as an accounting identity. It should therefore hold ex ante, not only for rational expectations but also for irrational expectations that respect identities. We can further write it as
+<span class="math display">\[
+p_{t}=\mathbb{E}_{t}\left[p_{t}\right]=\frac{k}{1-\rho}+p_{CF,t}+p_{DR,t}
+\]</span>
+where
+<span class="math display">\[
+p_{CF,t}=\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}\left(1-\rho\right)d_{t+1+j}\\
+p_{DR,t}=-\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}r_{t+1+j}
+\]</span>
+are the components of the log stock price driven by cash flow (dividend) expectations and discount rate (return) expectations, respectively.</p>
+</div>
+<div id="vuolteenaho-2002-approximation" class="section level3" number="4.2.2">
+<h3>
+<span class="header-section-number">4.2.2</span> Vuolteenaho (2002) Approximation<a class="anchor" aria-label="anchor" href="#vuolteenaho-2002-approximation"><i class="fas fa-link"></i></a>
+</h3>
+<p>Solution. Vuolteenaho (2002) starts with the book-to-market ratio expressed as
+<span class="math display">\[
+\frac{B}{P}=\frac{R-\lambda ROE}{\left(1-\lambda\right)ROE}=1+\left(\frac{R/ROE-1}{1-\lambda}\right)
+\]</span>
+Applying a similar loglinear approximation, we obtain:
+<span class="math display">\[
+b_{t}-v_{t}=\mu+\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}\left[-roe_{t+1+j}+r_{t+1+j}\right]
+\]</span>
+where <span class="math inline">\(b_{t}\)</span> is the log book value of the firm and <span class="math inline">\(v_{t}\)</span> is the log market value. It is natural to use this formula in studies of individual firms, since firm-level dividend policy may be unstable over time and some firms do not pay dividends at all in historical data.</p>
+</div>
+<div id="campbell-1991-approximation" class="section level3" number="4.2.3">
+<h3>
+<span class="header-section-number">4.2.3</span> Campbell (1991) Approximation<a class="anchor" aria-label="anchor" href="#campbell-1991-approximation"><i class="fas fa-link"></i></a>
+</h3>
+<p>Solution. Campbell (1991) used the Campbell-Shiller loglinearization to decompose the variation in stock returns, rather than prices, into revisions in expectations of dividend growth and future returns:
+<span class="math display">\[
+r_{t+1}-\mathbb{E}_{t}r_{t+1}=N_{CF,t+1}-N_{DR,t+1}
+\]</span>
+where
+<span class="math display">\[
+N_{CF,t+1}=\left(\mathbb{E}_{t+1}-\mathbb{E}_{t}\right)\sum_{j=0}^{\infty}\rho^{j}\Delta d_{t+1+j}\\N_{DR,t+1}=\left(\mathbb{E}_{t+1}-\mathbb{E}_{t}\right)\sum_{j=1}^{\infty}\rho^{j}r_{t+1+j}
+\]</span>
+are revisions in expectations or “news” about cash flows (dividends) and discount rates (expected future returns).</p>
+<p>The return decomposition above implies that better information about future dividends reduces the volatility of returns. The reason is that news about dividends must enter prices at some point; the earlier it does, the more heavily the effect is discounted.</p>
+</div>
+<div id="predictability-galore" class="section level3" number="4.2.4">
+<h3>
+<span class="header-section-number">4.2.4</span> Predictability Galore<a class="anchor" aria-label="anchor" href="#predictability-galore"><i class="fas fa-link"></i></a>
+</h3>
+<p>A few important points to note:</p>
+<ol style="list-style-type: decimal">
+<li>The return-prediction regression measures whether expected returns vary over time. The predictability literature is thus a quest to find out whether expected returns are time-varying.</li>
+<li>We use forecasting regressions in finance to understand how the RHS variable is formed from expectations of the LHS variable. For example, when we return returns and dividend growth on <span class="math inline">\(D/P\)</span>, what we learn is that <span class="math inline">\(D/P\)</span> is moving around, on average, in reaction to discount rate news not to cashflow news.</li>
+<li>Efficient markets does not mean “nothing is unpredictable.”</li>
+</ol>
+<p><strong>Importance of the Log Dividend-Price Ratio</strong></p>
+<p>Using the expression for prices and taking expectations, we have
+<span class="math display">\[
+d_{t}-p_{t}=-\frac{k}{1-\rho}+dp_{CF,t}+dp_{DR,t}
+\]</span>
+where
+<span class="math display">\[
+dp_{CF,t}=d_{t}-p_{CF,t}=-\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}\Delta d_{t+1+j}\\dp_{DR,t}=-p_{DR,t}=\mathbb{E}_{t}\sum_{j=0}^{\infty}\rho^{j}r_{t+1+j}
+\]</span>
+This decomposition shows why the log dividend-price ratio is a natural candidate to predict stock returns. If there is any predictable variation in stock returns, it will be reflected in <span class="math inline">\(dp_{DR,t}\)</span>. While the log dividend-price ratio also reflects expectations of dividend growth in the component <span class="math inline">\(dp_{CF,t}\)</span>, aggregate US dividend payments have been relatively smooth and close to a random walk since World War II. Hence, forecasts of future growth rates of dividends may not be too volatile, allowing return forecasts to be the primary influence on the ratio <span class="math inline">\(d_t-p_t\)</span>.</p>
+<ul>
+<li>If price variation comes from news about dividend growth, then price-dividend ratios should forecast dividend growth. Conversely,</li>
+<li>If price variation comes from news about changing discount rates, then price-dividend ratios should forecast returns.</li>
+<li>Our world cannot feature both unpredictable dividends and unpredictable returns!</li>
+</ul>
+<p><strong>Excess Volatility = Return Forecastability</strong></p>
+<p>We can tie predictability to the volatility of prices. Specifically, excess volatility of stock returns is exactly the same as the presence of return predictability and the absence of dividend growth predictability.</p>
+<p>Intuitively, volatility is another way to see the economic implications of return forecastability. With constant discount rates, which Shiller assumed, then high prices must be followed on average by higher dividend growth. But they are not. Already, we see that excess volatility is the same thing as the fact that high prices do not forecast dividend growth.</p>
+<p><strong>Persistence in Expected Returns</strong></p>
+<p>If expected returns follow a persistent time-series process, then movements in expected returns will have a large impact on asset prices: prices are much less sensitive to transitory fluctuations in expected returns.</p>
+<p>When expected returns are highly persistent, then the log dividend-price ratio can be very volatile. For example, consider a specific model of time-varying expected returns in which the expected return is an <span class="math inline">\(AR\left(1\right)\)</span> process:
+<span class="math display">\[
+r_{t+1}=\bar{r}+x_{t}+u_{t+1}\\x_{t+1}=\phi x_{t}+\xi_{t+1}
+\]</span>
+The process for <span class="math inline">\(x_t\)</span> implies that
+<span class="math display">\[
+dp_{DR,t}=\frac{\bar{r}}{1-\rho}+\frac{x_{t}}{1-\rho\phi},\quad Var\left(dp_{DR,t}\right)=\frac{\sigma_{x}^{2}}{\left(1-\rho\phi\right)^{2}}
+\]</span>
+Therefore, expected return may have a very small volatility yet may still have a very large effect on the log dividend-price ratio (or equivalently the stock price) if it is highly persistent.</p>
+<p><strong>Long-run Regressions</strong></p>
+<p>Consider the regressions of long-run returns and dividend growth on <span class="math inline">\(d_t-p_t\)</span>, which is essentially what equation (26) is. The long-run return forecasting regression coefficient and the long-run dividend growth forecasting regression coefficients must add up to one.</p>
+<p><strong>Short vs. Long-Horizon Predictive Regressions</strong></p>
+<p>Predictability improves at long horizons, almost mechanically. This is also equivalent to the fact that a high dividend-price ratio predicts a high return for many years in the future.</p>
+<p>Specifically, the ratio of the <span class="math inline">\(K\)</span>-period <span class="math inline">\(R^{2}\)</span> to the 1-period <span class="math inline">\(R^{2}\)</span> is
+<span class="math display">\[
+\frac{R^{2}\left(K\right)}{R^{2}\left(1\right)}=\left[\frac{Var\left(\mathbb{E}_{t}r_{t+1}+\cdots+\mathbb{E}_{t}r_{t+K}\right)}{Var\left(r_{t+1}+\cdots+r_{t+K}\right)}\right]/\left[\frac{Var\left(\mathbb{E}_{t}r_{t+1}\right)}{Var\left(r_{t+1}\right)}\right]\\=\frac{\beta\left(K\right)^{2}}{\beta\left(1\right)^{2}}\frac{1}{KV\left(K\right)}
+\]</span>
+where <span class="math inline">\(\beta\left(K\right)=1+\phi+\cdots+\phi^{K-1}\)</span>.</p>
+<p>Therefore, there is nothing special or different about long-run forecasts. They are the mechanical result of short-run forecasts and a persistent forecasting variable.</p>
+<p><strong>Predictive System of Pastor and Stambaugh (2009)</strong></p>
+<p>Pástor and Stambaugh (2009) have argued for the use of a “predictive system,” in which an AR(1) model for the expected return is combined with a vector of return predictors that are used to deliver filtered estimates of the unobservable expected return.</p>
+<p><strong>Dividend-price ratio fails to forecast dividend growth but does predict returns</strong></p>
+<p>An extensive empirical literature has found that in US historical data, the dividend-price ratio has little ability to forecast dividend growth.This is particularly true since World War II, when corporations began to smooth dividends in the manner documented by Lintner (1956), but even in the earlier part of the Shiller sample period dividend growth is forecastable only over a year or two. There is little evidence of long swings in the dividend growth rate that could justify the long swings in the dividend-price ratio.</p>
+<p>The dividend-price ratio does, however, predict returns in historical US data. This suggests that most of the variation in the series should be attributed to changing discount rates rather than changing expectations of dividend growth—at least if we take the perspective of rational investors.</p>
+</div>
+<div id="var-analysis-of-returns" class="section level3" number="4.2.5">
+<h3>
+<span class="header-section-number">4.2.5</span> VAR Analysis of Returns<a class="anchor" aria-label="anchor" href="#var-analysis-of-returns"><i class="fas fa-link"></i></a>
+</h3>
+<p>An alternative to direct long-horizon return regression is to use a time-series model and calculate its implications for long-horizon return behavior. Most obviously, if one is willing to assume that a vector autoregression (VAR) describes the data, then the news components of returns can be calculated directly from the VAR coefficients (Campbell and Shiller 1988a, Campbell 1991).</p>
+<p><strong>Parameter Restriction from the Campbell-Shiller Decomposition</strong></p>
+<p>Forecasts of either returns or dividend growth along with the log dividend-price ratio imply forecasts of the missing variable; and returns and dividend growth should not both be included in the system along with the log dividend-price ratio, because the resulting system will have perfectly collinear variables (except for a small approximation error).</p>
+<p><strong>Summary of Empirical Findings using VAR Approach</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Empirical work starting with Campbell (1991) typically finds that for broad stock indexes, the standard deviation of discount-rate news is about twice the standard deviation of cash-flow news.</p></li>
+<li><p>Results are quite different for individual stocks as shown by Vuolteenaho (2002) and Cohen, Polk, and Vuolteenaho (2009). Explanatory power of a time-series regression of an individual stock’s return on characteristics is very small even at long horizons, implying that most stock-level return variation is attributed to cash-flow news.</p></li>
+<li><p>This finding for individual stocks does not contradict the evidence for aggregate stock indexes because much of the stock-level cash-flow news is idiosyncratic, so it diversifies away at the aggregate level; whereas the stock-level discount-rate news has an important aggregate component that does not diversify away but accounts for a large part of the variation in aggregate stock returns.</p></li>
+</ol>
+</div>
+</div>
+</div>
+
+  <div class="chapter-nav">
+<div class="prev"><a href="stochastic-discount-factor.html"><span class="header-section-number">3</span> Stochastic Discount Factor</a></div>
+<div class="next"><a href="static-and-dynamic-factor-models.html"><span class="header-section-number">5</span> Static and Dynamic Factor Models</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#present-value-relations"><span class="header-section-number">4</span> Present Value Relations</a></li>
+<li>
+<a class="nav-link" href="#constant-discount-rates"><span class="header-section-number">4.1</span> Constant Discount Rates</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#simplest-pv-model"><span class="header-section-number">4.1.1</span> Simplest PV Model</a></li>
+<li><a class="nav-link" href="#rational-bubbles"><span class="header-section-number">4.1.2</span> Rational Bubbles</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#time-varying-discount-rates"><span class="header-section-number">4.2</span> Time-varying Discount Rates</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#campbell-shiller-1988-approximation"><span class="header-section-number">4.2.1</span> Campbell-Shiller (1988) Approximation</a></li>
+<li><a class="nav-link" href="#vuolteenaho-2002-approximation"><span class="header-section-number">4.2.2</span> Vuolteenaho (2002) Approximation</a></li>
+<li><a class="nav-link" href="#campbell-1991-approximation"><span class="header-section-number">4.2.3</span> Campbell (1991) Approximation</a></li>
+<li><a class="nav-link" href="#predictability-galore"><span class="header-section-number">4.2.4</span> Predictability Galore</a></li>
+<li><a class="nav-link" href="#var-analysis-of-returns"><span class="header-section-number">4.2.5</span> VAR Analysis of Returns</a></li>
+</ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Small Handbook of Asset Pricing Essentials</strong>" was written by Sangmin S. Oh. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

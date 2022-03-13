@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>3 Stochastic Discount Factor | Small Handbook of Asset Pricing Essentials</title>
+<meta name="author" content="Sangmin S. Oh">
+<meta name="description" content="3.1 SDF Basics Existence of SDFs There are two key theorems regarding the existence of an SDF: There is a discount factor that prices all the payoffs by \(P=\mathbb{E}[MX]\) if and only if the law...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="3 Stochastic Discount Factor | Small Handbook of Asset Pricing Essentials">
+<meta property="og:type" content="book">
+<meta property="og:description" content="3.1 SDF Basics Existence of SDFs There are two key theorems regarding the existence of an SDF: There is a discount factor that prices all the payoffs by \(P=\mathbb{E}[MX]\) if and only if the law...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3 Stochastic Discount Factor | Small Handbook of Asset Pricing Essentials">
+<meta name="twitter:description" content="3.1 SDF Basics Existence of SDFs There are two key theorems regarding the existence of an SDF: There is a discount factor that prices all the payoffs by \(P=\mathbb{E}[MX]\) if and only if the law...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Small Handbook of Asset Pricing Essentials</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li class="book-part">CLASSICAL AP ESSENTIALS</li>
+<li><a class="" href="portfolio-choice.html"><span class="header-section-number">2</span> Portfolio Choice</a></li>
+<li><a class="active" href="stochastic-discount-factor.html"><span class="header-section-number">3</span> Stochastic Discount Factor</a></li>
+<li><a class="" href="present-value-relations.html"><span class="header-section-number">4</span> Present Value Relations</a></li>
+<li><a class="" href="static-and-dynamic-factor-models.html"><span class="header-section-number">5</span> Static and Dynamic Factor Models</a></li>
+<li><a class="" href="estimating-and-evaluating-models.html"><span class="header-section-number">6</span> Estimating and Evaluating Models</a></li>
+<li><a class="" href="paper-highlights.html"><span class="header-section-number">7</span> Paper Highlights</a></li>
+<li class="book-part">SHOULDERS OF GIANTS</li>
+<li><a class="" href="epstein-zin-preferences-and-long-run-risks.html"><span class="header-section-number">8</span> Epstein-Zin Preferences and Long-Run Risks</a></li>
+<li><a class="" href="incomplete-markets.html"><span class="header-section-number">9</span> Incomplete Markets</a></li>
+<li><a class="" href="rare-events-and-disasters.html"><span class="header-section-number">10</span> Rare Events and Disasters</a></li>
+<li><a class="" href="habit-formation.html"><span class="header-section-number">11</span> Habit Formation</a></li>
+<li><a class="" href="ambiguity-aversion.html"><span class="header-section-number">12</span> Ambiguity Aversion</a></li>
+<li><a class="" href="learning.html"><span class="header-section-number">13</span> Learning</a></li>
+<li><a class="" href="production-based-models.html"><span class="header-section-number">14</span> Production-based Models</a></li>
+<li><a class="" href="term-structure.html"><span class="header-section-number">15</span> Term Structure</a></li>
+<li class="book-part">PRICING SPECIFIC ASSETS</li>
+<li><a class="" href="pricing-currencies.html"><span class="header-section-number">16</span> Pricing Currencies</a></li>
+<li><a class="" href="pricing-volatility.html"><span class="header-section-number">17</span> Pricing Volatility</a></li>
+<li><a class="" href="pricing-corporate-bonds.html"><span class="header-section-number">18</span> Pricing Corporate Bonds</a></li>
+<li><a class="" href="pricing-government-bonds.html"><span class="header-section-number">19</span> Pricing Government Bonds</a></li>
+<li><a class="" href="pricing-equity-strips.html"><span class="header-section-number">20</span> Pricing Equity Strips</a></li>
+<li class="book-part">SELECTED TOPICS</li>
+<li><a class="" href="asset-pricing-around-announcements.html"><span class="header-section-number">21</span> Asset Pricing around Announcements</a></li>
+<li><a class="" href="machine-learning-in-asset-pricing.html"><span class="header-section-number">22</span> Machine Learning in Asset Pricing</a></li>
+<li><a class="" href="demand-system-approach.html"><span class="header-section-number">23</span> Demand System Approach</a></li>
+<li><a class="" href="subjective-beliefs-in-asset-pricing.html"><span class="header-section-number">24</span> Subjective Beliefs in Asset Pricing</a></li>
+<li><a class="" href="insurance.html"><span class="header-section-number">25</span> Insurance</a></li>
+<li><a class="" href="international-finance.html"><span class="header-section-number">26</span> International Finance</a></li>
+<li class="book-part">MONETARY POLICY</li>
+<li><a class="" href="basics-of-new-keynesian-framework.html"><span class="header-section-number">27</span> Basics of New Keynesian Framework</a></li>
+<li><a class="" href="monetary-policy-shocks.html"><span class="header-section-number">28</span> Monetary Policy Shocks</a></li>
+<li><a class="" href="central-banks-and-asset-prices.html"><span class="header-section-number">29</span> Central Banks and Asset Prices</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="stochastic-discount-factor" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Stochastic Discount Factor<a class="anchor" aria-label="anchor" href="#stochastic-discount-factor"><i class="fas fa-link"></i></a>
+</h1>
+<div id="sdf-basics" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> SDF Basics<a class="anchor" aria-label="anchor" href="#sdf-basics"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Existence of SDFs</strong></p>
+<p>There are two key theorems regarding the existence of an SDF:</p>
+<ol style="list-style-type: decimal">
+<li>There is a discount factor that prices all the payoffs by <span class="math inline">\(P=\mathbb{E}[MX]\)</span> if and only if the law of one price holds.</li>
+<li>There is a <em>positive</em> discount factor that prices all the payoffs by <span class="math inline">\(P = \mathbb{E}[MX]\)</span> if and only if there are no arbitrage opportunities.</li>
+</ol>
+<p>These theorems are useful to show that we can use SDFs without implicitly assuming anything about utility functions, aggregate, and market completeness.</p>
+<p><strong>Fundamental Equation of Asset Pricing</strong></p>
+<p>Law of one price implies that we must have
+<span class="math display">\[
+P(X) = \sum_{s=1}^S q(s)X(s) = \sum_{s=1}^S \pi(s)\left(\frac{q(s)}{\pi(s)}\right)X(s) = \mathbb{E}[MX]
+\]</span>
+where <span class="math inline">\(M(s) = q(s) / \pi(s)\)</span> is the ratio of state price to probability for state <span class="math inline">\(s\)</span>.</p>
+<p><strong>Risk-Neutral Pricing</strong></p>
+<p>We can further rewrite the above equation by defining risk-neutral probabilities as <span class="math inline">\(\pi^*(s)\)</span>:
+<span class="math display">\[
+\pi^*(s) = R_f q(s) =\frac{M(s)}{\mathbb{E}[M]} \pi(s)
+\]</span>
+which allows us to rewrite the asset pricing equation:
+<span class="math display">\[
+P(X) = \frac{1}{R_f} \sum_s=1^S \pi^*(s) X(s) = \frac{1}{R_f} \mathbb{E}^*[X]
+\]</span>
+So the price of any asset is the pseudo-expectation of its payoff, discounted at the riskless interest rate.</p>
+</div>
+<div id="properties-of-sdfs" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> Properties of SDFs<a class="anchor" aria-label="anchor" href="#properties-of-sdfs"><i class="fas fa-link"></i></a>
+</h2>
+<p><strong>Linear Factor Pricing Model</strong></p>
+<p>We can show that returns always obey a linear factor pricing model with the SDF as the single factor.</p>
+<p>To see this, start with the fundamental equation of asset pricing:
+<span class="math display">\[
+P_{it} = \mathbb{E}_t[M_{t+1}X_{i,t+1}] = \mathbb{E}_t[M_{t+1}]\mathbb{E}_t[X_{i,t+1}] + Cov_t(M_{t+1}, X_{i,t+1})
+\]</span>
+Dividing each side by <span class="math inline">\(P_{it}\)</span> and using the fact that <span class="math inline">\(1+R_{f,t+1} = 1 / \mathbb{E}_t[M_{t+1}]\)</span> yields:
+<span class="math display">\[
+\mathbb{E}_t[1+R_{i,t+1}] = (1 + R_{f,t+1})(1 - Cov_t(M_{t+1}, R_{i,t+1}))
+\]</span>
+which says that expected return on any asset is the riskless return times an adjustment factor for the covariance of return with the SDF.</p>
+<p>As a final step, we can subtract the gross risk-free rate from each side:
+<span class="math display">\[
+\begin{aligned}
+\mathbb{E}_t[R_{i,t+1} - R_{f,t+1}] &amp;= -(1+R_{f,t+1}) Cov_t(M_t+1, R_{i,t+1} - R_{f,t+1})\\
+                                    &amp;= \underbrace{-(1+R_{f,t+1})Var_t(M_{t+1})}_{\equiv \lambda_{Mt}}\underbrace{\frac{Cov_t(M_t+1, R_{i,t+1} - R_{f,t+1})}{Var_t(M_{t+1})}}_{\equiv \beta_{iMt}}
+\end{aligned}
+\]</span>
+We denote <span class="math inline">\(\lambda_{Mt}\)</span> as the price of risk or the factor risk premium of the SDF. Immediately, we see that it depends on the volatility of the SDF.</p>
+<p><strong>Deriving the Hansen-Jagannathan Bound</strong></p>
+<p>Hansen–Jagannathan bound, introduced in <a href="#HansJaga:91">Hansen and Jagannathan (1991)</a> is a theorem that says that the ratio of the standard deviation of a stochastic discount factor to its mean exceeds the Sharpe ratio attained by any portfolio. Deriving the bound with a risky and a riskless asset is easy. Specifically, write:
+<span class="math display">\[
+\begin{aligned}
+\mathbb{E}_t[R_{i,t+1} - R_{f,t+1}] &amp;= -\frac{Cov_t(M_{t+1}, R_{i,t+1} - R_{f,t+1})}{\mathbb{E}_t[M_{t+1}]}\\
+                                    &amp;\leq \frac{\sigma_t(M_{t+1})\sigma_t(R_{i,t+1} - R_{f,t+1})}{\mathbb{E}_t[M_{t+1}]}
+\end{aligned}
+\]</span>
+Rearranging therefore yields:
+<span class="math display">\[
+\frac{\sigma_t(M_{t+1})}{\mathbb{E}_t[M_{t+1}]} \geq \frac{\mathbb{E}_t[R_{i,t+1} - R_{f,t+1}]}{\sigma_t(R_{i,t+1} - R_{f,t+1})}
+\]</span>
+Hansen and Jagannathan (1991) also derive the bound even when there is no riskfree asset pinning down the mean of the SDF. The idea is to treat the mean of the SDF as an unknown parameter, and for each possible value of the mean, augment the set of basis assets with a hypothetical riskfree payoff whose return equals <span class="math inline">\(1/\bar{M}\)</span>.</p>
+<p><strong>Usefulness of the Hansen-Jagannathan Bound</strong></p>
+<p>The HJ frontier is commonly used as a quick check on the ability of a parametric asset pricing model to fit the properties of asset returns. The mean and volatility of the SDF can be calculated for different parameter values of the model, and if they fail to satisfy the SDF volatility bounds, then this indicates that the model fails to price the assets.</p>
+<ul>
+<li>For example, Hansen and Jagannathan (1991) calculate SDF volatility bounds using return data on Treasury bills and an aggregate stock index. They find that a simple consumption-based asset pricing model with a power-utility representative agent can only satisfy these bounds if very high risk aversion coefficients are used.</li>
+</ul>
+<p><strong>Hansen and Richard (1987) Critique</strong></p>
+<p>Hansen and Richard (1987) highlight the effect of conditioning information on tests of asset pricing models.</p>
+<p>Their basic point is as follows. Recall that we can take the unconditional expectations of a conditional asset pricing equation to obtain:
+<span class="math display">\[
+\mathbb{E}P_{it} = \mathbb{E}[M_{t+1} X_{i,t+1}] = \mathbb{E}[M_{t+1}]\mathbb{E}[X_{i,t+1}] + Cov(M_{t+1}, X_{i,t+1})
+\]</span>
+Now suppose one has an economic model that expresses the SDF as a conditional linear function of some economic variable, i.e. <span class="math inline">\(M_{t+1} = a_t + b_t R_{m,t+1}\)</span> where <span class="math inline">\(R_{m,t+1}\)</span> is the return on the market portfolio in the CAPM sense. In this case, the conditional covariance <span class="math inline">\(Cov_t(M_{t+1}, X_{i,t+1})\)</span> can be written as
+<span class="math display">\[
+Cov_t(M_{t+1}, X_{i,t+1}) = b_t Cov_t(R_{m,t+1}, X_{i,t+1})
+\]</span>
+but the unconditional covariance does not take this simple form:
+<span class="math display">\[
+Cov(M_{t+1}, X_{i,t+1}) = Cov(a_t + b_t R_{m,t+1}, X_{i,t+1})
+\]</span>
+This implies that even if the CAPM holds conditionally, it need not hold unconditionally. This observation has then spurred a subsequent empirical literature searching for conditional models.</p>
+</div>
+<div id="representations-of-sdfs" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Representations of SDFs<a class="anchor" aria-label="anchor" href="#representations-of-sdfs"><i class="fas fa-link"></i></a>
+</h2>
+<p>I next describe key results regarding the representation of SDFs.</p>
+<p><strong>1. <span class="math inline">\(R^{mv}\)</span> is on mean-variance frontier <span class="math inline">\(\Rightarrow m = a+bR^{mv}\)</span></strong></p>
+<p>For any return on the mean-variance frontier, we can define a discount factor <span class="math inline">\(m\)</span> that price assets as a linear function of the mean-variance efficient return.</p>
+<p><strong>2. <span class="math inline">\(\mathbb{E}[R^i] = a + \lambda'\beta_i \Leftrightarrow m = a + b'f\)</span></strong></p>
+<p>Suppose we have an expected return - beta model such as CAPM, APT, or ICAPM. What discount factor model does this imply? This result says that they are <strong>equivalent </strong> to a model that is a linear function of the factors in the beta model.</p>
+<p><strong>Conditional Affine SDFs</strong></p>
+<p>In conditional versions of the classical CAPM and its multi-factor extensions, the SDF takes the conditionally affine form, <span class="math inline">\(m_{t+1} = a_t + b_t'f_{t+1}\)</span>. This version also arises in linearized consumption-based asset pricing models in which <span class="math inline">\(m_{t+1}\)</span> is a representative agent’s marginal rate of substitution such as Lettau and Ludvigson (2001) and Santos and Veronesi (2006).</p>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="portfolio-choice.html"><span class="header-section-number">2</span> Portfolio Choice</a></div>
+<div class="next"><a href="present-value-relations.html"><span class="header-section-number">4</span> Present Value Relations</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#stochastic-discount-factor"><span class="header-section-number">3</span> Stochastic Discount Factor</a></li>
+<li><a class="nav-link" href="#sdf-basics"><span class="header-section-number">3.1</span> SDF Basics</a></li>
+<li><a class="nav-link" href="#properties-of-sdfs"><span class="header-section-number">3.2</span> Properties of SDFs</a></li>
+<li><a class="nav-link" href="#representations-of-sdfs"><span class="header-section-number">3.3</span> Representations of SDFs</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Small Handbook of Asset Pricing Essentials</strong>" was written by Sangmin S. Oh. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+# (PART\*) SHOULDERS OF GIANTS {-}
+
+# Epstein-Zin Preferences and Long-Run Risks
+
+## Epstein-Zin Preferences
+
+The Epstein-Zin objective function is a member of a class of preferences defined recursively by
+$$
+U_t = f(C_t, \mu(U_{t+1}))
+$$
+The $f(\cdot)$ evaluates the tradeoffs between present and future, and $\mu(\cdot)$ is a certainty-equivalent function that encodes attitudes towards risk:
+$$
+U_{t}=\left\{ \left(1-\beta\right)C_{t}^{1-\rho}+\beta\left(\mathbb{E}_{t}\left[U_{t+1}^{1-\gamma}\right]\right)^{\frac{1-\rho}{1-\gamma}}\right\} ^{\frac{1}{1-\rho}}
+$$
+where $\gamma>0$ is the relative risk aversion, $\rho^{-1}$ is the intertemporal elasticity of substitution (IES), and $\beta$ is the subjective discount factor. If $\rho = \gamma$, the given equation collapses to power utility. 
+
+### SDF under Epstein-Zin Preferences
+
+Suppose returns and consumption are jointly lognormal and homoskedastic. Then the SDF is given as
+$$
+M_{t+1}=\left(\delta\left(\frac{C_{t+1}}{C_{t}}\right)^{-\frac{1}{\psi}}\right)^{\theta}\left(\frac{1}{1+R_{W,t+1}}\right)^{1-\theta}
+$$
+which then implies:
+$$
+r_{f,t+1} = -\log\delta+\frac{1}{\psi}\mathbb{E}_{t}\left[\Delta c_{t+1}\right]-\frac{\theta}{2\psi^{2}}\sigma_{c}^{2}+\frac{\theta-1}{2}\sigma_{W}^{2}
+$$
+
+$$
+\mathbb{E}_t[r_{i,t+1}]-r_{f,t+1} +\frac{\sigma_{i}^{2}}{2}=\theta\frac{\sigma_{ic}}{\psi}+\left(1-\theta\right)\sigma_{iw} 
+$$
+
+where $\sigma_{ic}$ and $\sigma_{iw}$ denote the covariances between innovations in log returns on asset $i$ and log consumption growth and the log wealth return, respectively.
+
+### Solving the Equity Premium and Risk-free Puzzles
+
+There are several reasons why EZ preferences have the potential to explain the dual puzzles.
+
+First, EZ preferences decouple the coefficient of relative risk aversion and the intertemporal elasticity of substitution (IES).  
+
+- The usage of power utility tightly links risk aversion and the IES, making one the reciprocal of the other. Therefore, under such framework, risk aversion cannot be increased to solve the equity premium puzzle without lowering the IES.
+- A very low value for the IES, however, implies implausible behavior of the riskfree interest rate. Therefore, the dual puzzles can be solved by decoupling these two parameters of the model.
+
+Second, for EZ preferences to explain the two puzzles, it is important that the consumption growth not be IID. To see this, consider a shock that affects expected consumption growth (so it affects future consumption) but does not affect current consumption.
+
+- In time-additive CRRA model, such a shock does not affect current marginal utility since it only depends on current consumption. Thus an asset's covariance with this shock does not affect its risk premium.
+
+- With EZ preferences, variables can affect the market return even if they do not affect consumption. Since the SDF depends on the market return in addition to consumption, such variables also enter the SDF.
+- Differently put, recall that the SDF under EZ preferences depends on aggregate consumption growth and the market return. In continuous time, this produces a two-factor pricing model; when consumption growth is IID, however, this two-factor model collapses to a single-factor model since the market return is proportional to consumption growth when consumption growth is IID. 
+
+## Long-Run Risk
+
+There are two key modeling assumptions behind the long-run risk model:
+
+1. The representative agent has Epstein-Zin preferences with moderately high risk aversion and a high elasticity of intertemporal substitution.
+2. Aggregate consumption growth is persistent and conditionally heteroskedastic. 
+
+### Bansal and Yaron (2004) and Its Extensions
+
+Bansal and Yaron (2004) have argued that the extended consumption CAPM can solve the equity premium, riskfree rate, and equity volatility puzzles if one assumes that a representative agent has Epstein-Zin preferences with moderately high risk aversion and a high EIS greater than one, and that aggregate consumption growth is both persistent and conditionally heteroskedastic.
+
+The basic logic is that even if consumption is adjusted continuously, investors are averse to covariance with long-run consumption growth if they have Epstein-Zin preferences with a relatively high elasticity of intertemporal substitution.
+
+**Empirical Model**
+
+The model is usually specified as the following:
+$$
+\Delta c_{t+1}=\mu_{c}+x_{t}+\sigma_{t}\eta_{t+1}\\
+x_{t+1}=\rho_{x}x_{t}+\varphi_{\epsilon}\sigma_{t}e_{t+1}\\
+\sigma_{t+1}^{2}=\bar{\sigma}^{2}+\nu\left(\sigma_{t}^{2}-\bar{\sigma}^{2}\right)+\sigma_{w}w_{t+1}\\
+\Delta d_{t+1}=\mu_{d}+\phi x_{t}+\varphi\sigma_{t}u_{t+1}+\pi\sigma_{t}\eta_{t+1}
+$$
+In this model, the dividends are imperfectly correlated with consumption, but:
+
+- Their growth rates share the same persistent and predictable component $x_t$ scaled by $\phi$
+- The conditional volatility of dividend growth is proportional to the conditional volatility of consumption growth $\sigma_t \eta_{t+1}$
+- 
+
+**Solving the Model: Bansal and Yaron (2004)**
+
+The model is solved using loglinear analytical approximations. By doing so, and assuming that the wealth portfolio is an exponentiated linear function of the state variables in the economy, the authors obtain:
+$$
+m_{t+1}=\theta\log\delta-\frac{\theta}{\psi}g_{t+1}+\left(\theta+1\right)r_{a,t+1}
+$$
+The log-linearization also implies that log wealth-consumption ratio for a consumption claim and the log price-dividend ratio for a dividend claim are linear in the conditional mean and variance of consumption growth, the two state variables of the model.
+
+**Persistence of Volatility**
+
+The greater persistence of volatility makes conditional heteroskedascitiy much more important for asset prices in two ways.
+
+1. Changing volatility affects the equity premium and the price-dividend ratio. This weakens the tight relationship between the price-dividend ratio and expected consumption growth in the homoskedastic model.
+2. Changing volatility helps explain the ability of the price-dividend ratio to predict excess stock returns.**
+
+**Term Structure**
+
+The model implies a downward-sloping term structure for real fixed-income securities but an upward-sloping term structure for risky securities. For bonds, this is because a decrease in expected future consumption growth lowers interest rates and increases bond prices. Therefore, bonds are good hedges against bad news about future consumption growth.
+
+Here's a more detailed logic:
+
+- A shock that decrease expected future consumption growth (which increases marginal utility) has the effect of lowering interest rates ($\rightarrow$ higher bond prices) and lowering future dividends ($\to$ lower stock prices). 
+- A shock that increases the volatility of consumption growth, which increases marginal utility, has the effect of lowering interest rate ($\to$ higher bond prices, through the precautionary savings effect) and lowering the price of risky dividend claims.
+
+Therefore, bonds are intertemporal hedges while stocks are intertemporally risky. 
+
+Both of these effects are more powerful for long-term claims, so the riskless and risky term structures have opposite slopes.
+
+## Appendix
+
+### Derivation of the SDF under Epstein-Zin Preferences
+
+Recall that the utility function is given as
+$$
+U_{t}=\left\{ \left(1-\beta\right)C_{t}^{1-\rho}+\beta R_{t}\left(U_{t+1}\right)^{1-\rho}\right\} ^{\frac{1}{1-\rho}}
+$$
+where $R_{t}\left(U_{t+1}\right)=\left(\mathbb{E}_{t}\left(U_{t+1}^{1-\gamma}\right)\right)^{\frac{1}{1-\gamma}}$. To derive the SDF ,we proceed in two steps.
+
+First, we show that 
+$$
+SDF_{t+1}\equiv\frac{M_{t+1}}{M_{t}}=\beta\left(\frac{U_{t+1}}{R_{t}\left(U_{t+1}\right)}\right)^{\rho-\gamma}\left(\frac{C_{t+1}}{C_{t}}\right)^{-\rho}
+$$
+
+- Define $MC_{t}\equiv\partial U_{t}/\partial C_{t}$ and $MU_{t+1}\equiv\partial U_{t}/\partial U_{t+1}$. We can then use Euler's Theorem to write:
+  $$
+  U_{t}=MC_{t}\cdot C_{t}+\mathbb{E}_{t}\left[MU_{t+1}\cdot U_{t+1}\right]
+  $$
+  since $U_t$ is homogeneous of degree 1.
+
+- Taking the derivatives:
+  $$
+  MC_{t}=\left(1-\beta\right)U_{t}^{\rho}C_{t}^{-\rho}
+  $$
+
+  $$
+  MU_{t+1} =\frac{\partial U_{t}}{\partial R_{t}\left(U_{t+1}\right)}\frac{\partial R_{t}\left(U_{t+1}\right)}{\partial U_{t+1}}= \beta U_{t}^{\rho}R_{t}\left(U_{t+1}\right)^{\gamma-\rho}U_{t+1}^{-\gamma}
+  $$
+
+- With EZ preferences, the Euler equation can be written as
+  $$
+  W_{1}\left(t\right)=W_{2}\left(t\right)\mathbb{E}_{t}\left[W_{1}\left(t+1\right)R_{t+1}\right]
+  $$
+  where $U_{t}=W\left(C_{t},R_{t}\left(U_{t+1}\right)\right)$. This is saying that giving up a unit of consumption today, which costs $W_1(t)$, should equal the expected utility value of the future payoff $\mathbb{E}_{t}\left[W_{1}\left(t+1\right)R_{t+1}\right]$ expressed in units of time-$t$ utility.
+
+- The equation above implies:
+  $$
+  \frac{M_{t+1}}{M_{t}}=W_{2}\left(t\right)\frac{W_{1}\left(t+1\right)}{W_{1}\left(t\right)}=MU_{t+1}\frac{MC_{t+1}}{MC_{t}}
+  $$
+  Plugging in the expressions yields the desired equation. The equation says that the SDF increases in response to contemporaneous reductions in consumption growth. When $\gamma>\rho$, it also increases in response to negative innovations in anticipated future utility. This injects an additional source of volatility into the SDF, which helps the model fit the data.
+
+Next, we show:
+$$
+SDF_{t+1}\equiv\frac{M_{t+1}}{M_{t}}=\beta^{\theta}\left(\frac{C_{t+1}}{C_{t}}\right)^{-\rho\theta}R_{w,t+1}^{\theta-t}\quad\theta=\frac{1-\gamma}{1-\rho}
+$$
+where $R_{W,t+1}=W_{t+1}/\left(W_{t}-C_{t}\right)$ is the return on the wealth portfolio.
+
+- Going back to the Euler equation:
+  $$
+  U_{t}=MC_{t}\cdot C_{t}+\mathbb{E}_{t}\left[MU_{t+1}\cdot U_{t+1}\right]
+  $$
+  we can rearrange it to write:
+  $$
+  W_{t}\equiv\frac{U_{t}}{MC_{t}}=C_{t}+\mathbb{E}_{t}\left[\frac{MU_{t+1}MC_{t+1}}{MC_{t}}\frac{U_{t+1}}{MC_{t+1}}\right]
+  $$
+
+  $$
+  =C_{t}+\mathbb{E}_{t}\left[\frac{M_{t+1}}{M_{t}}\frac{U_{t+1}}{MC_{t+1}}\right]=C_{t}+\mathbb{E}_{t}\left[\frac{M_{t+1}}{M_{t}}W_{t+1}\right]
+  $$
+
+  where $W_t$ has the interpretation of agent's wealth. This is because optimally managed wealth can be viewed as an asset that pays consumption as its dividend.
+
+- Define the return on this "asset" as
+  $$
+  R_{W,t+1}=\frac{W_{t+1}}{W_{t}-C_{t}}
+  $$
+  and using the expression for $MC_t$, we have
+  $$
+  W_{t+1}=\frac{1}{1-\beta}C_{t+1}^{\rho}U_{t+1}^{1-\rho}
+  $$
+
+  $$
+  W_t-C_t = \frac{1}{1-\beta}C_{t}^{\rho}U_{t}^{1-\rho}-C_{t}=\frac{1}{1-\beta}C_{t}^{\rho}\left(U_{t}^{1-\rho}-\left(1-\beta\right)C_{t}^{1-\rho}\right)
+  $$
+
+  $$
+  =\frac{1}{1-\beta}C_{t}\left(\left(\frac{U_{t}}{C_{t}}\right)^{1-\rho}-\left(1-\beta\right)\right)=\frac{1}{1-\beta}C_{t}\left(\frac{R_{t}\left(U_{t+1}\right)}{C_{t}}\right)^{1-\rho}
+  $$
+
+  where at the last step we used the recursion in the definition of EZ preferences.
+
+- Therefore, we have
+  $$
+  R_{W,t+1}=\frac{1}{\delta}\left(\frac{C_{t+1}}{C_{t}}\right)^{\rho}\left[\frac{U_{t+1}}{R_{t}\left(U_{t+1}\right)}\right]^{1-\rho}
+  $$
+  Plugging in yields the desired expression.

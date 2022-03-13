@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>8 Epstein-Zin Preferences and Long-Run Risks | Small Handbook of Asset Pricing Essentials</title>
+<meta name="author" content="Sangmin S. Oh">
+<meta name="description" content="8.1 Epstein-Zin Preferences The Epstein-Zin objective function is a member of a class of preferences defined recursively by \[ U_t = f(C_t, \mu(U_{t+1})) \] The \(f(\cdot)\) evaluates the...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="8 Epstein-Zin Preferences and Long-Run Risks | Small Handbook of Asset Pricing Essentials">
+<meta property="og:type" content="book">
+<meta property="og:description" content="8.1 Epstein-Zin Preferences The Epstein-Zin objective function is a member of a class of preferences defined recursively by \[ U_t = f(C_t, \mu(U_{t+1})) \] The \(f(\cdot)\) evaluates the...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="8 Epstein-Zin Preferences and Long-Run Risks | Small Handbook of Asset Pricing Essentials">
+<meta name="twitter:description" content="8.1 Epstein-Zin Preferences The Epstein-Zin objective function is a member of a class of preferences defined recursively by \[ U_t = f(C_t, \mu(U_{t+1})) \] The \(f(\cdot)\) evaluates the...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS -->
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Small Handbook of Asset Pricing Essentials</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> Introduction</a></li>
+<li class="book-part">CLASSICAL AP ESSENTIALS</li>
+<li><a class="" href="portfolio-choice.html"><span class="header-section-number">2</span> Portfolio Choice</a></li>
+<li><a class="" href="stochastic-discount-factor.html"><span class="header-section-number">3</span> Stochastic Discount Factor</a></li>
+<li><a class="" href="present-value-relations.html"><span class="header-section-number">4</span> Present Value Relations</a></li>
+<li><a class="" href="static-and-dynamic-factor-models.html"><span class="header-section-number">5</span> Static and Dynamic Factor Models</a></li>
+<li><a class="" href="estimating-and-evaluating-models.html"><span class="header-section-number">6</span> Estimating and Evaluating Models</a></li>
+<li><a class="" href="paper-highlights.html"><span class="header-section-number">7</span> Paper Highlights</a></li>
+<li class="book-part">SHOULDERS OF GIANTS</li>
+<li><a class="active" href="epstein-zin-preferences-and-long-run-risks.html"><span class="header-section-number">8</span> Epstein-Zin Preferences and Long-Run Risks</a></li>
+<li><a class="" href="incomplete-markets.html"><span class="header-section-number">9</span> Incomplete Markets</a></li>
+<li><a class="" href="rare-events-and-disasters.html"><span class="header-section-number">10</span> Rare Events and Disasters</a></li>
+<li><a class="" href="habit-formation.html"><span class="header-section-number">11</span> Habit Formation</a></li>
+<li><a class="" href="ambiguity-aversion.html"><span class="header-section-number">12</span> Ambiguity Aversion</a></li>
+<li><a class="" href="learning.html"><span class="header-section-number">13</span> Learning</a></li>
+<li><a class="" href="production-based-models.html"><span class="header-section-number">14</span> Production-based Models</a></li>
+<li><a class="" href="term-structure.html"><span class="header-section-number">15</span> Term Structure</a></li>
+<li class="book-part">PRICING SPECIFIC ASSETS</li>
+<li><a class="" href="pricing-currencies.html"><span class="header-section-number">16</span> Pricing Currencies</a></li>
+<li><a class="" href="pricing-volatility.html"><span class="header-section-number">17</span> Pricing Volatility</a></li>
+<li><a class="" href="pricing-corporate-bonds.html"><span class="header-section-number">18</span> Pricing Corporate Bonds</a></li>
+<li><a class="" href="pricing-government-bonds.html"><span class="header-section-number">19</span> Pricing Government Bonds</a></li>
+<li><a class="" href="pricing-equity-strips.html"><span class="header-section-number">20</span> Pricing Equity Strips</a></li>
+<li class="book-part">SELECTED TOPICS</li>
+<li><a class="" href="asset-pricing-around-announcements.html"><span class="header-section-number">21</span> Asset Pricing around Announcements</a></li>
+<li><a class="" href="machine-learning-in-asset-pricing.html"><span class="header-section-number">22</span> Machine Learning in Asset Pricing</a></li>
+<li><a class="" href="demand-system-approach.html"><span class="header-section-number">23</span> Demand System Approach</a></li>
+<li><a class="" href="subjective-beliefs-in-asset-pricing.html"><span class="header-section-number">24</span> Subjective Beliefs in Asset Pricing</a></li>
+<li><a class="" href="insurance.html"><span class="header-section-number">25</span> Insurance</a></li>
+<li><a class="" href="international-finance.html"><span class="header-section-number">26</span> International Finance</a></li>
+<li class="book-part">MONETARY POLICY</li>
+<li><a class="" href="basics-of-new-keynesian-framework.html"><span class="header-section-number">27</span> Basics of New Keynesian Framework</a></li>
+<li><a class="" href="monetary-policy-shocks.html"><span class="header-section-number">28</span> Monetary Policy Shocks</a></li>
+<li><a class="" href="central-banks-and-asset-prices.html"><span class="header-section-number">29</span> Central Banks and Asset Prices</a></li>
+</ul>
+
+        <div class="book-extra">
+          
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="epstein-zin-preferences-and-long-run-risks" class="section level1" number="8">
+<h1>
+<span class="header-section-number">8</span> Epstein-Zin Preferences and Long-Run Risks<a class="anchor" aria-label="anchor" href="#epstein-zin-preferences-and-long-run-risks"><i class="fas fa-link"></i></a>
+</h1>
+<div id="epstein-zin-preferences" class="section level2" number="8.1">
+<h2>
+<span class="header-section-number">8.1</span> Epstein-Zin Preferences<a class="anchor" aria-label="anchor" href="#epstein-zin-preferences"><i class="fas fa-link"></i></a>
+</h2>
+<p>The Epstein-Zin objective function is a member of a class of preferences defined recursively by
+<span class="math display">\[
+U_t = f(C_t, \mu(U_{t+1}))
+\]</span>
+The <span class="math inline">\(f(\cdot)\)</span> evaluates the tradeoffs between present and future, and <span class="math inline">\(\mu(\cdot)\)</span> is a certainty-equivalent function that encodes attitudes towards risk:
+<span class="math display">\[
+U_{t}=\left\{ \left(1-\beta\right)C_{t}^{1-\rho}+\beta\left(\mathbb{E}_{t}\left[U_{t+1}^{1-\gamma}\right]\right)^{\frac{1-\rho}{1-\gamma}}\right\} ^{\frac{1}{1-\rho}}
+\]</span>
+where <span class="math inline">\(\gamma&gt;0\)</span> is the relative risk aversion, <span class="math inline">\(\rho^{-1}\)</span> is the intertemporal elasticity of substitution (IES), and <span class="math inline">\(\beta\)</span> is the subjective discount factor. If <span class="math inline">\(\rho = \gamma\)</span>, the given equation collapses to power utility.</p>
+<div id="sdf-under-epstein-zin-preferences" class="section level3" number="8.1.1">
+<h3>
+<span class="header-section-number">8.1.1</span> SDF under Epstein-Zin Preferences<a class="anchor" aria-label="anchor" href="#sdf-under-epstein-zin-preferences"><i class="fas fa-link"></i></a>
+</h3>
+<p>Suppose returns and consumption are jointly lognormal and homoskedastic. Then the SDF is given as
+<span class="math display">\[
+M_{t+1}=\left(\delta\left(\frac{C_{t+1}}{C_{t}}\right)^{-\frac{1}{\psi}}\right)^{\theta}\left(\frac{1}{1+R_{W,t+1}}\right)^{1-\theta}
+\]</span>
+which then implies:
+<span class="math display">\[
+r_{f,t+1} = -\log\delta+\frac{1}{\psi}\mathbb{E}_{t}\left[\Delta c_{t+1}\right]-\frac{\theta}{2\psi^{2}}\sigma_{c}^{2}+\frac{\theta-1}{2}\sigma_{W}^{2}
+\]</span></p>
+<p><span class="math display">\[
+\mathbb{E}_t[r_{i,t+1}]-r_{f,t+1} +\frac{\sigma_{i}^{2}}{2}=\theta\frac{\sigma_{ic}}{\psi}+\left(1-\theta\right)\sigma_{iw} 
+\]</span></p>
+<p>where <span class="math inline">\(\sigma_{ic}\)</span> and <span class="math inline">\(\sigma_{iw}\)</span> denote the covariances between innovations in log returns on asset <span class="math inline">\(i\)</span> and log consumption growth and the log wealth return, respectively.</p>
+</div>
+<div id="solving-the-equity-premium-and-risk-free-puzzles" class="section level3" number="8.1.2">
+<h3>
+<span class="header-section-number">8.1.2</span> Solving the Equity Premium and Risk-free Puzzles<a class="anchor" aria-label="anchor" href="#solving-the-equity-premium-and-risk-free-puzzles"><i class="fas fa-link"></i></a>
+</h3>
+<p>There are several reasons why EZ preferences have the potential to explain the dual puzzles.</p>
+<p>First, EZ preferences decouple the coefficient of relative risk aversion and the intertemporal elasticity of substitution (IES).</p>
+<ul>
+<li>The usage of power utility tightly links risk aversion and the IES, making one the reciprocal of the other. Therefore, under such framework, risk aversion cannot be increased to solve the equity premium puzzle without lowering the IES.</li>
+<li>A very low value for the IES, however, implies implausible behavior of the riskfree interest rate. Therefore, the dual puzzles can be solved by decoupling these two parameters of the model.</li>
+</ul>
+<p>Second, for EZ preferences to explain the two puzzles, it is important that the consumption growth not be IID. To see this, consider a shock that affects expected consumption growth (so it affects future consumption) but does not affect current consumption.</p>
+<ul>
+<li><p>In time-additive CRRA model, such a shock does not affect current marginal utility since it only depends on current consumption. Thus an asset’s covariance with this shock does not affect its risk premium.</p></li>
+<li><p>With EZ preferences, variables can affect the market return even if they do not affect consumption. Since the SDF depends on the market return in addition to consumption, such variables also enter the SDF.</p></li>
+<li><p>Differently put, recall that the SDF under EZ preferences depends on aggregate consumption growth and the market return. In continuous time, this produces a two-factor pricing model; when consumption growth is IID, however, this two-factor model collapses to a single-factor model since the market return is proportional to consumption growth when consumption growth is IID.</p></li>
+</ul>
+</div>
+</div>
+<div id="long-run-risk" class="section level2" number="8.2">
+<h2>
+<span class="header-section-number">8.2</span> Long-Run Risk<a class="anchor" aria-label="anchor" href="#long-run-risk"><i class="fas fa-link"></i></a>
+</h2>
+<p>There are two key modeling assumptions behind the long-run risk model:</p>
+<ol style="list-style-type: decimal">
+<li>The representative agent has Epstein-Zin preferences with moderately high risk aversion and a high elasticity of intertemporal substitution.</li>
+<li>Aggregate consumption growth is persistent and conditionally heteroskedastic.</li>
+</ol>
+<div id="bansal-and-yaron-2004-and-its-extensions" class="section level3" number="8.2.1">
+<h3>
+<span class="header-section-number">8.2.1</span> Bansal and Yaron (2004) and Its Extensions<a class="anchor" aria-label="anchor" href="#bansal-and-yaron-2004-and-its-extensions"><i class="fas fa-link"></i></a>
+</h3>
+<p>Bansal and Yaron (2004) have argued that the extended consumption CAPM can solve the equity premium, riskfree rate, and equity volatility puzzles if one assumes that a representative agent has Epstein-Zin preferences with moderately high risk aversion and a high EIS greater than one, and that aggregate consumption growth is both persistent and conditionally heteroskedastic.</p>
+<p>The basic logic is that even if consumption is adjusted continuously, investors are averse to covariance with long-run consumption growth if they have Epstein-Zin preferences with a relatively high elasticity of intertemporal substitution.</p>
+<p><strong>Empirical Model</strong></p>
+<p>The model is usually specified as the following:
+<span class="math display">\[
+\Delta c_{t+1}=\mu_{c}+x_{t}+\sigma_{t}\eta_{t+1}\\
+x_{t+1}=\rho_{x}x_{t}+\varphi_{\epsilon}\sigma_{t}e_{t+1}\\
+\sigma_{t+1}^{2}=\bar{\sigma}^{2}+\nu\left(\sigma_{t}^{2}-\bar{\sigma}^{2}\right)+\sigma_{w}w_{t+1}\\
+\Delta d_{t+1}=\mu_{d}+\phi x_{t}+\varphi\sigma_{t}u_{t+1}+\pi\sigma_{t}\eta_{t+1}
+\]</span>
+In this model, the dividends are imperfectly correlated with consumption, but:</p>
+<ul>
+<li>Their growth rates share the same persistent and predictable component <span class="math inline">\(x_t\)</span> scaled by <span class="math inline">\(\phi\)</span>
+</li>
+<li>The conditional volatility of dividend growth is proportional to the conditional volatility of consumption growth <span class="math inline">\(\sigma_t \eta_{t+1}\)</span>
+</li>
+<li>
+</ul>
+<p><strong>Solving the Model: Bansal and Yaron (2004)</strong></p>
+<p>The model is solved using loglinear analytical approximations. By doing so, and assuming that the wealth portfolio is an exponentiated linear function of the state variables in the economy, the authors obtain:
+<span class="math display">\[
+m_{t+1}=\theta\log\delta-\frac{\theta}{\psi}g_{t+1}+\left(\theta+1\right)r_{a,t+1}
+\]</span>
+The log-linearization also implies that log wealth-consumption ratio for a consumption claim and the log price-dividend ratio for a dividend claim are linear in the conditional mean and variance of consumption growth, the two state variables of the model.</p>
+<p><strong>Persistence of Volatility</strong></p>
+<p>The greater persistence of volatility makes conditional heteroskedascitiy much more important for asset prices in two ways.</p>
+<ol style="list-style-type: decimal">
+<li>Changing volatility affects the equity premium and the price-dividend ratio. This weakens the tight relationship between the price-dividend ratio and expected consumption growth in the homoskedastic model.</li>
+<li>Changing volatility helps explain the ability of the price-dividend ratio to predict excess stock returns.**</li>
+</ol>
+<p><strong>Term Structure</strong></p>
+<p>The model implies a downward-sloping term structure for real fixed-income securities but an upward-sloping term structure for risky securities. For bonds, this is because a decrease in expected future consumption growth lowers interest rates and increases bond prices. Therefore, bonds are good hedges against bad news about future consumption growth.</p>
+<p>Here’s a more detailed logic:</p>
+<ul>
+<li>A shock that decrease expected future consumption growth (which increases marginal utility) has the effect of lowering interest rates (<span class="math inline">\(\rightarrow\)</span> higher bond prices) and lowering future dividends (<span class="math inline">\(\to\)</span> lower stock prices).</li>
+<li>A shock that increases the volatility of consumption growth, which increases marginal utility, has the effect of lowering interest rate (<span class="math inline">\(\to\)</span> higher bond prices, through the precautionary savings effect) and lowering the price of risky dividend claims.</li>
+</ul>
+<p>Therefore, bonds are intertemporal hedges while stocks are intertemporally risky.</p>
+<p>Both of these effects are more powerful for long-term claims, so the riskless and risky term structures have opposite slopes.</p>
+</div>
+</div>
+<div id="appendix" class="section level2" number="8.3">
+<h2>
+<span class="header-section-number">8.3</span> Appendix<a class="anchor" aria-label="anchor" href="#appendix"><i class="fas fa-link"></i></a>
+</h2>
+<div id="derivation-of-the-sdf-under-epstein-zin-preferences" class="section level3" number="8.3.1">
+<h3>
+<span class="header-section-number">8.3.1</span> Derivation of the SDF under Epstein-Zin Preferences<a class="anchor" aria-label="anchor" href="#derivation-of-the-sdf-under-epstein-zin-preferences"><i class="fas fa-link"></i></a>
+</h3>
+<p>Recall that the utility function is given as
+<span class="math display">\[
+U_{t}=\left\{ \left(1-\beta\right)C_{t}^{1-\rho}+\beta R_{t}\left(U_{t+1}\right)^{1-\rho}\right\} ^{\frac{1}{1-\rho}}
+\]</span>
+where <span class="math inline">\(R_{t}\left(U_{t+1}\right)=\left(\mathbb{E}_{t}\left(U_{t+1}^{1-\gamma}\right)\right)^{\frac{1}{1-\gamma}}\)</span>. To derive the SDF ,we proceed in two steps.</p>
+<p>First, we show that
+<span class="math display">\[
+SDF_{t+1}\equiv\frac{M_{t+1}}{M_{t}}=\beta\left(\frac{U_{t+1}}{R_{t}\left(U_{t+1}\right)}\right)^{\rho-\gamma}\left(\frac{C_{t+1}}{C_{t}}\right)^{-\rho}
+\]</span></p>
+<ul>
+<li><p>Define <span class="math inline">\(MC_{t}\equiv\partial U_{t}/\partial C_{t}\)</span> and <span class="math inline">\(MU_{t+1}\equiv\partial U_{t}/\partial U_{t+1}\)</span>. We can then use Euler’s Theorem to write:
+<span class="math display">\[
+U_{t}=MC_{t}\cdot C_{t}+\mathbb{E}_{t}\left[MU_{t+1}\cdot U_{t+1}\right]
+\]</span>
+since <span class="math inline">\(U_t\)</span> is homogeneous of degree 1.</p></li>
+<li>
+<p>Taking the derivatives:
+<span class="math display">\[
+MC_{t}=\left(1-\beta\right)U_{t}^{\rho}C_{t}^{-\rho}
+\]</span></p>
+<p><span class="math display">\[
+MU_{t+1} =\frac{\partial U_{t}}{\partial R_{t}\left(U_{t+1}\right)}\frac{\partial R_{t}\left(U_{t+1}\right)}{\partial U_{t+1}}= \beta U_{t}^{\rho}R_{t}\left(U_{t+1}\right)^{\gamma-\rho}U_{t+1}^{-\gamma}
+\]</span></p>
+</li>
+<li><p>With EZ preferences, the Euler equation can be written as
+<span class="math display">\[
+W_{1}\left(t\right)=W_{2}\left(t\right)\mathbb{E}_{t}\left[W_{1}\left(t+1\right)R_{t+1}\right]
+\]</span>
+where <span class="math inline">\(U_{t}=W\left(C_{t},R_{t}\left(U_{t+1}\right)\right)\)</span>. This is saying that giving up a unit of consumption today, which costs <span class="math inline">\(W_1(t)\)</span>, should equal the expected utility value of the future payoff <span class="math inline">\(\mathbb{E}_{t}\left[W_{1}\left(t+1\right)R_{t+1}\right]\)</span> expressed in units of time-<span class="math inline">\(t\)</span> utility.</p></li>
+<li><p>The equation above implies:
+<span class="math display">\[
+\frac{M_{t+1}}{M_{t}}=W_{2}\left(t\right)\frac{W_{1}\left(t+1\right)}{W_{1}\left(t\right)}=MU_{t+1}\frac{MC_{t+1}}{MC_{t}}
+\]</span>
+Plugging in the expressions yields the desired equation. The equation says that the SDF increases in response to contemporaneous reductions in consumption growth. When <span class="math inline">\(\gamma&gt;\rho\)</span>, it also increases in response to negative innovations in anticipated future utility. This injects an additional source of volatility into the SDF, which helps the model fit the data.</p></li>
+</ul>
+<p>Next, we show:
+<span class="math display">\[
+SDF_{t+1}\equiv\frac{M_{t+1}}{M_{t}}=\beta^{\theta}\left(\frac{C_{t+1}}{C_{t}}\right)^{-\rho\theta}R_{w,t+1}^{\theta-t}\quad\theta=\frac{1-\gamma}{1-\rho}
+\]</span>
+where <span class="math inline">\(R_{W,t+1}=W_{t+1}/\left(W_{t}-C_{t}\right)\)</span> is the return on the wealth portfolio.</p>
+<ul>
+<li>
+<p>Going back to the Euler equation:
+<span class="math display">\[
+U_{t}=MC_{t}\cdot C_{t}+\mathbb{E}_{t}\left[MU_{t+1}\cdot U_{t+1}\right]
+\]</span>
+we can rearrange it to write:
+<span class="math display">\[
+W_{t}\equiv\frac{U_{t}}{MC_{t}}=C_{t}+\mathbb{E}_{t}\left[\frac{MU_{t+1}MC_{t+1}}{MC_{t}}\frac{U_{t+1}}{MC_{t+1}}\right]
+\]</span></p>
+<p><span class="math display">\[
+=C_{t}+\mathbb{E}_{t}\left[\frac{M_{t+1}}{M_{t}}\frac{U_{t+1}}{MC_{t+1}}\right]=C_{t}+\mathbb{E}_{t}\left[\frac{M_{t+1}}{M_{t}}W_{t+1}\right]
+\]</span></p>
+<p>where <span class="math inline">\(W_t\)</span> has the interpretation of agent’s wealth. This is because optimally managed wealth can be viewed as an asset that pays consumption as its dividend.</p>
+</li>
+<li>
+<p>Define the return on this “asset” as
+<span class="math display">\[
+R_{W,t+1}=\frac{W_{t+1}}{W_{t}-C_{t}}
+\]</span>
+and using the expression for <span class="math inline">\(MC_t\)</span>, we have
+<span class="math display">\[
+W_{t+1}=\frac{1}{1-\beta}C_{t+1}^{\rho}U_{t+1}^{1-\rho}
+\]</span></p>
+<p><span class="math display">\[
+W_t-C_t = \frac{1}{1-\beta}C_{t}^{\rho}U_{t}^{1-\rho}-C_{t}=\frac{1}{1-\beta}C_{t}^{\rho}\left(U_{t}^{1-\rho}-\left(1-\beta\right)C_{t}^{1-\rho}\right)
+\]</span></p>
+<p><span class="math display">\[
+=\frac{1}{1-\beta}C_{t}\left(\left(\frac{U_{t}}{C_{t}}\right)^{1-\rho}-\left(1-\beta\right)\right)=\frac{1}{1-\beta}C_{t}\left(\frac{R_{t}\left(U_{t+1}\right)}{C_{t}}\right)^{1-\rho}
+\]</span></p>
+<p>where at the last step we used the recursion in the definition of EZ preferences.</p>
+</li>
+<li><p>Therefore, we have
+<span class="math display">\[
+R_{W,t+1}=\frac{1}{\delta}\left(\frac{C_{t+1}}{C_{t}}\right)^{\rho}\left[\frac{U_{t+1}}{R_{t}\left(U_{t+1}\right)}\right]^{1-\rho}
+\]</span>
+Plugging in yields the desired expression.</p></li>
+</ul>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="paper-highlights.html"><span class="header-section-number">7</span> Paper Highlights</a></div>
+<div class="next"><a href="incomplete-markets.html"><span class="header-section-number">9</span> Incomplete Markets</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#epstein-zin-preferences-and-long-run-risks"><span class="header-section-number">8</span> Epstein-Zin Preferences and Long-Run Risks</a></li>
+<li>
+<a class="nav-link" href="#epstein-zin-preferences"><span class="header-section-number">8.1</span> Epstein-Zin Preferences</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sdf-under-epstein-zin-preferences"><span class="header-section-number">8.1.1</span> SDF under Epstein-Zin Preferences</a></li>
+<li><a class="nav-link" href="#solving-the-equity-premium-and-risk-free-puzzles"><span class="header-section-number">8.1.2</span> Solving the Equity Premium and Risk-free Puzzles</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#long-run-risk"><span class="header-section-number">8.2</span> Long-Run Risk</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#bansal-and-yaron-2004-and-its-extensions"><span class="header-section-number">8.2.1</span> Bansal and Yaron (2004) and Its Extensions</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#appendix"><span class="header-section-number">8.3</span> Appendix</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#derivation-of-the-sdf-under-epstein-zin-preferences"><span class="header-section-number">8.3.1</span> Derivation of the SDF under Epstein-Zin Preferences</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+          
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Small Handbook of Asset Pricing Essentials</strong>" was written by Sangmin S. Oh. </p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>
